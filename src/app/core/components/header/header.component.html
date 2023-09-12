@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg bg-dark p-3" data-bs-theme="dark">
+    <div class="container-fluid">
+      <!-- <img src="/src/assets/logo.png" alt="Logo" width="24" height="24" class="d-inline-block align-text-top"> -->
+      <a class="navbar-brand" href="#">🍔 Smart Food </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['/']" i18n>About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/container-map']" i18n>Food suppliers</a>
+          </li>
+
+          <ng-container *ngIf="user?.roles?.includes('Superadmin')">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" i18n>
+              Super admin panel
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" i18n>Manage requests</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" i18n>Manage food suppliers</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" i18n>Manage companies</a></li>
+            </ul>
+          </li>
+          </ng-container>
+
+        </ul>
+        <div class="d-flex">  
+          <ng-container *ngIf="user === undefined; else showLogout">
+           <!-- Show Login button -->
+           <a [routerLink]="['/login']" class="btn btn-primary" i18n> <i class="bi bi-person-hearts"></i> Log in to join the program!</a>
+          </ng-container> 
+
+          <ng-template #showLogout> 
+           <div class="d-flex align-items-center">
+             <span>{{user?.name}}</span>
+
+            <ng-container *ngIf="user?.roles?.includes('Supplier')">
+                <a [routerLink]="['supplier/menu']" class="btn btn-success ms-3" i18n>My menu</a>
+                <a [routerLink]="['supplier/requests']" class="btn btn-success ms-3" i18n>My offers</a>
+            </ng-container> 
+
+            <ng-container *ngIf="user?.roles?.includes('Organization')">
+                <a [routerLink]="['organization/fridges']" class="btn btn-success ms-3" i18n>My fridges</a>
+            </ng-container>
+            
+            
+             <button class="btn btn-outline-danger ms-3" (click)="onLogout()" i18n><i class="bi bi-person"></i> Log out</button>
+           </div>
+          </ng-template>
+       </div>
+        <!-- <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+      </div>
+    </div>
+  </nav>
