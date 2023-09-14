@@ -14,6 +14,8 @@ import { LoginComponent } from './features/auth/login/login.component';
 import { HomeComponent } from './features/public/home/home.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './features/auth/register/register.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
 
 
 @NgModule({
@@ -31,6 +33,9 @@ import { RegisterComponent } from './features/auth/register/register.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    RouterModule,
+    InputTextModule,
+    PasswordModule
   ],
   providers: [],
   bootstrap: [AppComponent]
