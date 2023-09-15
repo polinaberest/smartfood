@@ -4,5 +4,5 @@ export interface RegisterRequest {
     name: string;
     description: string | null;
     registerDate: Date;
-    roles: string[];
+    role: string;
 }

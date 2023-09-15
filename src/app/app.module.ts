@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './features/auth/register/register.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { PasswordModule } from 'primeng/password';
     HttpClientModule,
     RouterModule,
     InputTextModule,
-    PasswordModule
+    PasswordModule,
+    RadioButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

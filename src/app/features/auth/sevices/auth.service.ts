@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginRequest } from '../models/login-request.model';
 import { environment } from 'src/environments/environment';
+import { RegisterRequest } from '../models/register-request.model';
 
 
 const mockLoginResponse: LoginResponse = {
@@ -40,6 +41,11 @@ export class AuthService {
     //     role: request.role
     //   }
     // );
+  }
+
+  register(request: RegisterRequest): Observable<any> {
+    return of(true);
+    //return this.http.post(`${environment.apiBaseUrl}/api/auth/register`, request);
   }
 
   setUser(user: User): void {
