@@ -40,10 +40,10 @@
               <a [routerLink]="['/']" class="text-reset" i18n>About the project</a>
             </p>
             <p>
-              <a [routerLink]="['/container-map']" class="text-reset" i18n>Our partners</a>
+              <a (click)="navigateToTarget('our-clients')" class="text-reset" i18n>Our partners</a>
             </p>
             <p>
-              <a [routerLink]="['/login']" class="text-reset" i18n>Food suppliers</a>
+              <a (click)="navigateToTarget('our-suppliers')" class="text-reset" i18n>Food suppliers</a>
             </p>
             <p>
                 <a [routerLink]="['/login']" class="text-reset" i18n>Join us</a>
