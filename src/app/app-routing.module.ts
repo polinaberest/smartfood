@@ -6,21 +6,21 @@ import { RegisterComponent } from './features/auth/register/register.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component: HomeComponent
+    path: '',
+    component: HomeComponent,
   },
   {
-    path:'login',
-    component: LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path:'register',
-    component: RegisterComponent
-  }
+    path: 'register',
+    component: RegisterComponent,
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled' })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
