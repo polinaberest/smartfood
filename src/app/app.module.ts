@@ -15,6 +15,7 @@ import { HomeComponent } from './features/public/home/home.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './features/auth/register/register.component';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { PasswordModule } from 'primeng/password';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FieldsetModule } from 'primeng/fieldset';
@@ -44,6 +45,7 @@ import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-d
     HttpClientModule,
     RouterModule,
     InputTextModule,
+    InputTextareaModule,
     PasswordModule,
     RadioButtonModule,
     FieldsetModule,
