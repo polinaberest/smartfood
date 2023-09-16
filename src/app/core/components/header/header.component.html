@@ -43,9 +43,9 @@
            <div class="d-flex align-items-center">
              <span>{{user?.name}}</span>
 
-            <ng-container *ngIf="user?.roles?.includes('Supplier')">
-                <a [routerLink]="['food-supplier/menu']" class="btn btn-success ms-3" i18n>My menu</a>
-                <a [routerLink]="['supplier/requests']" class="btn btn-success ms-3" i18n>My offers</a>
+            <ng-container *ngIf="supplier">
+                <a [routerLink]="['food-supplier', supplier.id, 'menu']" class="btn btn-success ms-3" i18n>My menu</a>
+                <a [routerLink]="['food-supplier', supplier.id, 'requests']" class="btn btn-success ms-3" i18n>My offers</a>
             </ng-container> 
 
             <ng-container *ngIf="user?.roles?.includes('Organization')">

@@ -1,74 +1,128 @@
 <div class="container">
-    <div class="mt-5">
-        <div class="col-12 col-md-8 col-lg-6 mx-auto">
-             <h1 i18n>Add new dish:</h1>
+  <div class="mt-5">
+    <div class="col-12 col-md-8 col-lg-6 mx-auto">
+      <h1 i18n>Add new dish:</h1>
 
-             <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+      <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+        <div class="mt-5 col-12">
+          <span class="p-float-label">
+            <input
+              pInputText
+              id="name"
+              name="name"
+              [(ngModel)]="model.name"
+              class="col-12"
+              required
+              minlength="2"
+              #nameField="ngModel"
+            />
+            <label htmlFor="name" i18n>Name</label>
+          </span>
 
-                <div class="mt-5 col-12">
-                    <span class="p-float-label">
-                      <input pInputText id="name" name="name" [(ngModel)]="model.name" class="col-12"
-                        required minlength="2" #nameField="ngModel" />
-                      <label htmlFor="name" i18n>name</label>
-                    </span>
-
-                    <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
-                      <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12">
-                        Name is required.
-                      </div>
-                      <div *ngIf="nameField?.errors?.['minlength']" class="alert alert-danger col-12">
-                        Name must be at least 2 characters long.
-                      </div>
-                    </div>
-                </div>
-
-                <div class="mt-5 col-12">
-                    <span class="p-float-label">
-                      <input pInputText type="number" id="price" price="price" [(ngModel)]="model.price" class="col-12"
-                        required min="1" max="100000" #priceField="ngModel" />
-                      <label htmlFor="price" i18n>price</label>
-                    </span>
-
-                    <div *ngIf="priceField.invalid && (priceField.dirty || priceField.touched)">
-                      <div *ngIf="priceField?.errors?.['required']" class="alert alert-danger col-12">
-                        Price is required.
-                      </div>
-                      <div *ngIf="priceField?.errors?.['min']" class="alert alert-danger col-12">
-                        Price must be greater than 0.
-                      </div>
-                    </div>
-                </div>
-
-                <div class="mt-4 col-12">                  
-                    <span class="p-float-label">
-                        <textarea id="description" name="description"
-                         rows="5" [(ngModel)]="model.description" 
-                         class="col-12" pInputTextarea  required #descriptionField="ngModel"
-                         minlength="10" maxlength="200"></textarea>
-                        <label for="description">Dish description</label>
-                    </span>
-
-                    <div *ngIf="descriptionField.invalid && (descriptionField.dirty || descriptionField.touched)">
-                      <div *ngIf="descriptionField?.errors?.['required']" class="alert alert-danger col-12">
-                        Dish short description is required.
-                      </div>
-                      <div *ngIf="descriptionField?.errors?.['minlength']" class="alert alert-danger col-12">
-                        Dish short description should have at least 10 characters.
-                      </div>
-                      <div *ngIf="descriptionField?.errors?.['maxlength']" class="alert alert-danger col-12">
-                        Dish short description maximum size is 200 characters.
-                      </div>
-                    </div>
-                </div>
-
-
-
-                <div class="mt-4 flex-column align-items-center">
-                    <button type="submit" [disabled]="nameField.invalid || priceField.invalid || descriptionField.invalid" 
-                    class="btn btn-success btn-block mt-3 btn-lg w-100" i18n>Add dish</button>
-                </div>
-             </form>
-
+          <div
+            *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)"
+          >
+            <div
+              *ngIf="nameField?.errors?.['required']"
+              class="alert alert-danger col-12"
+            >
+              Name is required.
+            </div>
+            <div
+              *ngIf="nameField?.errors?.['minlength']"
+              class="alert alert-danger col-12"
+            >
+              Name must be at least 2 characters long.
+            </div>
+          </div>
         </div>
+
+        <div class="mt-4 col-12">
+          <span class="p-float-label">
+            <p-inputNumber
+              #priceField="ngModel"
+              [styleClass]="'col-12'"
+              [showClear]="true"
+              class="col-12"
+              name="price"
+              [(ngModel)]="model.price"
+              [inputId]="'priceField'"
+              mode="currency"
+              currency="UAH"
+              [required]="true"
+              suffix=" ₴"
+              [min]="1"
+              [max]="100000"
+            >
+            </p-inputNumber>
+            <label htmlFor="priceField" i18n>Price</label>
+          </span>
+
+          <div
+            *ngIf="
+              priceField.invalid && (priceField.dirty || priceField.touched)
+            "
+          >
+            <div
+              *ngIf="priceField?.errors?.['required']"
+              class="alert alert-danger col-12"
+            >
+              Price is required.
+            </div>
+            <div
+              *ngIf="priceField?.errors?.['min']"
+              class="alert alert-danger col-12"
+            >
+              Price must be greater than 0.
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 col-12">
+          <span class="p-float-label">
+            <textarea
+              id="description"
+              name="description"
+              rows="5"
+              [(ngModel)]="model.description"
+              class="col-12"
+              pInputTextarea
+              #descriptionField="ngModel"
+              maxlength="200"
+            ></textarea>
+            <label for="description">Dish description</label>
+          </span>
+
+          <div
+            *ngIf="
+              descriptionField.invalid &&
+              (descriptionField.dirty || descriptionField.touched)
+            "
+          >
+            <div
+              *ngIf="descriptionField?.errors?.['maxlength']"
+              class="alert alert-danger col-12"
+            >
+              Dish description maximum size is 200 characters.
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 flex-column align-items-center">
+          <button
+            type="submit"
+            [disabled]="
+              nameField.invalid ||
+              priceField.invalid ||
+              descriptionField.invalid
+            "
+            class="btn btn-success btn-block mt-3 btn-lg w-100"
+            i18n
+          >
+            Add dish
+          </button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>

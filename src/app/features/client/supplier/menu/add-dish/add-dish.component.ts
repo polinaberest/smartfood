@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CreateDishRequest } from '../../models/create-dish-request.model';
 import { DishService } from '../../services/dish.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { notFoundPath } from 'src/app/app-routing.module';
 
 @Component({
   selector: 'app-add-dish',
@@ -9,16 +10,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-dish.component.css'],
 })
 export class AddDishComponent {
-  @Input({ required: true }) supplierId: string = '';
-
   model: CreateDishRequest = {
     name: '',
     price: 0,
-    supplierId: this.supplierId,
+    supplierId: '',
     description: null,
   };
 
-  constructor(private dishService: DishService, private router: Router) {}
+  constructor(
+    private dishService: DishService,
+    private router: Router,
+    private readonly route: ActivatedRoute
+  ) {}
+
+  ngOnInit() {
+    const supplierId = this.route.snapshot.paramMap.get('supplierId');
+    
+    // Case when supplierId is missing in query params.
+    if (!supplierId) {
+      // TODO: Create not found page and navigate here to it.
+      this.router.navigateByUrl(notFoundPath);
+      return;
+    }
+    
+    this.model.supplierId = supplierId;
+  }
 
   validateDish(): boolean {
     return this.model.name.trim().length >= 2;
@@ -31,7 +47,7 @@ export class AddDishComponent {
         next: (response) => {
           console.log('Successful dish creating!', this.model);
           // redirect to menu
-          this.router.navigateByUrl('/food-supplier/menu');
+          this.router.navigate(['/food-supplier', this.model.supplierId, 'menu']);
         },
         error: (error) => {
           console.error('error', error);

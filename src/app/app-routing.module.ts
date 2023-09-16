@@ -7,6 +7,9 @@ import { MenuComponent } from './features/client/supplier/menu/menu/menu.compone
 import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-dish.component';
 import { EditDishComponent } from './features/client/supplier/menu/edit-dish/edit-dish.component';
 
+// Can be removed when not found page is implemented.
+export const notFoundPath = '/NotFound';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,17 +24,17 @@ const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: 'food-supplier/menu',
+    path: 'food-supplier/:supplierId/menu',
     component: MenuComponent,
   },
   {
-    path: 'food-supplier/menu/add-dish',
-    component: AddDishComponent
+    path: 'food-supplier/:supplierId/add-dish',
+    component: AddDishComponent,
   },
   {
-    path: 'food-supplier/edit-dish/:id',
+    path: 'food-supplier/:supplierId/edit-dish/:id',
     component: EditDishComponent,
-  }
+  },
 ];
 
 @NgModule({
