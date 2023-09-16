@@ -18,6 +18,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FieldsetModule } from 'primeng/fieldset';
+import { MenuComponent } from './features/client/supplier/menu/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FieldsetModule } from 'primeng/fieldset';
     FooterComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

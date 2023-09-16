@@ -44,7 +44,7 @@
              <span>{{user?.name}}</span>
 
             <ng-container *ngIf="user?.roles?.includes('Supplier')">
-                <a [routerLink]="['supplier/menu']" class="btn btn-success ms-3" i18n>My menu</a>
+                <a [routerLink]="['food-supplier/menu']" class="btn btn-success ms-3" i18n>My menu</a>
                 <a [routerLink]="['supplier/requests']" class="btn btn-success ms-3" i18n>My offers</a>
             </ng-container> 
 
