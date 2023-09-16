@@ -41,7 +41,7 @@
                       <label htmlFor="name" i18n>Your name</label>
                     </span>
 
-                    <div *ngIf="nameField.invalid && (emailField.dirty || emailField.touched)">
+                    <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
                       <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12">
                         Name is required.
                       </div>

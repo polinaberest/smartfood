@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { Dish } from '../../models/dish.model';
 import { supplierMock } from '../../services/supplier.service';
 import { environment } from 'src/environments/environment';
+import { UpdateDish } from '../../models/update-dish.model';
 
 const dishesMock: Dish[] = [
   {
@@ -35,5 +36,20 @@ export class DishService {
     // return this.http.get<Dish[]>(
     //   `${environment.apiBaseUrl}/api/suppliers/${supplierId}/dishes`
     // );
+  }
+
+  getDishById(id: string): Observable<Dish> {
+    //return this.http.get<Dish>(`${environment.apiBaseUrl}`);
+    return of(
+      dishesMock.find((dish) => dish.id === id) as Dish
+    );
+  }
+
+  updateDish(id: string, updatedDish: UpdateDish): Observable<Dish> {
+    return this.http.put<Dish>(`${environment.apiBaseUrl}`, updatedDish);
+  }
+
+  deleteDish(id: string): Observable<Dish> {
+    return this.http.delete<Dish>(`${environment.apiBaseUrl}`);
   }
 }
