@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Dish } from '../../../models/dish.model';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/features/auth/sevices/auth.service';
+import { DishService } from '../../services/dish.service';
+import { SupplierService } from '../../../services/supplier.service';
 
 @Component({
   selector: 'app-menu',
@@ -9,21 +12,21 @@ import { Observable } from 'rxjs';
 })
 export class MenuComponent implements OnInit{
   dishes$?: Observable<Dish[]>;
-  currentUser: User | undefined;
 
   constructor(
-    private requestPostService: RequestPostService,
+    private dishService: DishService,
+    private supplierService: SupplierService,
     private authService: AuthService
   ) {}
 
   ngOnInit(): void {
     this.authService.user().subscribe((user) => {
-      this.currentUser = user;
-
-      if (this.currentUser) {
-        this.requestPosts$ = this.requestPostService.getAllUsersRequests(
-          this.currentUser.id
-        );
+      if (user) {
+        this.supplierService.getSupplier(user.id).subscribe(supplier => {
+          this.dishes$ = this.dishService.getAllSupplierDishes(
+            supplier.id
+          );
+        })
       }
     });
   }

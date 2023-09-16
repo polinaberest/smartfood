@@ -26,6 +26,8 @@ const supplierResponse: LoginResponse = {
   token: 'e62f19e6-9f5d-47fc-ab6c-9c2fe3705ea2',
 };
 
+export const supplierUser: User = { ...supplierResponse };
+
 const companyResponse: LoginResponse = {
   id: 'ba25735e-da37-4925-8cad-5dddad98b0ae',
   email: 'r@gmail.com',

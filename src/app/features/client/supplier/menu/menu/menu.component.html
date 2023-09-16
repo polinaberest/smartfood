@@ -11,7 +11,7 @@
             <thead>
                 <tr>
                     <th i18n>Title</th>
-                    <th i18n>Short description</th>
+                    <th i18n>Description</th>
                     <th i18n>Price (UAH)</th>
                     <th></th>
                 </tr>
@@ -19,7 +19,7 @@
             <tbody>
                 <tr *ngFor="let dish of dishes">
                     <td>{{dish.name}}</td>
-                    <td>{{dish.shortDescription}}</td>
+                    <td>{{dish.description}}</td>
                     <td>{{dish.price}}</td>
                     <td>
                         <a [routerLink]="['food-supplier/menu', dish.id]" class="btn btn-outline-warning" i18n>Edit dish</a>
