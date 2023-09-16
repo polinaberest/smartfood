@@ -19,6 +19,7 @@ import { PasswordModule } from 'primeng/password';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FieldsetModule } from 'primeng/fieldset';
 import { MenuComponent } from './features/client/supplier/menu/menu/menu.component';
+import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-dish.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MenuComponent } from './features/client/supplier/menu/menu/menu.compone
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    MenuComponent
+    MenuComponent,
+    AddDishComponent
   ],
   imports: [
     BrowserModule,

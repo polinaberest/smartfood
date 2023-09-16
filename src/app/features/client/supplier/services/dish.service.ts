@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { Dish } from '../../models/dish.model';
 import { supplierMock } from '../../services/supplier.service';
 import { environment } from 'src/environments/environment';
+import { CreateDishRequest } from '../models/create-dish-request.model';
 
 const dishesMock: Dish[] = [
   {
@@ -35,5 +36,13 @@ export class DishService {
     // return this.http.get<Dish[]>(
     //   `${environment.apiBaseUrl}/api/suppliers/${supplierId}/dishes`
     // );
+  }
+
+  createDish(request: CreateDishRequest): Observable<Dish> {
+    const resultDish: Dish = { id: crypto.randomUUID(), ...request, supplier: supplierMock };
+    dishesMock.push(resultDish);
+    return of(resultDish);
+
+    // return this.http.post(`${environment.apiBaseUrl}/api/dishes`, request);
   }
 }

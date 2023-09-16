@@ -4,6 +4,7 @@ import { LoginComponent } from './features/auth/login/login.component';
 import { HomeComponent } from './features/public/home/home.component';
 import { RegisterComponent } from './features/auth/register/register.component';
 import { MenuComponent } from './features/client/supplier/menu/menu/menu.component';
+import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-dish.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
     path: 'food-supplier/menu',
     component: MenuComponent,
   },
+  {
+    path: 'food-supplier/menu/add-dish',
+    component: AddDishComponent
+  }
 ];
 
 @NgModule({
