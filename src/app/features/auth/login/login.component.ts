@@ -30,7 +30,7 @@ export class LoginComponent {
 
   onFormSubmit(): void {
     this.authService.login(this.model).subscribe({
-      next: ({ token, id, email, name, description, registerDate, roles}) => {
+      next: ({ token, id, email, name, registerDate, roles}) => {
         // set auth cookie
         this.cookieService.set(
           'Authorization',
@@ -47,7 +47,6 @@ export class LoginComponent {
           id,
           email,
           name,
-          description,
           registerDate,
           roles,
         });
