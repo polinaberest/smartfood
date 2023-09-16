@@ -5,6 +5,7 @@ import { HomeComponent } from './features/public/home/home.component';
 import { RegisterComponent } from './features/auth/register/register.component';
 import { MenuComponent } from './features/client/supplier/menu/menu/menu.component';
 import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-dish.component';
+import { EditDishComponent } from './features/client/supplier/menu/edit-dish/edit-dish.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'food-supplier/menu/add-dish',
     component: AddDishComponent
+  },
+  {
+    path: 'food-supplier/edit-dish/:id',
+    component: EditDishComponent,
   }
 ];
 

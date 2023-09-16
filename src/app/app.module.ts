@@ -19,6 +19,9 @@ import { PasswordModule } from 'primeng/password';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FieldsetModule } from 'primeng/fieldset';
 import { MenuComponent } from './features/client/supplier/menu/menu/menu.component';
+import { EditDishComponent } from './features/client/supplier/menu/edit-dish/edit-dish.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-dish.component';
 
 @NgModule({
@@ -30,6 +33,7 @@ import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-d
     HomeComponent,
     RegisterComponent,
     MenuComponent,
+    EditDishComponent,
     AddDishComponent
   ],
   imports: [
@@ -42,7 +46,9 @@ import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-d
     InputTextModule,
     PasswordModule,
     RadioButtonModule,
-    FieldsetModule
+    FieldsetModule,
+    InputNumberModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

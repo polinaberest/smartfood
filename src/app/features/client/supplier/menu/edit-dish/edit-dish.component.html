@@ -1,0 +1,63 @@
+<div class="container">
+    <ng-container *ngIf="model">
+        <h1 class="mt-3" i18n>Edit dish {{model.name}}</h1>
+
+        <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+            <div class="mt-2">
+                <div class="mt-5">
+                    <span class="p-float-label">
+                        <input pInputText type="text" id="name" name="name" [(ngModel)]="model.name" class="col-12"
+                          required minlength="5" #nameField="ngModel" />
+                        <label htmlFor="name" i18n>Dish name</label>
+                      </span>
+  
+                      <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
+                        <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12">
+                          Dish is required.
+                        </div>
+                        <div *ngIf="nameField.errors?.['minlength']" class="alert alert-danger col-12">
+                          Name must be at least 5 characters long.
+                        </div> 
+                      </div>
+                </div>
+
+                <div class="mt-4">               
+                        <span class="p-float-label">
+                            <textarea id="description" name="description"
+                             rows="5" [(ngModel)]="model.description" 
+                             class="col-12" pInputTextarea  required #descriptionField="ngModel"
+                             minlength="2" maxlength="200"></textarea>
+                            <label for="description">Dish description</label>
+                        </span>
+    
+                        <div *ngIf="descriptionField.invalid && (descriptionField.dirty || descriptionField.touched)">
+                          <div *ngIf="descriptionField?.errors?.['required']" class="alert alert-danger col-12">
+                            Description is required.
+                          </div>
+                          <div *ngIf="descriptionField?.errors?.['minlength']" class="alert alert-danger col-12">
+                            Description should have at least 2 characters.
+                          </div>
+                          <div *ngIf="descriptionField?.errors?.['maxlength']" class="alert alert-danger col-12">
+                            Description maximum size is 200 characters.
+                          </div>
+                        </div>
+                </div>
+
+                <div class="mt-3">
+                    <label for="content" class="form-label" i18n>Price: </label>
+                    <p-inputNumber class="ml-3" [(ngModel)]="model.price" [showButtons]="true" [min]="1" [max]="100000"
+                    inputId="stacked" [minFractionDigits]="2" [maxFractionDigits]="2"> </p-inputNumber>
+                </div>
+
+                <div class="mt-5 mb-5 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success" 
+                    [disabled]="nameField.invalid || descriptionField.invalid " i18n>Save changes</button>
+                    <button type="button" class="btn btn-danger ms-3" (click)="onDelete()" i18n>Delete the request</button>
+                </div>
+            </div>
+        </form>
+
+    </ng-container>
+</div>
+
+

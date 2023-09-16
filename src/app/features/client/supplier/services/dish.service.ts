@@ -5,6 +5,7 @@ import { Dish } from '../../models/dish.model';
 import { supplierMock } from '../../services/supplier.service';
 import { environment } from 'src/environments/environment';
 import { CreateDishRequest } from '../models/create-dish-request.model';
+import { UpdateDish } from '../../models/update-dish.model';
 
 const dishesMock: Dish[] = [
   {
@@ -38,11 +39,26 @@ export class DishService {
     // );
   }
 
-  createDish(request: CreateDishRequest): Observable<Dish> {
-    const resultDish: Dish = { id: crypto.randomUUID(), ...request, supplier: supplierMock };
-    dishesMock.push(resultDish);
-    return of(resultDish);
+  getDishById(id: string): Observable<Dish> {
+    //return this.http.get<Dish>(`${environment.apiBaseUrl}`);
+    return of(
+      dishesMock.find((dish) => dish.id === id) as Dish
+    );
+    }
 
-    // return this.http.post(`${environment.apiBaseUrl}/api/dishes`, request);
+    createDish(request: CreateDishRequest): Observable<Dish> {
+        const resultDish: Dish = { id: crypto.randomUUID(), ...request, supplier: supplierMock };
+        dishesMock.push(resultDish);
+        return of(resultDish);
+
+        // return this.http.post(`${environment.apiBaseUrl}/api/dishes`, request);
+    }
+
+  updateDish(id: string, updatedDish: UpdateDish): Observable<Dish> {
+    return this.http.put<Dish>(`${environment.apiBaseUrl}`, updatedDish);
+  }
+
+  deleteDish(id: string): Observable<Dish> {
+    return this.http.delete<Dish>(`${environment.apiBaseUrl}`);
   }
 }
