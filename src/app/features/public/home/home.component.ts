@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { Organization } from '../../client/models/company.model';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../auth/sevices/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -22,8 +23,6 @@ export class HomeComponent implements OnInit {
     if (fragment) {
       this.scrollToElement(fragment.replace('#', ''));
     }
-
-    
   }
 
   scrollToElement(id: string) {

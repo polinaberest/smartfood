@@ -6,20 +6,18 @@ import { AuthService } from 'src/app/features/auth/sevices/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   user?: User;
 
-  constructor(private authService: AuthService,
-    private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    this.authService.user()
-    .subscribe({
+    this.authService.user().subscribe({
       next: (user) => {
         this.user = user;
-      }
+      },
     });
   }
 
@@ -28,4 +26,3 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/');
   }
 }
-

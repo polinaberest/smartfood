@@ -47,7 +47,7 @@ const loginResponsesMocks = [
   providedIn: 'root',
 })
 export class AuthService {
-  $user = new BehaviorSubject<User | undefined>(undefined);
+  private readonly $user = new BehaviorSubject<User | undefined>(undefined);
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
@@ -106,6 +106,17 @@ export class AuthService {
     }
 
     return undefined;
+  }
+
+  loadUserFromLocalStorage() {
+    this.user().subscribe((u) => {
+      if (u === undefined) {
+        const localStorageUser = this.getUser();
+        if (localStorageUser !== undefined) {
+          this.setUser(localStorageUser);
+        }
+      }
+    });
   }
 
   logout(): void {
