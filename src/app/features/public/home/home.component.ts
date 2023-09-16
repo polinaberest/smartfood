@@ -1,8 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
-import { Router } from '@angular/router';
 import { Organization } from '../../client/models/company.model';
 import { Observable } from 'rxjs';
-import { AuthService } from '../../auth/sevices/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +10,7 @@ import { AuthService } from '../../auth/sevices/auth.service';
 export class HomeComponent implements OnInit {
   clients$?: Observable<Organization[]>;
 
-  constructor(
-    private router: Router,
-    private renderer: Renderer2,
-    private elementRef: ElementRef
-  ) {}
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
     const fragment = window.location.hash;
