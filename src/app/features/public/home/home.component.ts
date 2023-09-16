@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
+import { Company } from '../../client/models/company.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  clients$?: Observable<Company[]>;
+
+
   constructor(private router: Router,
     private renderer: Renderer2, 
     private elementRef: ElementRef) { }

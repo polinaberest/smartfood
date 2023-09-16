@@ -11,7 +11,10 @@
             <a class="nav-link active" aria-current="page" [routerLink]="['/']" i18n>About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/container-map']" i18n>Food suppliers</a>
+            <a class="nav-link" href="#our-suppliers" i18n>Food suppliers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#our-clients" i18n>Client organizations</a>
           </li>
 
           <ng-container *ngIf="user?.roles?.includes('Superadmin')">

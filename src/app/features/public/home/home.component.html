@@ -13,7 +13,7 @@
         <div class="col-md-6">
             <h2 i18n>Who are we?</h2>
             <p i18n>We are the providers of System for ordering and managing smart fridge devices and food suppliers for them. <br><br> 
-            We are here to connect office owners and fuud suppliers to make a lunch for the client company empoloyees just a <b>choose office -> choose dish -> pick it up from the _ fridge -> enjoy!</b><br>
+            We are here to connect office owners and food suppliers to make a lunch for the client company empoloyees just a <b>choose office -> choose dish -> pick it up from the _ fridge -> enjoy!</b><br>
             </p>
             
             <h2 i18n>How it works?</h2>
@@ -31,6 +31,17 @@
 
 <div class="container title-container" id="our-clients">
     <h2 class="title" i18n>We are already providing services for: </h2>
+    <ng-container *ngIf="clients$ | async as clients">
+        <div class="col-12" *ngFor="let client of clients">
+            <p-fieldset [legend]="client.name" [toggleable]="true">
+                <p>
+                    {{client.description}}
+                </p>
+            </p-fieldset>
+        </div>
+    </ng-container>
+    
+    
 </div>
 
 <div class="container title-container" id="our-suppliers">

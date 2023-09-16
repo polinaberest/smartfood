@@ -17,7 +17,7 @@ import { RegisterComponent } from './features/auth/register/register.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { RadioButtonModule } from 'primeng/radiobutton';
-
+import { FieldsetModule } from 'primeng/fieldset';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     RouterModule,
     InputTextModule,
     PasswordModule,
-    RadioButtonModule
+    RadioButtonModule,
+    FieldsetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
