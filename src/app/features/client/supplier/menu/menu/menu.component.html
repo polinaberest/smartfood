@@ -22,7 +22,7 @@
                     <td>{{dish.description}}</td>
                     <td>{{dish.price}}</td>
                     <td>
-                        <a [routerLink]="['/food-supplier/edit-dish', dish.id]" class="btn btn-outline-warning" i18n>Edit dish</a>
+                        <a [routerLink]="['/food-supplier', supplierId, 'edit-dish', dish.id]" class="btn btn-outline-warning" i18n>Edit dish</a>
                     </td>
                 </tr>
             </tbody>

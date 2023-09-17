@@ -12,6 +12,7 @@ import { UpdateDish } from '../../../models/update-dish.model';
 })
 export class EditDishComponent implements OnInit, OnDestroy {
   id: string | null = null;
+  supplierId: string | null = null;
   model?: Dish;
 
   routeSubscription?: Subscription;
@@ -36,6 +37,7 @@ export class EditDishComponent implements OnInit, OnDestroy {
     this.routeSubscription = this.route.paramMap.subscribe({
       next: (params) => {
         this.id = params.get('id');
+        this.supplierId = params.get('supplierId');
 
         //get dish from API
         if (this.id) {
@@ -65,7 +67,7 @@ export class EditDishComponent implements OnInit, OnDestroy {
         .updateDish(this.id, updateDish)
         .subscribe({
           next: (response) => {
-            this.router.navigateByUrl('/food-supplier/menu');
+            this.router.navigateByUrl('/food-supplier/' + this.supplierId + '/menu');
           },
         });
     }
@@ -77,7 +79,7 @@ export class EditDishComponent implements OnInit, OnDestroy {
         .deleteDish(this.id)
         .subscribe({
           next: (response) => {
-            this.router.navigateByUrl('/food-supplier/menu');
+            this.router.navigateByUrl('/food-supplier/' + this.supplierId + '/menu');
           },
         });
     }
