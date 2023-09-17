@@ -18,7 +18,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { PasswordModule } from 'primeng/password';
 import { RadioButtonModule } from 'primeng/radiobutton';
-
+import { FieldsetModule } from 'primeng/fieldset';
+import { MenuComponent } from './features/client/supplier/menu/menu/menu.component';
+import { EditDishComponent } from './features/client/supplier/menu/edit-dish/edit-dish.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-dish.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     FooterComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    MenuComponent,
+    EditDishComponent,
+    AddDishComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     InputTextModule,
     InputTextareaModule,
     PasswordModule,
-    RadioButtonModule
+    RadioButtonModule,
+    FieldsetModule,
+    InputNumberModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

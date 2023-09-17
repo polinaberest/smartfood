@@ -37,15 +37,32 @@
                 <div class="mt-4 col-12">
                     <span class="p-float-label">
                       <input pInputText type="text" id="name" name="name" [(ngModel)]="model.name" class="col-12"
-                        required minlength="5" #nameField="ngModel" />
-                      <label htmlFor="name" i18n>Your title company / organization name</label>
+                        required minlength="10" #nameField="ngModel" />
+                      <label htmlFor="name" i18n>Your name</label>
                     </span>
 
-                    <div *ngIf="nameField.invalid && (emailField.dirty || emailField.touched)">
+                    <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
                       <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12">
                         Name is required.
                       </div>
                       <div *ngIf="nameField.errors?.['minlength']" class="alert alert-danger col-12">
+                        Name must be at least 10 characters long.
+                      </div> 
+                    </div>
+                </div>
+
+                <div class="mt-4 col-12">
+                    <span class="p-float-label">
+                      <input pInputText type="text" id="organizationName" name="organizationName" [(ngModel)]="model.organizationName" class="col-12"
+                        required minlength="5" #organizationNameField="ngModel" />
+                      <label htmlFor="organizationName" i18n>Your title company / organization name</label>
+                    </span>
+
+                    <div *ngIf="organizationNameField.invalid && (emailField.dirty || emailField.touched)">
+                      <div *ngIf="organizationNameField?.errors?.['required']" class="alert alert-danger col-12">
+                        Name is required.
+                      </div>
+                      <div *ngIf="organizationNameField.errors?.['minlength']" class="alert alert-danger col-12">
                         Name must be at least 5 characters long.
                       </div> 
                     </div>
@@ -105,7 +122,7 @@
 
                 <div class="mt-4 flex-column align-items-center">
                     <button type="submit" [disabled]="emailField.invalid || isShortPassword
-                    || passwordsNotMatch || nameField.invalid || descriptionField.invalid" 
+                    || passwordsNotMatch || nameField.invalid || organizationNameField.invalid || descriptionField.invalid" 
                     class="btn btn-success btn-block mt-3 btn-lg w-100" i18n>Register</button>
                 </div>
              </form>
