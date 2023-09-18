@@ -30,20 +30,11 @@
 </div>
 
 <div class="container title-container" id="our-clients">
-    <h2 class="title" i18n>We are already providing services for: </h2>
-    <ng-container *ngIf="clients$ | async as clients">
-        <div class="col-12" *ngFor="let client of clients">
-            <p-fieldset [legend]="client.name" [toggleable]="true">
-                <p>
-                    {{client.description}}
-                </p>
-            </p-fieldset>
-        </div>
-    </ng-container>
-    
-    
+    <h2 i18n>We are already providing our services for: </h2>
+    <app-client-list></app-client-list>
 </div>
 
 <div class="container title-container" id="our-suppliers">
-    <h2 class="title" i18n>The smart food providers ready to deliver to your fridges: </h2>
+    <h2 i18n>The smart food providers ready to deliver to your fridges: </h2>
+    <app-suppliers-list></app-suppliers-list>
 </div>

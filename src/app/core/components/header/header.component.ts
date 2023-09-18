@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/features/auth/models/user.model';
-import { AuthService } from 'src/app/features/auth/sevices/auth.service';
+import { AuthService, Role } from 'src/app/features/auth/sevices/auth.service';
 import { Supplier } from 'src/app/features/client/models/supplier.model';
 import { SupplierService } from 'src/app/features/client/services/supplier.service';
 
@@ -14,6 +14,7 @@ import { SupplierService } from 'src/app/features/client/services/supplier.servi
 export class HeaderComponent implements OnInit {
   user?: User;
   supplier?: Supplier;
+  role = Role;
 
   userSubscription$?: Subscription;
   supplierSubscription$?: Subscription;
@@ -28,7 +29,7 @@ export class HeaderComponent implements OnInit {
     this.userSubscription$ = this.authService.user().subscribe({
       next: (user) => {
         this.user = user;
-        if (user && user?.roles?.includes('Supplier')) {
+        if (user && user?.roles?.includes(Role.Supplier)) {
           this.supplierSubscription$ = this.supplierService
             .getSupplier(user?.id)
             .subscribe((s) => (this.supplier = s));

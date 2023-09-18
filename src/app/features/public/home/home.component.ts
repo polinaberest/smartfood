@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  clients$?: Observable<Organization[]>;
 
   constructor(private elementRef: ElementRef) {}
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginRequest } from '../models/login-request.model';
-import { AuthService } from '../sevices/auth.service';
+import { AuthService, Role } from '../sevices/auth.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   model: LoginRequest;
+  role = Role;
 
   constructor(
     private authService: AuthService,

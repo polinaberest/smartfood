@@ -17,7 +17,7 @@
             <a class="nav-link" href="#our-clients" i18n>Client organizations</a>
           </li>
 
-          <ng-container *ngIf="user?.roles?.includes('Superadmin')">
+          <ng-container *ngIf="user?.roles?.includes(role.Admin)">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" i18n>
               Super admin panel
@@ -43,12 +43,12 @@
            <div class="d-flex align-items-center">
              <span>{{user?.name}}</span>
 
-            <ng-container *ngIf="supplier">
+            <ng-container *ngIf="user?.roles?.includes(role.Supplier) && supplier">
                 <a [routerLink]="['food-supplier', supplier.id, 'menu']" class="btn btn-success ms-3" i18n>My menu</a>
                 <a [routerLink]="['food-supplier', supplier.id, 'requests']" class="btn btn-success ms-3" i18n>My offers</a>
             </ng-container> 
 
-            <ng-container *ngIf="user?.roles?.includes('Organization')">
+            <ng-container *ngIf="user?.roles?.includes(role.Organization)">
                 <a [routerLink]="['organization/fridges']" class="btn btn-success ms-3" i18n>My fridges</a>
             </ng-container>
             
@@ -57,10 +57,6 @@
            </div>
           </ng-template>
        </div>
-        <!-- <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> -->
       </div>
     </div>
   </nav>

@@ -23,6 +23,8 @@ import { MenuComponent } from './features/client/supplier/menu/menu/menu.compone
 import { EditDishComponent } from './features/client/supplier/menu/edit-dish/edit-dish.component';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-dish.component';
+import { ClientListComponent } from './features/public/components/client-list/client-list.component';
+import { SuppliersListComponent } from './features/public/components/suppliers-list/suppliers-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-d
     RegisterComponent,
     MenuComponent,
     EditDishComponent,
-    AddDishComponent
+    AddDishComponent,
+    ClientListComponent,
+    SuppliersListComponent
   ],
   imports: [
     BrowserModule,

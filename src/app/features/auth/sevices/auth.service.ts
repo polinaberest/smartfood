@@ -8,11 +8,17 @@ import { LoginRequest } from '../models/login-request.model';
 import { environment } from 'src/environments/environment';
 import { RegisterRequest } from '../models/register-request.model';
 
+export enum Role {
+  Supplier = 'Supplier',
+  Organization = 'Organization',
+  Admin = 'Admin'
+}
+
 const superAdminResponse: LoginResponse = {
   id: 'ba25735e-da37-4925-8cad-5dddad98b0ae',
   email: 'p.b@gmail.com',
   name: 'Polina Berest',
-  roles: ['Superadmin'],
+  roles: [Role.Admin],
   registerDate: new Date('22-08-2023'),
   token: 'e62f19e6-9f5d-47fc-ab6c-9c2fe3705ea2',
 };
@@ -21,7 +27,7 @@ const supplierResponse: LoginResponse = {
   id: 'ba25735e-da37-4925-8cad-5dddad98b0ae',
   email: 's@gmail.com',
   name: 'Save & Co',
-  roles: ['Supplier'],
+  roles: [Role.Supplier],
   registerDate: new Date('22-08-2023'),
   token: 'e62f19e6-9f5d-47fc-ab6c-9c2fe3705ea2',
 };
@@ -32,7 +38,7 @@ const companyResponse: LoginResponse = {
   id: 'ba25735e-da37-4925-8cad-5dddad98b0ae',
   email: 'r@gmail.com',
   name: 'Rysya Berest',
-  roles: ['Organization'],
+  roles: [Role.Organization],
   registerDate: new Date('22-08-2023'),
   token: 'e62f19e6-9f5d-47fc-ab6c-9c2fe3705ea2',
 };
@@ -42,6 +48,7 @@ const loginResponsesMocks = [
   supplierResponse,
   companyResponse,
 ];
+
 
 @Injectable({
   providedIn: 'root',

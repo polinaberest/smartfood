@@ -5,5 +5,5 @@ export interface Organization {
   name: string;
   description: string | null;
   registerDate: Date;
-  manager: User;
+  manager?: User;
 }

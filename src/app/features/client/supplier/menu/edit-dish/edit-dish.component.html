@@ -43,15 +43,49 @@
                         </div>
                 </div>
 
-                <div class="mt-3">
-                    <label for="content" class="form-label" i18n>Price: </label>
-                    <p-inputNumber class="ml-3" [(ngModel)]="model.price" [showButtons]="true" [min]="1" [max]="100000"
-                    inputId="stacked" [minFractionDigits]="2" [maxFractionDigits]="2"> </p-inputNumber>
+                <div class="mt-3 col-12">
+                  <span class="p-float-label">
+                    <p-inputNumber
+                      #priceField="ngModel"
+                      [styleClass]="'col-12'"
+                      [showClear]="true"
+                      class="col-12"
+                      name="price"
+                      [(ngModel)]="model.price"
+                      [inputId]="'priceField'"
+                      mode="currency"
+                      currency="UAH"
+                      [required]="true"
+                      [min]="1"
+                      [max]="100000"
+                    >
+                    </p-inputNumber>
+                    <label htmlFor="priceField" i18n>Price</label>
+                  </span>
+        
+                  <div
+                    *ngIf="
+                      priceField.invalid && (priceField.dirty || priceField.touched)
+                    "
+                  >
+                    <div
+                      *ngIf="priceField?.errors?.['required']"
+                      class="alert alert-danger col-12"
+                    >
+                      Price is required.
+                    </div>
+                    <div
+                      *ngIf="priceField?.errors?.['min']"
+                      class="alert alert-danger col-12"
+                    >
+                      Price must be greater than 0.
+                    </div>
+                  </div>
                 </div>
 
                 <div class="mt-5 mb-5 d-flex justify-content-end">
                     <button type="submit" class="btn btn-success" 
-                    [disabled]="nameField.invalid || descriptionField.invalid " i18n>Save changes</button>
+                    [disabled]="nameField.invalid || descriptionField.invalid || priceField.invalid " i18n>Save changes</button>
                     <button type="button" class="btn btn-danger ms-3" (click)="onDelete()" i18n>Delete the request</button>
                 </div>
             </div>

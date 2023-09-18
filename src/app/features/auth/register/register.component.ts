@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { AuthService } from '../sevices/auth.service';
+import { AuthService, Role } from '../sevices/auth.service';
 import { RegisterRequest } from '../models/register-request.model';
 import { Router } from '@angular/router';
 import { NgModel } from '@angular/forms';
@@ -11,6 +11,7 @@ import { NgModel } from '@angular/forms';
 })
 export class RegisterComponent {
   model: RegisterRequest;
+  role = Role;
 
   confirmPassword: string = '';
   passwordsNotMatch: boolean = false;
@@ -23,7 +24,7 @@ export class RegisterComponent {
       name: '',
       organizationName: '',
       description: '',
-      role: 'Organization',
+      role: this.role.Organization,
     };
   }
 
