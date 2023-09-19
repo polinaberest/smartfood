@@ -1,1 +1,15 @@
-<p>suppliers-list works!</p>
+<div class="row align-items-stretch">
+    <ng-container *ngIf="suppliers">
+        <div class="col-12 col-md-6 my-3" *ngFor="let supplier of suppliers">
+            <p-fieldset [legend]="supplier.name" class="col-lg-6 legend" [toggleable]="true" >
+                <div class="d-flex">
+                    <img [src] = "supplier.img" alt="Client Image" class="logo-img">
+                    
+                    <p class="fs-6">
+                      {{supplier.description}}
+                    </p>
+                  </div>
+            </p-fieldset>
+        </div>
+    </ng-container>
+    </div>
