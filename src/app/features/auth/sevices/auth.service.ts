@@ -43,6 +43,8 @@ const companyResponse: LoginResponse = {
   token: 'e62f19e6-9f5d-47fc-ab6c-9c2fe3705ea2',
 };
 
+export const companyUser: User = { ...companyResponse };
+
 const loginResponsesMocks = [
   superAdminResponse,
   supplierResponse,

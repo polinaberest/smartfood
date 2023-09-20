@@ -48,8 +48,9 @@
                 <a [routerLink]="['food-supplier', supplier.id, 'requests']" class="btn btn-success ms-3" i18n>My offers</a>
             </ng-container> 
 
-            <ng-container *ngIf="user?.roles?.includes(role.Organization)">
-                <a [routerLink]="['organization/fridges']" class="btn btn-success ms-3" i18n>My fridges</a>
+            <ng-container *ngIf="user?.roles?.includes(role.Organization) && organization">
+                <a [routerLink]="['organization', organization.id, 'smart-fridges']" class="btn btn-success ms-3" i18n>My fridges</a>
+                <a [routerLink]="['organization', organization.id, 'filials']" class="btn btn-success ms-3" i18n>My filials</a>
             </ng-container>
             
             

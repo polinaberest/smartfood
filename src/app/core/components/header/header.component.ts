@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/features/auth/models/user.model';
 import { AuthService, Role } from 'src/app/features/auth/sevices/auth.service';
+import { Organization } from 'src/app/features/client/models/company.model';
 import { Supplier } from 'src/app/features/client/models/supplier.model';
+import { CompanyService } from 'src/app/features/client/services/company.service';
 import { SupplierService } from 'src/app/features/client/services/supplier.service';
 
 @Component({
@@ -14,15 +16,18 @@ import { SupplierService } from 'src/app/features/client/services/supplier.servi
 export class HeaderComponent implements OnInit {
   user?: User;
   supplier?: Supplier;
+  organization?: Organization;
   role = Role;
 
   userSubscription$?: Subscription;
   supplierSubscription$?: Subscription;
+  organizationSubscription$?: Subscription;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private readonly supplierService: SupplierService
+    private readonly supplierService: SupplierService,
+    private readonly companyService: CompanyService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +38,11 @@ export class HeaderComponent implements OnInit {
           this.supplierSubscription$ = this.supplierService
             .getSupplier(user?.id)
             .subscribe((s) => (this.supplier = s));
+        }
+        if (user && user?.roles?.includes(Role.Organization)) {
+          this.organizationSubscription$ = this.companyService
+            .getOrganization(user?.id)
+            .subscribe((s) => (this.organization = s));
         }
       },
     });
