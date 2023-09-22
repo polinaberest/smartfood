@@ -1,0 +1,33 @@
+<div class="container">
+
+    <h1 class="mt-3" i18n>Smart fridges in my filials:</h1>
+
+    <div class="d-flex justify-content-end mt-4">
+        <a [routerLink]="['/organization', organizationId, 'addfridge-request']" class="btn btn-success" i18n>Make request for Smartfridge installation</a>
+    </div>
+
+    <ng-container *ngIf="fridges$ | async as fridges">
+        <table class="table mt-3 table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th i18n>Filial</th>
+                    <th i18n>Location description</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fridge of fridges">
+                    <td>{{fridge.filial.name}}</td>
+                    <td>{{fridge.placementDescription}}</td>
+                    <td class="text-center">
+                        <div class="d-inline-block">
+                          <a class="btn btn-warning mx-2" i18n>Change placement description</a>
+                          <a class="btn btn-danger mx-2" i18n>Request fridge Deinstallation</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+
+</div>
