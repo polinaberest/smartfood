@@ -25,6 +25,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-dish.component';
 import { ClientListComponent } from './features/public/components/client-list/client-list.component';
 import { SuppliersListComponent } from './features/public/components/suppliers-list/suppliers-list.component';
+import { FridgesListComponent } from './features/client/company/fridges/fridges-list/fridges-list.component';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { SuppliersListComponent } from './features/public/components/suppliers-l
     EditDishComponent,
     AddDishComponent,
     ClientListComponent,
-    SuppliersListComponent
+    SuppliersListComponent,
+    FridgesListComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

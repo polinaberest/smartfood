@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { CreateDishRequest } from '../../models/create-dish-request.model';
 import { DishService } from '../../services/dish.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { notFoundPath } from 'src/app/app-routing.module';
 
 @Component({
   selector: 'app-add-dish',
@@ -29,7 +28,7 @@ export class AddDishComponent {
     // Case when supplierId is missing in query params.
     if (!supplierId) {
       // TODO: Create not found page and navigate here to it.
-      this.router.navigateByUrl(notFoundPath);
+      this.router.navigateByUrl('/notFound');
       return;
     }
     

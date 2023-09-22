@@ -6,14 +6,17 @@ import { RegisterComponent } from './features/auth/register/register.component';
 import { MenuComponent } from './features/client/supplier/menu/menu/menu.component';
 import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-dish.component';
 import { EditDishComponent } from './features/client/supplier/menu/edit-dish/edit-dish.component';
-
-// Can be removed when not found page is implemented.
-export const notFoundPath = '/NotFound';
+import { FridgesListComponent } from './features/client/company/fridges/fridges-list/fridges-list.component';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'notFound',
+    component: NotFoundComponent,
   },
   {
     path: 'login',
@@ -34,6 +37,10 @@ const routes: Routes = [
   {
     path: 'food-supplier/:supplierId/edit-dish/:id',
     component: EditDishComponent,
+  },
+  {
+    path: 'organization/:organizationId/smartfridges-list',
+    component: FridgesListComponent,
   },
 ];
 
