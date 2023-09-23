@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './features/auth/register/register.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ToastModule } from 'primeng/toast';
 import { PasswordModule } from 'primeng/password';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { FieldsetModule } from 'primeng/fieldset';
@@ -27,6 +28,9 @@ import { ClientListComponent } from './features/public/components/client-list/cl
 import { SuppliersListComponent } from './features/public/components/suppliers-list/suppliers-list.component';
 import { FridgesListComponent } from './features/client/company/fridges/fridges-list/fridges-list.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { EditFridgeComponent } from './features/client/company/fridges/edit-fridge/edit-fridge.component';
+import { MessagesModule } from 'primeng/messages';
+import { AddFridgeRequestComponent } from './features/client/company/fridges/add-fridge-request/add-fridge-request.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,9 @@ import { NotFoundComponent } from './core/components/not-found/not-found.compone
     ClientListComponent,
     SuppliersListComponent,
     FridgesListComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    EditFridgeComponent,
+    AddFridgeRequestComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,9 @@ import { NotFoundComponent } from './core/components/not-found/not-found.compone
     RadioButtonModule,
     FieldsetModule,
     InputNumberModule,
-    InputTextareaModule
+    InputTextareaModule,
+    ToastModule,
+    MessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

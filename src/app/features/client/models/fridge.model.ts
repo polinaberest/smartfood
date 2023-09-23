@@ -4,6 +4,7 @@ export interface Fridge {
     id: string;
     placementDescription: string;
     isOpen: boolean;
+    isDeleted?: boolean;
     filial: Filial;
     //dishesServed: DishStored[];
 }

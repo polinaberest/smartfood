@@ -8,6 +8,7 @@ import { AddDishComponent } from './features/client/supplier/menu/add-dish/add-d
 import { EditDishComponent } from './features/client/supplier/menu/edit-dish/edit-dish.component';
 import { FridgesListComponent } from './features/client/company/fridges/fridges-list/fridges-list.component';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { EditFridgeComponent } from './features/client/company/fridges/edit-fridge/edit-fridge.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'organization/:organizationId/smartfridges-list',
     component: FridgesListComponent,
+  },
+  {
+    path: 'organization/:organizationId/edit-fridge/:id',
+    component: EditFridgeComponent,
   },
 ];
 

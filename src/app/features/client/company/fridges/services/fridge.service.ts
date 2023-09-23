@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Fridge } from '../../../models/fridge.model';
 import { filialsMock } from '../../filials/services/filial.service';
+import { UpdateFridge } from '../../../models/update-fridge.model';
+import { environment } from 'src/environments/environment';
 
 const fridgesMock: Fridge[] = [
     {
@@ -54,5 +56,19 @@ export class FridgeService {
   getAllOrganizationsFridges(companyId: string): Observable<Fridge[]> {
     return of(fridgesMock);
     //return this.http.get<Fridge[]>(`/api/companies/${companyId}/fridges`);
+  }
+
+  getFridgeById(id: string): Observable<Fridge> {
+    //return this.http.get<Fridge>(`/api/fridges/${id}`);
+    return of(
+      fridgesMock.find((fridge) => fridge.id === id) as Fridge
+    );
+  }
+
+  updateFridge(id: string, updatedFridge: UpdateFridge): Observable<Fridge> {
+    //return this.http.put<Fridge>(`/api/fridges/${id}`, updatedFridge);
+    return of(
+      fridgesMock.find((fridge) => fridge.id === id) as Fridge
+    );
   }
 }

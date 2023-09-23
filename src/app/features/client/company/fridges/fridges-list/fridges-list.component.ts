@@ -33,4 +33,5 @@ export class FridgesListComponent implements OnInit{
 
     this.fridges$ = this.fridgeService.getAllOrganizationsFridges(organizationId);
   }
+
 }
