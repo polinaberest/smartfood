@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Fridge } from '../../../models/fridge.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FridgeService } from '../services/fridge.service';
+import { FridgeRequest } from '../../../models/fridge-request.model';
 
 @Component({
   selector: 'app-fridges-list',
@@ -12,6 +13,7 @@ import { FridgeService } from '../services/fridge.service';
 export class FridgesListComponent implements OnInit{
   organizationId?: string;
   fridges$?: Observable<Fridge[]>;
+  requests$?: Observable<FridgeRequest[]>;
 
   constructor(
     private fridgeService: FridgeService,
@@ -32,6 +34,8 @@ export class FridgesListComponent implements OnInit{
     this.organizationId = organizationId;
 
     this.fridges$ = this.fridgeService.getAllOrganizationsFridges(organizationId);
+
+    this.requests$ = this.fridgeService.getOrganizationsInstallationRequests(organizationId);
   }
 
 }

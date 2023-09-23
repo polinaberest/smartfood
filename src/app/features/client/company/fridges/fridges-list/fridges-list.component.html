@@ -30,3 +30,38 @@
     </ng-container>
 
 </div>
+
+<div class="container">
+
+    <h1 class="mt-5" i18n>My requests about fridge installation:</h1>
+
+    <ng-container *ngIf="requests$ | async as requests">
+        <ng-container *ngIf="requests.length > 0; else noRequests">
+            <table class="table mt-3 table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th i18n>Filial</th>
+                        <th i18n>Location description</th>
+                        <th i18n>Creation date</th>
+                        <th i18n>Request status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let request of requests">
+                        <td>{{request.filialOfInstall.name}}</td>
+                        <td>{{request.placementDescription}}</td>
+                        <td>{{request.requestTime | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{request.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #noRequests>
+        <div class="alert alert-info" role="alert" i18n>
+            You have no Smartfridge installation requests yet. Make one!
+        </div>
+    </ng-template>
+
+</div>

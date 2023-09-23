@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Organization } from '../models/company.model';
 import { companyUser } from '../../auth/sevices/auth.service';
+import { Filial } from '../models/filial.model';
+import { filialsMock } from '../company/filials/services/filial.service';
 
 export const organizationMock: Organization = {
   id: "c057fbdb-a98d-4132-9df2-7ce7b3589e8c",
@@ -31,5 +33,10 @@ export class CompanyService {
     // this.http.get<Organization>(
     //   `${environment.apiBaseUrl}/api/users/{userId}/organizations`
     // );
+  }
+
+  getCompanyFilials(companyId: string): Observable<Filial[]> {
+    //return this.http.get<Filial[]>(`/api/companies/${companyId}/filials`);
+    return of(filialsMock);
   }
 }

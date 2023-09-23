@@ -5,6 +5,8 @@ import { Fridge } from '../../../models/fridge.model';
 import { filialsMock } from '../../filials/services/filial.service';
 import { UpdateFridge } from '../../../models/update-fridge.model';
 import { environment } from 'src/environments/environment';
+import { FridgeInstallRequest } from '../../../models/fridge-install-request.model';
+import { FridgeRequest } from '../../../models/fridge-request.model';
 
 const fridgesMock: Fridge[] = [
     {
@@ -45,6 +47,9 @@ const fridgesMock: Fridge[] = [
     },
 ];
 
+const fridgeRequestsMock: FridgeRequest[] = [
+
+];
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +68,19 @@ export class FridgeService {
     return of(
       fridgesMock.find((fridge) => fridge.id === id) as Fridge
     );
+  }
+
+  addFridgeInstallRequest(request: FridgeInstallRequest): Observable<FridgeRequest> {
+    const result: FridgeRequest = { id: crypto.randomUUID(), ...request, status: 'Unseen', requestTime: new Date(), filialOfInstall: filialsMock[0], organizationId: filialsMock[0].ownerOrganization.id };
+        fridgeRequestsMock.push(result);
+        return of(result);
+
+    // return this.http.post(``, request);
+  }
+
+  getOrganizationsInstallationRequests(companyId: string): Observable<FridgeRequest[]> {
+    return of(fridgeRequestsMock);
+    //return this.http.get<FridgeRequest[]>(`/api/installation-requests/${companyId}`);
   }
 
   updateFridge(id: string, updatedFridge: UpdateFridge): Observable<Fridge> {
