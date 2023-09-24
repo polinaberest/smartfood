@@ -1,0 +1,41 @@
+<div class="container">
+
+    <h1 class="mt-3" i18n>My requests to companies about dishes delivery</h1>
+
+    <div class="d-flex justify-content-end mt-4">
+        <a [routerLink]="['/food-supplier', supplierId, 'make-supply-request']" class="btn btn-warning" i18n>Make an Offer to supply food to a smartfridge</a>
+    </div>
+
+    <ng-container *ngIf="requests$ | async as requests">
+        <ng-container *ngIf="requests.length > 0; else noRequests">
+            <table class="table mt-3 table-bordered">
+                <thead>
+                    <tr>
+                        <th i18n>Fridge</th>
+                        <th i18n>Request status</th>
+                        <th i18n>Created on</th>
+                        <th i18n>Answered on</th>
+                        <th i18n>Request message</th>
+                        <th i18n>Dish to supply</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let request of requests" [ngStyle]="{'background': getRequestStatusColor(request.status)}">
+                        <td>{{request.fridgeUseRequested.filial.name}}, {{request.fridgeUseRequested.filial.address}}<br>Company: {{request.fridgeUseRequested.filial.ownerOrganization.name}}</td>
+                        <td>{{request.status}}</td>
+                        <td>{{request.requestTime | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{request?.answeredTime | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{request?.requestMessage}}</td>
+                        <td>{{request.dishToDeliver.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #noRequests>
+        <div class="alert alert-info" role="alert" i18n>
+            You have made no supply requests to any Smartfridges yet. Make one and they will be displayed here!
+        </div>
+    </ng-template>
+</div>

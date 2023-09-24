@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 import { CreateDishRequest } from '../models/create-dish-request.model';
 import { UpdateDish } from '../../models/update-dish.model';
 
-const dishesMock: Dish[] = [
+export const dishesMock: Dish[] = [
   {
     id: '9fb20bce-a2f3-46cf-a481-58935a9c5f71',
     name: 'Отбивная с ананасами',

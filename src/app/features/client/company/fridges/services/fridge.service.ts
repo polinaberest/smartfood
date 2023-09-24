@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 import { FridgeInstallRequest } from '../../../models/fridge-install-request.model';
 import { FridgeRequest } from '../../../models/fridge-request.model';
 
-const fridgesMock: Fridge[] = [
+export const fridgesMock: Fridge[] = [
     {
       id: '1',
       placementDescription: 'Холодильник 1 - 1 єтаж',
