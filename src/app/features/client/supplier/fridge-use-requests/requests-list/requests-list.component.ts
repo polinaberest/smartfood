@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { FridgeUseRequest } from '../../models/fridge-use-request.model';
-import { FridgeUseService } from '../services/fridge-use.service';
+import { FridgeUseRequest } from '../../../models/fridge-use-request.model';
+import { FridgeUseService } from '../../services/fridge-use.service';
 
 @Component({
   selector: 'app-requests-list',

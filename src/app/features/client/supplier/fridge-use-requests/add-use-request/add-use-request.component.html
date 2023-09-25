@@ -1,0 +1,67 @@
+<p-toast></p-toast>
+
+<div class="container">
+    <ng-container *ngIf="model">
+        <h1 class="mt-3" i18n>Make a request to deliver my dish to a Smartfridge</h1>
+
+        <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+            <div class="mt-2">
+                <div class="mt-5">
+                    <label for="filialId" class="form-label">Select an office of delivery: </label>
+                    <ng-container *ngIf="filials$ | async as filials">
+                        <select [(ngModel)]="selectedFilialId" (change)="onFilialChange()"
+                        name="filialId" id="filialId" 
+                        class="form-control">
+                            <option *ngFor="let filial of filials" [value]="filial.id">{{filial.name}}, {{filial.address}}</option>
+                        </select>
+                    </ng-container>
+                </div>
+
+                <div class="mt-5">
+                    <label for="fridgeId" class="form-label">Select a fridge to deliver to: </label>
+                    <ng-container *ngIf="fridges$ | async as fridges">
+                        <select [(ngModel)]="model.fridgeId"
+                        name="fridgeId" id="fridgeId" 
+                        class="form-control">
+                            <option *ngFor="let fridge of fridges" [value]="fridge.id">{{fridge.placementDescription}}</option>
+                        </select>
+                    </ng-container>
+                </div>
+
+                <div class="mt-5">
+                    <label for="fridgeId" class="form-label">Select your dish for delivery: </label>
+                    <ng-container *ngIf="dishes$ | async as dishes">
+                        <select [(ngModel)]="model.dishId"
+                        name="dishId" id="dishId" 
+                        class="form-control">
+                            <option *ngFor="let dish of dishes" [value]="dish.id">{{dish.name}}</option>
+                        </select>
+                    </ng-container>
+                </div>
+                
+                <div class="mt-5">               
+                        <span class="p-float-label">
+                            <textarea id="requestMessage" name="requestMessage"
+                             rows="5" [(ngModel)]="model.requestMessage" 
+                             class="col-12" pInputTextarea #requestMessage="ngModel"
+                             maxlength="200"></textarea>
+                            <label for="requestMessage">Add a request message to the owner of the fridge (optionally):</label>
+                        </span>
+    
+                        <div *ngIf="requestMessage.invalid && (requestMessage.dirty || requestMessage.touched)">
+                          <div *ngIf="requestMessage?.errors?.['maxlength']" class="alert alert-danger col-12">
+                            Description maximum size is 200 characters.
+                          </div>
+                        </div>
+                </div>
+
+                <div class="mt-5 mb-5 d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success" pButton pRipple label="Success"
+                    [disabled]="requestMessage.invalid" i18n>Make a request for dish delivery!</button>
+                </div>
+            </div>
+        </form>
+
+    </ng-container>
+</div>
+

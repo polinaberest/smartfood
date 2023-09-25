@@ -58,9 +58,19 @@ export class FridgeService {
 
   constructor(private http: HttpClient) {}
 
+  getAllFridges(): Observable<Fridge[]> {
+    return of(fridgesMock);
+    //return this.http.get<Fridge[]>('/api/fridges');
+  }
+
   getAllOrganizationsFridges(companyId: string): Observable<Fridge[]> {
     return of(fridgesMock);
     //return this.http.get<Fridge[]>(`/api/companies/${companyId}/fridges`);
+  }
+
+  getFilialFridges(filialId: string): Observable<Fridge[]> {
+    return of(fridgesMock.filter((fridge) => fridge.filial.id === filialId));
+    //return this.http.get<Fridge[]>('/api/filials/${filialId}/fridges');
   }
 
   getFridgeById(id: string): Observable<Fridge> {

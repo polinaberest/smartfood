@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { supplierMock } from '../../services/supplier.service';
 import { fridgesMock } from '../../company/fridges/services/fridge.service';
 import { dishesMock } from './dish.service';
+import { AddFridgeUseRequest } from '../../models/add-fridge-use-request.model';
 
 
 
@@ -60,5 +61,14 @@ export class FridgeUseService {
   getSuppliersRequests(supplierId: string): Observable<FridgeUseRequest[]> {
     return of(fridgeUseRequestsMock);
     //return this.http.get<FridgeUseRequest[]>(`/api/fridge-use-requests/${supplierId}`);
+  }
+
+  addFridgeUseRequest(request: AddFridgeUseRequest): Observable<FridgeUseRequest> {
+    const result: FridgeUseRequest = { id: crypto.randomUUID(), ...request, status: 'Unseen', requestTime: new Date(), supplierId: supplierMock.id, fridgeUseRequested: fridgesMock[0], dishToDeliver: dishesMock[0] };
+
+      fridgeUseRequestsMock.push(result);
+      return of(result);
+
+      // return this.http.post(`${environment.apiBaseUrl}/api/fridge-use-requests`, request);
   }
 }

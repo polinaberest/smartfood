@@ -31,7 +31,8 @@ import { NotFoundComponent } from './core/components/not-found/not-found.compone
 import { EditFridgeComponent } from './features/client/company/fridges/edit-fridge/edit-fridge.component';
 import { MessagesModule } from 'primeng/messages';
 import { AddFridgeRequestComponent } from './features/client/company/fridges/add-fridge-request/add-fridge-request.component';
-import { RequestsListComponent } from './features/client/supplier/requests-list/requests-list.component';
+import { RequestsListComponent } from './features/client/supplier/fridge-use-requests/requests-list/requests-list.component';
+import { AddUseRequestComponent } from './features/client/supplier/fridge-use-requests/add-use-request/add-use-request.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { RequestsListComponent } from './features/client/supplier/requests-list/
     EditFridgeComponent,
     AddFridgeRequestComponent,
     RequestsListComponent,
+    AddUseRequestComponent,
   ],
   imports: [
     BrowserModule,

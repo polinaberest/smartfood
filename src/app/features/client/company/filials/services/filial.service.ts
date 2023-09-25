@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { organizationMock } from '../../../services/company.service';
+import { Observable, of } from 'rxjs';
+import { Filial } from '../../../models/filial.model';
 
 export const filialsMock = [
   {
@@ -28,4 +30,8 @@ export const filialsMock = [
 export class FilialService {
 
   constructor() { }
+
+  getAllFilials() : Observable<Filial[]>{
+    return of(filialsMock);
+  }
 }
