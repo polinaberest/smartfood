@@ -33,6 +33,8 @@ import { MessagesModule } from 'primeng/messages';
 import { AddFridgeRequestComponent } from './features/client/company/fridges/add-fridge-request/add-fridge-request.component';
 import { RequestsListComponent } from './features/client/supplier/fridge-use-requests/requests-list/requests-list.component';
 import { AddUseRequestComponent } from './features/client/supplier/fridge-use-requests/add-use-request/add-use-request.component';
+import { ManageRequestsComponent } from './features/client/company/incoming-requests/manage-requests/manage-requests.component';
+import { FilialsListComponent } from './features/client/company/filials/filials-list/filials-list.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { AddUseRequestComponent } from './features/client/supplier/fridge-use-re
     AddFridgeRequestComponent,
     RequestsListComponent,
     AddUseRequestComponent,
+    ManageRequestsComponent,
+    FilialsListComponent,
   ],
   imports: [
     BrowserModule,

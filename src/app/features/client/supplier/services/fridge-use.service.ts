@@ -16,7 +16,7 @@ export const fridgeUseRequestsMock: FridgeUseRequest[] = [
     requestTime: new Date(),
     answeredTime: new Date(),
     status: 'Approved',
-    supplierId: supplierMock.id,
+    supplier: supplierMock,
     fridgeUseRequested: fridgesMock[0],
     dishToDeliver: dishesMock[0],
     },
@@ -24,7 +24,7 @@ export const fridgeUseRequestsMock: FridgeUseRequest[] = [
     id: '2',
     requestTime: new Date(),
     status: 'Unseen',
-    supplierId: supplierMock.id,
+    supplier: supplierMock,
     fridgeUseRequested: fridgesMock[1],
     dishToDeliver: dishesMock[1],
   },
@@ -34,7 +34,7 @@ export const fridgeUseRequestsMock: FridgeUseRequest[] = [
     requestTime: new Date(),
     answeredTime: new Date(),
     status: 'Rejected',
-    supplierId: supplierMock.id,
+    supplier: supplierMock,
     fridgeUseRequested: fridgesMock[4],
     dishToDeliver: dishesMock[0],
   },
@@ -43,8 +43,8 @@ export const fridgeUseRequestsMock: FridgeUseRequest[] = [
     requestMessage: 'Свежесть мяса гарантируем',
     requestTime: new Date(),
     answeredTime: new Date(),
-    status: 'Approved',
-    supplierId: supplierMock.id,
+    status: 'Unseen',
+    supplier: supplierMock,
     fridgeUseRequested: fridgesMock[5],
     dishToDeliver: dishesMock[0],
   },
@@ -63,12 +63,30 @@ export class FridgeUseService {
     //return this.http.get<FridgeUseRequest[]>(`/api/fridge-use-requests/${supplierId}`);
   }
 
+  getUnseenRequestsToOrganization(organizationId: string): Observable<FridgeUseRequest[]> {
+    return of(fridgeUseRequestsMock.filter(request => request.status === 'Unseen'));
+    //return this.http.get<FridgeUseRequest[]>();
+  }
+
+  acceptRequest(requestId: string): Observable<FridgeUseRequest> {
+    fridgeUseRequestsMock.find(request => request.id === requestId)!.status = 'Approved';
+    return of(fridgeUseRequestsMock.find(request => request.id === requestId)!);
+    //return this.http.put<FridgeUseRequest>(`/api/fridge-use-requests/${requestId}/accept`, {});
+  }
+
+  rejectRequest(requestId: string): Observable<FridgeUseRequest> {
+    fridgeUseRequestsMock.find(request => request.id === requestId)!.status = 'Rejected';
+    return of(fridgeUseRequestsMock.find(request => request.id === requestId)!);
+    //return this.http.put<FridgeUseRequest>(`/api/fridge-use-requests/${requestId}/reject`, {});
+  }
+
   addFridgeUseRequest(request: AddFridgeUseRequest): Observable<FridgeUseRequest> {
-    const result: FridgeUseRequest = { id: crypto.randomUUID(), ...request, status: 'Unseen', requestTime: new Date(), supplierId: supplierMock.id, fridgeUseRequested: fridgesMock[0], dishToDeliver: dishesMock[0] };
+    const result: FridgeUseRequest = { id: crypto.randomUUID(), ...request, status: 'Unseen', requestTime: new Date(), supplier: supplierMock, fridgeUseRequested: fridgesMock[0], dishToDeliver: dishesMock[0] };
 
       fridgeUseRequestsMock.push(result);
       return of(result);
 
       // return this.http.post(`${environment.apiBaseUrl}/api/fridge-use-requests`, request);
   }
+
 }

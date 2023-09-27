@@ -1,0 +1,44 @@
+<p-toast></p-toast>
+ <div class="container">
+
+    <h1 class="mt-3" i18n>The incoming requests from Food suppliers to `host` in your Smart fridges:</h1>
+
+    <ng-container *ngIf="requests$ | async as requests">
+        <ng-container *ngIf="requests.length > 0; else noRequests">
+            <table class="table mt-3 table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th i18n>Supplier</th>
+                        <th i18n>Dish Info</th>
+                        <th i18n>Request Message</th>
+                        <th i18n>Fridge Use Requested</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let request of requests">
+                        <td>{{request.supplier.name}}</td>
+                        <td>{{request.dishToDeliver.name}}, {{request.dishToDeliver.price}} UAH<br>{{request.dishToDeliver.description}}</td>
+                        <td>{{request?.requestMessage}}</td>
+                        <td>{{request.fridgeUseRequested.filial.name}}<br><i>{{request.fridgeUseRequested.placementDescription}}</i></td>
+                        <td>
+                            <div class="mt-5 mb-5 d-flex justify-content-end">
+                                <button (click)="onAccept(request.id)" pButton pRipple label="Success" class="btn btn-success" 
+                                i18n>Accept request</button>
+
+                                <button (click)="onReject(request.id)" pButton pRipple label="Success"  class="btn btn-danger ms-3" 
+                                i18n>Reject request</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #noRequests>
+        <div class="alert alert-info" role="alert" i18n>
+            Currently there are no requests from food suppliers to be answered!
+        </div>
+    </ng-template>
+</div>
