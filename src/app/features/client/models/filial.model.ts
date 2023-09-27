@@ -6,5 +6,6 @@ export interface Filial {
     name: string;
     address: string;
     ownerOrganization: Organization;
+    isDeleted?: boolean;
     //fridgesInstalled: Fridge[];
 }
