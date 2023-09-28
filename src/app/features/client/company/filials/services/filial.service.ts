@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { organizationMock } from '../../../services/company.service';
 import { Observable, of } from 'rxjs';
 import { Filial } from '../../../models/filial.model';
+import { UpdateFilial } from '../../../models/update-filial.model';
 
 export const filialsMock = [
   {
@@ -40,5 +41,20 @@ export class FilialService {
 
   getAllOrganizationFilials(organizationId: string) : Observable<Filial[]>{
     return of(filialsMock.filter(filial => !filial?.isDeleted && filial.ownerOrganization.id === organizationId));
+  }
+
+  getFilialById(id: string) : Observable<Filial>{
+    return of(filialsMock.find(filial => filial.id === id) as Filial);
+  }
+
+  updateFilial(id: string, updatedFilial: UpdateFilial) : Observable<Filial>{
+    //return this.http.put<Filial>(``, updatedFilial);
+    const filialToUpdate = filialsMock.find((filial) => filial.id === id);
+    if (filialToUpdate !== undefined) {
+      filialToUpdate.address = updatedFilial.address;
+      filialToUpdate.name = updatedFilial.name;
+    }
+
+    return of(filialToUpdate as Filial);
   }
 }

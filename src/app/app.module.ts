@@ -35,6 +35,7 @@ import { RequestsListComponent } from './features/client/supplier/fridge-use-req
 import { AddUseRequestComponent } from './features/client/supplier/fridge-use-requests/add-use-request/add-use-request.component';
 import { ManageRequestsComponent } from './features/client/company/incoming-requests/manage-requests/manage-requests.component';
 import { FilialsListComponent } from './features/client/company/filials/filials-list/filials-list.component';
+import { EditFilialComponent } from './features/client/company/filials/edit-filial/edit-filial.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { FilialsListComponent } from './features/client/company/filials/filials-
     AddUseRequestComponent,
     ManageRequestsComponent,
     FilialsListComponent,
+    EditFilialComponent,
   ],
   imports: [
     BrowserModule,
