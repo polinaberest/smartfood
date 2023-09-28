@@ -3,6 +3,8 @@ import { organizationMock } from '../../../services/company.service';
 import { Observable, of } from 'rxjs';
 import { Filial } from '../../../models/filial.model';
 import { UpdateFilial } from '../../../models/update-filial.model';
+import { AddFilial } from '../../../models/add-filial.model';
+import { HttpClient } from '@angular/common/http';
 
 export const filialsMock = [
   {
@@ -33,7 +35,7 @@ export const filialsMock = [
 })
 export class FilialService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getAllFilials() : Observable<Filial[]>{
     return of(filialsMock.filter(filial => !filial?.isDeleted));
@@ -56,5 +58,11 @@ export class FilialService {
     }
 
     return of(filialToUpdate as Filial);
+  }
+
+  addFilial(request: AddFilial) : Observable<Filial>{
+    //this.http.post<Filial>(``, request);
+    filialsMock.push({id: crypto.randomUUID(), ...request, ownerOrganization: organizationMock, isDeleted: false});
+    return of(filialsMock[filialsMock.length - 1]);
   }
 }

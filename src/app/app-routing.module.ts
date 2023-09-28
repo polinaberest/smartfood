@@ -15,6 +15,7 @@ import { AddUseRequestComponent } from './features/client/supplier/fridge-use-re
 import { ManageRequestsComponent } from './features/client/company/incoming-requests/manage-requests/manage-requests.component';
 import { FilialsListComponent } from './features/client/company/filials/filials-list/filials-list.component';
 import { EditFilialComponent } from './features/client/company/filials/edit-filial/edit-filial.component';
+import { AddFilialComponent } from './features/client/company/filials/add-filial/add-filial.component';
 
 const routes: Routes = [
   {
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: 'organization/:organizationId/edit-filial/:id',
     component: EditFilialComponent,
+  },
+  {
+    path: 'organization/:organizationId/add-filial',
+    component: AddFilialComponent,
   },
 ];
 
