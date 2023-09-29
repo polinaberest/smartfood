@@ -6,4 +6,5 @@ export interface Supplier {
     description: string | null;
     registerDate: Date;
     manager: User;
+    isBlocked?: boolean;
 }

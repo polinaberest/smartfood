@@ -8,4 +8,5 @@ export interface Organization {
   registerDate: Date;
   manager?: User;
   filials?: Filial[];
+  isBlocked?: boolean;
 }

@@ -37,6 +37,9 @@ import { ManageRequestsComponent } from './features/client/company/incoming-requ
 import { FilialsListComponent } from './features/client/company/filials/filials-list/filials-list.component';
 import { EditFilialComponent } from './features/client/company/filials/edit-filial/edit-filial.component';
 import { AddFilialComponent } from './features/client/company/filials/add-filial/add-filial.component';
+import { FridgeInstallationRequestsComponent } from './features/admin/fridge-installation-requests/fridge-installation-requests.component';
+import { SuppliersManagementComponent } from './features/admin/suppliers-management/suppliers-management.component';
+import { OrganizationsManagementComponent } from './features/admin/organizations-management/organizations-management.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +64,9 @@ import { AddFilialComponent } from './features/client/company/filials/add-filial
     FilialsListComponent,
     EditFilialComponent,
     AddFilialComponent,
+    FridgeInstallationRequestsComponent,
+    SuppliersManagementComponent,
+    OrganizationsManagementComponent,
   ],
   imports: [
     BrowserModule,

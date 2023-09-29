@@ -1,0 +1,52 @@
+<p-toast></p-toast>
+<div class="container">
+
+    <h1 class="mt-3" i18n>Requests about smartfridges installation:</h1>
+
+    <ng-container *ngIf="requests$ | async as requests">
+        <ng-container *ngIf="requests.length > 0; else noRequests">
+            <table class="table mt-3 table-bordered">
+                <thead>
+                    <tr>
+                        <th i18n>Address of installation</th>
+                        <th i18n>Placement description</th>
+                        <th i18n>Created on</th>
+                        <th i18n>Answered on</th>
+                        <th i18n>Request status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let request of requests" [ngStyle]="{'background': getRequestStatusColor(request.status)}">
+                        <td>{{request.filialOfInstall.name}}, <br>{{request.filialOfInstall.address}}<br><br>Company: {{request.filialOfInstall.ownerOrganization.name}}</td>
+                        <td>{{request.placementDescription}}</td>
+                        <td>{{request.requestTime | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{request?.answeredTime | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{request.status}}</td>
+                        <td>
+                                <div class="mt-5 mb-5 d-flex justify-content-end">
+                                    <ng-container *ngIf="request.status == status.Unseen">
+                                        <button (click)="onAccept(request)" pButton pRipple label="Success" class="btn btn-success" 
+                                        i18n>Approve installation</button>
+        
+                                        <button (click)="onReject(request)" pButton pRipple label="Success"  class="btn btn-danger ms-3" 
+                                        i18n>Reject request</button>
+                                    </ng-container>
+                                    <ng-container *ngIf="request.status == status.Approved">
+                                        <button (click)="onFulfill(request)" pButton pRipple label="Success" class="btn btn-success" 
+                                        i18n>Mark as fulfilled</button>
+                                    </ng-container> 
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #noRequests>
+        <div class="alert alert-info" role="alert" i18n>
+            There are no requests about smartfridges installation yet.
+        </div>
+    </ng-template>
+</div>

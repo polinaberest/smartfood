@@ -7,6 +7,7 @@ import { UpdateFridge } from '../../../models/update-fridge.model';
 import { environment } from 'src/environments/environment';
 import { FridgeInstallRequest } from '../../../models/fridge-install-request.model';
 import { FridgeRequest } from '../../../models/fridge-request.model';
+import { Status } from '../../../models/request-status';
 
 export const fridgesMock: Fridge[] = [
     {
@@ -47,8 +48,31 @@ export const fridgesMock: Fridge[] = [
     },
 ];
 
-const fridgeRequestsMock: FridgeRequest[] = [
-
+export const fridgeRequestsMock: FridgeRequest[] = [
+  {
+    id: '1',
+    filialOfInstall: filialsMock[1],
+    organizationId: filialsMock[1].ownerOrganization.id,
+    requestTime: new Date(),
+    placementDescription: 'lalalala',
+    status: Status.Rejected
+  },
+  {
+    id: '2',
+    filialOfInstall: filialsMock[0],
+    organizationId: filialsMock[0].ownerOrganization.id,
+    requestTime: new Date(),
+    placementDescription: 'la2la2la2la',
+    status: Status.Unseen
+  },
+  {
+    id: '3',
+    filialOfInstall: filialsMock[1],
+    organizationId: filialsMock[1].ownerOrganization.id,
+    requestTime: new Date(),
+    placementDescription: 'la333lalala',
+    status: Status.Approved
+  }
 ];
 
 @Injectable({

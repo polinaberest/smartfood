@@ -39,9 +39,8 @@ export class RequestsListComponent {
         return 'rgb(150, 255, 150)';
       case 'Rejected':
         return 'rgb(255, 146, 146)';
-      // Add more cases for other statuses and their corresponding colors
       default:
-        return 'white'; // Default to white if the status is not recognized
+        return 'white'; 
     }
   }
 

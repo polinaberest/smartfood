@@ -1,0 +1,48 @@
+<p-toast></p-toast>
+<div class="container">
+
+    <h1 class="mt-3" i18n>The food suppliers registered in the SmartFood system:</h1>
+
+    <ng-container *ngIf="suppliers$ | async as suppliers">
+        <ng-container *ngIf="suppliers.length > 0; else noRegisteredUsers">
+            <table class="table mt-3 table-bordered">
+                <thead>
+                    <tr>
+                        <th i18n>Food supplier</th>
+                        <th i18n>Description</th>
+                        <th i18n>Registered on</th>
+                        <th i18n>Manager</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let supplier of suppliers" [ngStyle]="{'background': getStateColor(supplier?.isBlocked)}">
+                        <td>{{supplier.name}}</td>
+                        <td>{{supplier.description}}</td>
+                        <td>{{supplier.registerDate | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{supplier?.manager?.name}}<br><i>{{supplier?.manager?.email}}</i></td>
+                        <td>
+                                <div class="d-flex justify-content-center">
+                                    <ng-container *ngIf="supplier?.isBlocked; else showBlockAction">
+                                        <button (click)="unblockSupplier(supplier)" pButton pRipple label="Success" class="btn btn-success" 
+                                        i18n>Unblock food supplier</button>
+                                    </ng-container>
+                                    <ng-template #showBlockAction>
+                                        <button (click)="blockSupplier(supplier)" pButton pRipple label="Success" class="btn btn-danger" 
+                                        i18n>Block food supplier</button>
+                                    </ng-template> 
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #noRegisteredUsers>
+        <div class="alert alert-info" role="alert" i18n>
+            There are no food suppliers registered yet.
+        </div>
+    </ng-template>
+</div>
+
