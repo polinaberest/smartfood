@@ -12,17 +12,17 @@
                              rows="5" [(ngModel)]="model.placementDescription" 
                              class="col-12" pInputTextarea  required #descriptionField="ngModel"
                              minlength="2" maxlength="200"></textarea>
-                            <label for="placementDescription">Fridge placement description: </label>
+                            <label for="placementDescription" i18n>Fridge placement description: </label>
                         </span>
     
                         <div *ngIf="descriptionField.invalid && (descriptionField.dirty || descriptionField.touched)">
-                          <div *ngIf="descriptionField?.errors?.['required']" class="alert alert-danger col-12">
+                          <div *ngIf="descriptionField?.errors?.['required']" class="alert alert-danger col-12" i18n>
                             Description is required.
                           </div>
-                          <div *ngIf="descriptionField?.errors?.['minlength']" class="alert alert-danger col-12">
+                          <div *ngIf="descriptionField?.errors?.['minlength']" class="alert alert-danger col-12" i18n >
                             Description should have at least 2 characters.
                           </div>
-                          <div *ngIf="descriptionField?.errors?.['maxlength']" class="alert alert-danger col-12">
+                          <div *ngIf="descriptionField?.errors?.['maxlength']" class="alert alert-danger col-12" i18n>
                             Description maximum size is 200 characters.
                           </div>
                         </div>

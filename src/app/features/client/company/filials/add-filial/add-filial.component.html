@@ -24,13 +24,13 @@
             >
               <div
                 *ngIf="nameField?.errors?.['required']"
-                class="alert alert-danger col-12"
+                class="alert alert-danger col-12" i18n
               >
                 Name is required.
               </div>
               <div
                 *ngIf="nameField?.errors?.['minlength']"
-                class="alert alert-danger col-12"
+                class="alert alert-danger col-12" i18n
               >
                 Name must be at least 2 characters long.
               </div>
@@ -51,7 +51,7 @@
                 minlength="5"
                 maxlength="300"
               ></textarea>
-              <label for="address">Filial address</label>
+              <label for="address" i18n>Filial address</label>
             </span>
   
             <div
@@ -62,19 +62,19 @@
             >
               <div
                 *ngIf="addressField?.errors?.['maxlength']"
-                class="alert alert-danger col-12"
+                class="alert alert-danger col-12" i18n
               >
                 Dish description maximum size is 300 characters.
               </div>
               <div
                 *ngIf="addressField?.errors?.['required']"
-                class="alert alert-danger col-12"
+                class="alert alert-danger col-12" i18n
               >
                 Address is required.
               </div>
               <div
                 *ngIf="nameField?.errors?.['minlength']"
-                class="alert alert-danger col-12"
+                class="alert alert-danger col-12" i18n
               >
                 Address must be at least 5 characters long.
               </div>

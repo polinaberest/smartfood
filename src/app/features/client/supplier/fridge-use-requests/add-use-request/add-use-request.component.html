@@ -7,7 +7,7 @@
         <form #form="ngForm" (ngSubmit)="onFormSubmit()">
             <div class="mt-2">
                 <div class="mt-5">
-                    <label for="filialId" class="form-label">Select an office of delivery: </label>
+                    <label for="filialId" class="form-label" i18n>Select an office of delivery: </label>
                     <ng-container *ngIf="filials$ | async as filials">
                         <select [(ngModel)]="selectedFilialId" (change)="onFilialChange()"
                         name="filialId" id="filialId" 
@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="mt-5">
-                    <label for="fridgeId" class="form-label">Select a fridge to deliver to: </label>
+                    <label for="fridgeId" class="form-label" i18n>Select a fridge to deliver to: </label>
                     <ng-container *ngIf="fridges$ | async as fridges">
                         <select [(ngModel)]="model.fridgeId"
                         name="fridgeId" id="fridgeId" 
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="mt-5">
-                    <label for="fridgeId" class="form-label">Select your dish for delivery: </label>
+                    <label for="fridgeId" class="form-label" i18n>Select your dish for delivery: </label>
                     <ng-container *ngIf="dishes$ | async as dishes">
                         <select [(ngModel)]="model.dishId"
                         name="dishId" id="dishId" 
@@ -45,14 +45,14 @@
                              rows="5" [(ngModel)]="model.requestMessage" 
                              class="col-12" pInputTextarea #requestMessage="ngModel"
                              maxlength="200"></textarea>
-                            <label for="requestMessage">Add a request message to the owner of the fridge (optionally):</label>
+                            <label for="requestMessage" i18n>Add a request message to the owner of the fridge (optionally):</label>
                         </span>
     
                         <div *ngIf="requestMessage.invalid && (requestMessage.dirty || requestMessage.touched)">
-                          <div *ngIf="requestMessage?.errors?.['maxlength']" class="alert alert-danger col-12">
+                          <div *ngIf="requestMessage?.errors?.['maxlength']" class="alert alert-danger col-12" i18n>
                             Description maximum size is 200 characters.
                           </div>
-                        </div>ests
+                        </div>
                 </div>
 
                 <div class="mt-5 mb-5 d-flex justify-content-end">

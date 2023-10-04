@@ -12,10 +12,10 @@
                       </span>
   
                       <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
-                        <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12">
+                        <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12" i18n>
                           Dish is required.
                         </div>
-                        <div *ngIf="nameField.errors?.['minlength']" class="alert alert-danger col-12">
+                        <div *ngIf="nameField.errors?.['minlength']" class="alert alert-danger col-12" i18n>
                           Name must be at least 5 characters long.
                         </div> 
                       </div>
@@ -27,17 +27,17 @@
                              rows="5" [(ngModel)]="model.description" 
                              class="col-12" pInputTextarea  required #descriptionField="ngModel"
                              minlength="2" maxlength="200"></textarea>
-                            <label for="description">Dish description</label>
+                            <label for="description" i18n>Dish description</label>
                         </span>
     
                         <div *ngIf="descriptionField.invalid && (descriptionField.dirty || descriptionField.touched)">
-                          <div *ngIf="descriptionField?.errors?.['required']" class="alert alert-danger col-12">
+                          <div *ngIf="descriptionField?.errors?.['required']" class="alert alert-danger col-12" i18n>
                             Description is required.
                           </div>
-                          <div *ngIf="descriptionField?.errors?.['minlength']" class="alert alert-danger col-12">
+                          <div *ngIf="descriptionField?.errors?.['minlength']" class="alert alert-danger col-12" i18n>
                             Description should have at least 2 characters.
                           </div>
-                          <div *ngIf="descriptionField?.errors?.['maxlength']" class="alert alert-danger col-12">
+                          <div *ngIf="descriptionField?.errors?.['maxlength']" class="alert alert-danger col-12" i18n>
                             Description maximum size is 200 characters.
                           </div>
                         </div>
@@ -70,13 +70,13 @@
                   >
                     <div
                       *ngIf="priceField?.errors?.['required']"
-                      class="alert alert-danger col-12"
+                      class="alert alert-danger col-12" i18n
                     >
                       Price is required.
                     </div>
                     <div
                       *ngIf="priceField?.errors?.['min']"
-                      class="alert alert-danger col-12"
+                      class="alert alert-danger col-12" i18n
                     >
                       Price must be greater than 0.
                     </div>

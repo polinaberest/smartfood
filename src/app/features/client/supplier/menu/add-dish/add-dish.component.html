@@ -24,13 +24,13 @@
           >
             <div
               *ngIf="nameField?.errors?.['required']"
-              class="alert alert-danger col-12"
+              class="alert alert-danger col-12" i18n
             >
               Name is required.
             </div>
             <div
               *ngIf="nameField?.errors?.['minlength']"
-              class="alert alert-danger col-12"
+              class="alert alert-danger col-12" i18n
             >
               Name must be at least 2 characters long.
             </div>
@@ -39,7 +39,7 @@
 
         <div class="mt-4 col-12">
           <span class="p-float-label">
-            <p-inputNumber
+            <p-inputNumber 
               #priceField="ngModel"
               [styleClass]="'col-12'"
               [showClear]="true"
@@ -64,13 +64,13 @@
           >
             <div
               *ngIf="priceField?.errors?.['required']"
-              class="alert alert-danger col-12"
+              class="alert alert-danger col-12" i18n
             >
               Price is required.
             </div>
             <div
               *ngIf="priceField?.errors?.['min']"
-              class="alert alert-danger col-12"
+              class="alert alert-danger col-12" i18n
             >
               Price must be greater than 0.
             </div>
@@ -89,7 +89,7 @@
               #descriptionField="ngModel"
               maxlength="200"
             ></textarea>
-            <label for="description">Dish description</label>
+            <label for="description" i18n>Dish description</label>
           </span>
 
           <div
@@ -100,7 +100,7 @@
           >
             <div
               *ngIf="descriptionField?.errors?.['maxlength']"
-              class="alert alert-danger col-12"
+              class="alert alert-danger col-12" i18n
             >
               Dish description maximum size is 200 characters.
             </div>

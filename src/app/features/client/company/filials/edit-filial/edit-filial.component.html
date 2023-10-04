@@ -12,17 +12,17 @@
                          rows="5" [(ngModel)]="model.name" 
                          class="col-12" pInputTextarea  required #nameField="ngModel"
                          minlength="2" maxlength="100"></textarea>
-                        <label for="name">Filial name:</label>
+                        <label for="name" i18n>Filial name:</label>
                     </span>
 
                     <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
-                      <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12">
+                      <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12" i18n>
                         Filial name is required.
                       </div>
-                      <div *ngIf="nameField?.errors?.['minlength']" class="alert alert-danger col-12">
+                      <div *ngIf="nameField?.errors?.['minlength']" class="alert alert-danger col-12" i18n>
                         Filial name should have at least 2 characters.
                       </div>
-                      <div *ngIf="nameField?.errors?.['maxlength']" class="alert alert-danger col-12">
+                      <div *ngIf="nameField?.errors?.['maxlength']" class="alert alert-danger col-12" i18n>
                         Filial name maximum size is 100 characters.
                       </div>
                     </div>
@@ -34,17 +34,17 @@
                              rows="5" [(ngModel)]="model.address" 
                              class="col-12" pInputTextarea  required #addressField="ngModel"
                              minlength="5" maxlength="300"></textarea>
-                            <label for="address">Filial address:</label>
+                            <label for="address" i18n>Filial address:</label>
                         </span>
     
                         <div *ngIf="addressField.invalid && (addressField.dirty || addressField.touched)">
-                          <div *ngIf="addressField?.errors?.['required']" class="alert alert-danger col-12">
+                          <div *ngIf="addressField?.errors?.['required']" class="alert alert-danger col-12" i18n>
                             Address is required.
                           </div>
-                          <div *ngIf="addressField?.errors?.['minlength']" class="alert alert-danger col-12">
+                          <div *ngIf="addressField?.errors?.['minlength']" class="alert alert-danger col-12" i18n>
                             Address should have at least 5 characters.
                           </div>
-                          <div *ngIf="addressField?.errors?.['maxlength']" class="alert alert-danger col-12">
+                          <div *ngIf="addressField?.errors?.['maxlength']" class="alert alert-danger col-12" i18n>
                             Address maximum size is 300 characters.
                           </div>
                         </div>

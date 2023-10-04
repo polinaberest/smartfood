@@ -8,12 +8,12 @@
                 <div class="flex gap-3">
                     <div class="flex flex-row gap-3 mt-5">
                         <p-radioButton name="role" value="Supplier" [(ngModel)]="model.role" inputId="supplier" class="px-2"></p-radioButton>
-                        <label for="supplier" class="ml-3">  Register me as a <b>food supplier</b> (I want to deliver food to Smart fridges)</label>
+                        <label for="supplier" class="ml-3" i18n>  Register me as a <b>food supplier</b> (I want to deliver food to Smart fridges)</label>
                     </div>
                     
                     <div class="flex align-items-center mt-3">
                         <p-radioButton name="role" value="Organization" [(ngModel)]="model.role" inputId="organization" class="px-2"></p-radioButton>
-                        <label for="organization" class="ml-3">  Register me as a <b>client organization</b> (I want Smart fridges to be installed in my filias)</label>
+                        <label for="organization" class="ml-3" i18n>  Register me as a <b>client organization</b> (I want Smart fridges to be installed in my filias)</label>
                     </div>
                 </div>
 
@@ -25,10 +25,10 @@
                     </span>
 
                     <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)">
-                      <div *ngIf="emailField?.errors?.['required']" class="alert alert-danger col-12">
+                      <div *ngIf="emailField?.errors?.['required']" class="alert alert-danger col-12" i18n>
                         Email is required.
                       </div>
-                      <div *ngIf="emailField?.errors?.['email']" class="alert alert-danger col-12">
+                      <div *ngIf="emailField?.errors?.['email']" class="alert alert-danger col-12" i18n>
                         Invalid email address.
                       </div>
                     </div>
@@ -42,10 +42,10 @@
                     </span>
 
                     <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
-                      <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12">
+                      <div *ngIf="nameField?.errors?.['required']" class="alert alert-danger col-12" i18n>
                         Name is required.
                       </div>
-                      <div *ngIf="nameField.errors?.['minlength']" class="alert alert-danger col-12">
+                      <div *ngIf="nameField.errors?.['minlength']" class="alert alert-danger col-12" i18n>
                         Name must be at least 10 characters long.
                       </div> 
                     </div>
@@ -59,10 +59,10 @@
                     </span>
 
                     <div *ngIf="organizationNameField.invalid && (emailField.dirty || emailField.touched)">
-                      <div *ngIf="organizationNameField?.errors?.['required']" class="alert alert-danger col-12">
+                      <div *ngIf="organizationNameField?.errors?.['required']" class="alert alert-danger col-12" i18n>
                         Name is required.
                       </div>
-                      <div *ngIf="organizationNameField.errors?.['minlength']" class="alert alert-danger col-12">
+                      <div *ngIf="organizationNameField.errors?.['minlength']" class="alert alert-danger col-12" i18n>
                         Name must be at least 5 characters long.
                       </div> 
                     </div>
@@ -78,7 +78,7 @@
                     </span>
                 </div>
 
-                <div class="col-12 alert alert-danger" *ngIf="isShortPassword">
+                <div class="col-12 alert alert-danger" *ngIf="isShortPassword" i18n>
                     Password should be of minimum 6 characters.
                 </div>
 
@@ -92,7 +92,7 @@
                     </span>
                 </div>
 
-                <div class="col-12 alert alert-danger" *ngIf="passwordsNotMatch">
+                <div class="col-12 alert alert-danger" *ngIf="passwordsNotMatch" i18n>
                     Passwords do not match.
                 </div>
 
@@ -102,17 +102,17 @@
                          rows="5" [(ngModel)]="model.description" 
                          class="col-12" pInputTextarea required #descriptionField="ngModel"
                          minlength="10" maxlength="200"></textarea>
-                        <label for="description">Company / Organization short description</label>
+                        <label for="description" i18n>Company / Organization short description</label>
                     </span>
 
                     <div *ngIf="descriptionField.invalid && (descriptionField.dirty || descriptionField.touched)">
-                      <div *ngIf="descriptionField?.errors?.['required']" class="alert alert-danger col-12">
+                      <div *ngIf="descriptionField?.errors?.['required']" class="alert alert-danger col-12" i18n>
                         Company short description is required.
                       </div>
-                      <div *ngIf="descriptionField?.errors?.['minlength']" class="alert alert-danger col-12">
+                      <div *ngIf="descriptionField?.errors?.['minlength']" class="alert alert-danger col-12" i18n>
                         Company short description should have at least 10 characters.
                       </div>
-                      <div *ngIf="descriptionField?.errors?.['maxlength']" class="alert alert-danger col-12">
+                      <div *ngIf="descriptionField?.errors?.['maxlength']" class="alert alert-danger col-12" i18n>
                         Company short description maximum size is 200 characters.
                       </div>
                     </div>
