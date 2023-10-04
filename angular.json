@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "smartfood": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ua-UA": "src/locale/messages.ua.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,6 +19,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": [
+              "ua-UA"
+            ],
             "outputPath": "dist/smartfood",
             "index": "src/index.html",
             "main": "src/main.ts",

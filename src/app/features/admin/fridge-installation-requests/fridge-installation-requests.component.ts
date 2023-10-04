@@ -22,9 +22,9 @@ export class FridgeInstallationRequestsComponent {
   rejectRequestSubscription?: Subscription;
   fulfillRequestSubscription?: Subscription;
 
-  private readonly approveMsg = 'Request approved!';
-  private readonly rejectMsg = 'Request rejected!';
-  private readonly fulfiilledMsg = 'Request status changed to "fulfilled"!';
+  private readonly approveMsg = $localize `Request approved!`;
+  private readonly rejectMsg = $localize `Request rejected!`;
+  private readonly fulfiilledMsg = $localize `Request status changed to "fulfilled"!`;
 
   constructor(
     private adminService: AdminService,

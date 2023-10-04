@@ -18,8 +18,8 @@ export class SuppliersManagementComponent {
 
   changeStateSubscription?: Subscription;
 
-  private readonly blockMsg = 'The food supplier is blocked, no service available!';
-  private readonly unblockMsg = 'The food supplier is unblocked, all the services available!';
+  private readonly blockMsg = $localize `The food supplier is blocked, no service available!`;
+  private readonly unblockMsg = $localize `The food supplier is unblocked, all the services available!`;
 
   constructor(
     private adminService: AdminService,

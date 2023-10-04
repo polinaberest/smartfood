@@ -99,7 +99,7 @@ export class EditFilialComponent implements OnInit, OnDestroy{
   }
 
   showError() {
-    this.messageService.add({ severity: 'warn', summary: 'Warning: ', detail: 'The filial was deleted. The smartfidges will be removed at the earliest convenience. No more food orders available' });
+    this.messageService.add({ severity: 'warn', summary: 'Warning: ', detail: $localize `The filial was deleted. The smartfidges will be removed at the earliest convenience. No more food orders available` });
   }
 
 }

@@ -18,8 +18,8 @@ export class OrganizationsManagementComponent {
 
   changeStateSubscription?: Subscription;
 
-  private readonly blockMsg = 'The organization is blocked, no service available!';
-  private readonly unblockMsg = 'The organization is unblocked, all the services available!';
+  private readonly blockMsg = $localize `The organization is blocked, no service available!`;
+  private readonly unblockMsg = $localize `The organization is unblocked, all the services available!`;
 
   constructor(
     private adminService: AdminService,

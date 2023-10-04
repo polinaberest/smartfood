@@ -69,6 +69,6 @@ export class ManageRequestsComponent implements OnInit{
   }
 
   showSuccess() {
-    this.messageService.add({ severity: 'success', summary: 'Success: ', detail: `Request accepted! Wait for the dishes in the fridge!` });
+    this.messageService.add({ severity: 'success', summary: 'Success: ', detail: $localize `Request accepted! Wait for the dishes in the fridge!` });
   }
 }

@@ -72,10 +72,10 @@ export class AddFridgeRequestComponent {
     }
 
     showSuccess() {
-      this.messageService.add({ severity: 'success', summary: 'Success: ', detail: 'The installation request is accepted.' });
+      this.messageService.add({ severity: 'success', summary: 'Success: ', detail: $localize `The installation request is accepted.` });
     }
 
     showError() {
-      this.messageService.add({ severity: 'error', summary: 'Error: ', detail: 'Fill in the form first.' });
+      this.messageService.add({ severity: 'error', summary: 'Error: ', detail: $localize `Fill in the form first.` });
     }
   }
