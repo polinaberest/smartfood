@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { Organization } from '../../client/models/company.model';
 import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private elementRef: ElementRef) {}
+  constructor(private elementRef: ElementRef, private http: HttpClient) {}
 
   ngOnInit() {
     const fragment = window.location.hash;
@@ -23,5 +23,12 @@ export class HomeComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  getForecast() {
+    this.http.get<any>('https://localhost:7065/WeatherForecast').subscribe({
+      next: (response) => console.log(response),
+      error: (err) => console.error(err),
+    });
   }
 }

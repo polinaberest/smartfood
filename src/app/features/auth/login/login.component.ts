@@ -34,7 +34,6 @@ export class LoginComponent {
   onFormSubmit(): void {
     this.authService.login(this.model).subscribe({
       next: ({ token, refreshToken }) => {
-        debugger
         this.tokenStorage.saveToken(token);
         this.tokenStorage.saveRefreshToken(refreshToken);
 
