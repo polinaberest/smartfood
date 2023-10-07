@@ -7,12 +7,12 @@
 
                 <div class="flex gap-3">
                     <div class="flex flex-row gap-3 mt-5">
-                        <p-radioButton name="role" value="Supplier" [(ngModel)]="model.role" inputId="supplier" class="px-2"></p-radioButton>
+                        <p-radioButton name="role" [value]="role.Supplier"  [(ngModel)]="model.role" inputId="supplier" class="px-2"></p-radioButton>
                         <label for="supplier" class="ml-3" i18n>  Register me as a <b>food supplier</b> (I want to deliver food to Smart fridges)</label>
                     </div>
                     
                     <div class="flex align-items-center mt-3">
-                        <p-radioButton name="role" value="Organization" [(ngModel)]="model.role" inputId="organization" class="px-2"></p-radioButton>
+                        <p-radioButton name="role" [value]="role.OrganizationManager" [(ngModel)]="model.role" inputId="organization" class="px-2"></p-radioButton>
                         <label for="organization" class="ml-3" i18n>  Register me as a <b>client organization</b> (I want Smart fridges to be installed in my filias)</label>
                     </div>
                 </div>

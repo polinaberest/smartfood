@@ -6,13 +6,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-add-filial',
   templateUrl: './add-filial.component.html',
-  styleUrls: ['./add-filial.component.css']
+  styleUrls: ['./add-filial.component.css'],
 })
-export class AddFilialComponent implements OnInit{
+export class AddFilialComponent implements OnInit {
   model: AddFilial = {
     name: '',
     address: '',
-    ownerOrganizationId: ''
+    ownerOrganizationId: '',
   };
 
   constructor(
@@ -23,25 +23,28 @@ export class AddFilialComponent implements OnInit{
 
   ngOnInit() {
     const organizationId = this.route.snapshot.paramMap.get('organizationId');
-    
+
     // Case when organizationId is missing in query params.
     if (!organizationId) {
       // TODO: Create not found page and navigate here to it.
       this.router.navigateByUrl('/notFound');
       return;
     }
-    
+
     this.model.ownerOrganizationId = organizationId;
   }
 
   onFormSubmit(): void {
-    debugger;
     if (this.model) {
       this.filialService.addFilial(this.model).subscribe({
         next: (response) => {
           console.log('Successful filial creating!', this.model);
           // redirect to menu
-          this.router.navigate(['/organization', this.model.ownerOrganizationId, 'filials']);
+          this.router.navigate([
+            '/organization',
+            this.model.ownerOrganizationId,
+            'filials',
+          ]);
         },
         error: (error) => {
           console.error('error', error);

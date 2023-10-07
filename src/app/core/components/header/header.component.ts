@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
             .getSupplier(user?.id)
             .subscribe((s) => (this.supplier = s));
         }
-        if (user && user?.roles?.includes(Role.Organization)) {
+        if (user && user?.roles?.includes(Role.OrganizationManager)) {
           this.organizationSubscription$ = this.companyService
             .getOrganization(user?.id)
             .subscribe((s) => (this.organization = s));

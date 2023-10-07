@@ -7,14 +7,15 @@ import { CookieService } from 'ngx-cookie-service';
 import { LoginRequest } from '../models/login-request.model';
 import { environment } from 'src/environments/environment';
 import { RegisterRequest } from '../models/register-request.model';
+import { TokenStorageService } from './tokenStorage.service';
 
 export enum Role {
-  Supplier = 'Supplier',
-  Organization = 'Organization',
-  Admin = 'Admin'
+  Supplier = 'supplier',
+  OrganizationManager = 'organizationmanager',
+  Admin = 'admin',
 }
 
-const superAdminResponse: LoginResponse = {
+const superAdminResponse: LoginResponse | any = {
   id: 'ba25735e-da37-4925-8cad-5dddad98b0ae',
   email: 'p.b@gmail.com',
   name: 'Polina Berest',
@@ -23,7 +24,7 @@ const superAdminResponse: LoginResponse = {
   token: 'e62f19e6-9f5d-47fc-ab6c-9c2fe3705ea2',
 };
 
-const supplierResponse: LoginResponse = {
+const supplierResponse: LoginResponse | any = {
   id: 'ba25735e-da37-4925-8cad-5dddad98b0ae',
   email: 's@gmail.com',
   name: 'Save & Co',
@@ -32,13 +33,13 @@ const supplierResponse: LoginResponse = {
   token: 'e62f19e6-9f5d-47fc-ab6c-9c2fe3705ea2',
 };
 
-export const supplierUser: User = { ...supplierResponse };
+export const supplierUser: User | any = { ...supplierResponse };
 
-const companyResponse: LoginResponse = {
+const companyResponse: LoginResponse | any = {
   id: 'ba25735e-da37-4925-8cad-5dddad98b0ae',
   email: 'r@gmail.com',
   name: 'Rysya Berest',
-  roles: [Role.Organization],
+  roles: [Role.OrganizationManager],
   registerDate: new Date('22-08-2023'),
   token: 'e62f19e6-9f5d-47fc-ab6c-9c2fe3705ea2',
 };
@@ -51,44 +52,47 @@ const loginResponsesMocks = [
   companyResponse,
 ];
 
-
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private readonly $user = new BehaviorSubject<User | undefined>(undefined);
 
-  constructor(private http: HttpClient, private cookieService: CookieService) {}
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService,
+    private tokenStorage: TokenStorageService
+  ) {}
 
   login(request: LoginRequest): Observable<LoginResponse> {
-    const foundMock = loginResponsesMocks.find(
-      (c) => c.email === request.email
+    const obs = this.http.post<LoginResponse>(
+      `${environment.apiBaseUrl}/api/auth/login`,
+      request
     );
-    return of(foundMock || superAdminResponse);
 
-    // return this.http.post<LoginResponse>(
-    //   `${environment.apiBaseUrl}/api/auth/login`,
-    //   {
-    //     email: request.email,
-    //     password: request.password,
-    //     role: request.role
-    //   }
-    // );
+    return obs;
+  }
+
+  refreshToken(token: string, refreshToken: string): Observable<LoginResponse> {
+    const req = this.http.post<LoginResponse>(
+      `${environment.apiBaseUrl}/api/Auth/refresh-token`,
+      { token, refreshToken }
+    );
+    return req;
   }
 
   register(request: RegisterRequest): Observable<any> {
+    const req = this.http.post(
+      `${environment.apiBaseUrl}/api/Auth/register`,
+      request
+    );
+
+    return req;
     return of(true);
-    //return this.http.post(`${environment.apiBaseUrl}/api/auth/register`, request);
   }
 
   setUser(user: User): void {
     this.$user.next(user);
-
-    localStorage.setItem('user-id', user.id);
-    localStorage.setItem('user-email', user.email);
-    localStorage.setItem('user-name', user.name);
-    localStorage.setItem('user-registerDate', user.registerDate.toUTCString());
-    localStorage.setItem('user-roles', user.roles.join(','));
   }
 
   user(): Observable<User | undefined> {
@@ -96,25 +100,7 @@ export class AuthService {
   }
 
   getUser(): User | undefined {
-    const id = localStorage.getItem('user-id');
-    const email = localStorage.getItem('user-email');
-    const register = localStorage.getItem('user-register-date');
-    const name = localStorage.getItem('user-name');
-    const roles = localStorage.getItem('user-roles');
-
-    if (id && email && roles) {
-      const user: User = {
-        id,
-        email,
-        registerDate: new Date(register || ''),
-        name: name || email,
-        roles: roles?.split(','),
-      };
-
-      return user;
-    }
-
-    return undefined;
+    return this.tokenStorage.getUser();
   }
 
   loadUserFromLocalStorage() {

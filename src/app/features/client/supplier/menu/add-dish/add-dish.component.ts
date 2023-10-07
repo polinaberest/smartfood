@@ -24,14 +24,14 @@ export class AddDishComponent {
 
   ngOnInit() {
     const supplierId = this.route.snapshot.paramMap.get('supplierId');
-    
+
     // Case when supplierId is missing in query params.
     if (!supplierId) {
       // TODO: Create not found page and navigate here to it.
       this.router.navigateByUrl('/notFound');
       return;
     }
-    
+
     this.model.supplierId = supplierId;
   }
 
@@ -40,13 +40,16 @@ export class AddDishComponent {
   }
 
   onFormSubmit(): void {
-    debugger;
     if (this.validateDish()) {
       this.dishService.createDish(this.model).subscribe({
         next: (response) => {
           console.log('Successful dish creating!', this.model);
           // redirect to menu
-          this.router.navigate(['/food-supplier', this.model.supplierId, 'menu']);
+          this.router.navigate([
+            '/food-supplier',
+            this.model.supplierId,
+            'menu',
+          ]);
         },
         error: (error) => {
           console.error('error', error);

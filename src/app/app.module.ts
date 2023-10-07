@@ -40,6 +40,7 @@ import { AddFilialComponent } from './features/client/company/filials/add-filial
 import { FridgeInstallationRequestsComponent } from './features/admin/fridge-installation-requests/fridge-installation-requests.component';
 import { SuppliersManagementComponent } from './features/admin/suppliers-management/suppliers-management.component';
 import { OrganizationsManagementComponent } from './features/admin/organizations-management/organizations-management.component';
+import { authInterceptorProviders as AuthInterceptorProviders } from './features/auth/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,7 @@ import { OrganizationsManagementComponent } from './features/admin/organizations
     ToastModule,
     MessagesModule
   ],
-  providers: [],
+  providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

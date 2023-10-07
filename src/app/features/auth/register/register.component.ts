@@ -24,7 +24,7 @@ export class RegisterComponent {
       name: '',
       organizationName: '',
       description: '',
-      role: this.role.Organization,
+      role: this.role.OrganizationManager,
     };
   }
 
