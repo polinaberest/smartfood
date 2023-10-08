@@ -41,7 +41,7 @@ export class AddDishComponent {
 
   onFormSubmit(): void {
     if (this.validateDish()) {
-      this.dishService.createDish(this.model).subscribe({
+      this.dishService.create(this.model).subscribe({
         next: (response) => {
           console.log('Successful dish creating!', this.model);
           // redirect to menu

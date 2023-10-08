@@ -8,7 +8,7 @@ import { UpdateDish } from '../../../models/update-dish.model';
 @Component({
   selector: 'app-edit-dish',
   templateUrl: './edit-dish.component.html',
-  styleUrls: ['./edit-dish.component.css']
+  styleUrls: ['./edit-dish.component.css'],
 })
 export class EditDishComponent implements OnInit, OnDestroy {
   id: string | null = null;
@@ -42,10 +42,14 @@ export class EditDishComponent implements OnInit, OnDestroy {
         //get dish from API
         if (this.id) {
           this.getDishSubscription = this.dishService
-            .getDishById(this.id)
+            .getById(this.id)
             .subscribe({
               next: (response) => {
-                this.model = response;
+                if (response) {
+                  this.model = response;
+                } else {
+                  console.error(`Dish with id: ${this.id} is not fould`);
+                }
               },
             });
         }
@@ -61,13 +65,16 @@ export class EditDishComponent implements OnInit, OnDestroy {
         name: this.model.name,
         description: this.model.description,
         price: this.model.price,
+        supplierId: this.supplierId!,
       };
 
       this.updateDishSubscription = this.dishService
-        .updateDish(this.id, updateDish)
+        .update(this.id, updateDish)
         .subscribe({
           next: (response) => {
-            this.router.navigateByUrl('/food-supplier/' + this.supplierId + '/menu');
+            this.router.navigateByUrl(
+              '/food-supplier/' + this.supplierId + '/menu'
+            );
           },
         });
     }
@@ -79,7 +86,9 @@ export class EditDishComponent implements OnInit, OnDestroy {
         .deleteDish(this.id)
         .subscribe({
           next: (response) => {
-            this.router.navigateByUrl('/food-supplier/' + this.supplierId + '/menu');
+            this.router.navigateByUrl(
+              '/food-supplier/' + this.supplierId + '/menu'
+            );
           },
         });
     }

@@ -41,6 +41,8 @@ import { FridgeInstallationRequestsComponent } from './features/admin/fridge-ins
 import { SuppliersManagementComponent } from './features/admin/suppliers-management/suppliers-management.component';
 import { OrganizationsManagementComponent } from './features/admin/organizations-management/organizations-management.component';
 import { authInterceptorProviders as AuthInterceptorProviders } from './features/auth/interceptors/auth.interceptor';
+import { ODataModule } from 'angular-odata';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -84,7 +86,12 @@ import { authInterceptorProviders as AuthInterceptorProviders } from './features
     InputNumberModule,
     InputTextareaModule,
     ToastModule,
-    MessagesModule
+    MessagesModule,
+    ODataModule.forRoot({
+      config: {
+        serviceRootUrl: `${environment.apiBaseUrl}/odata/`
+      }
+    })
   ],
   providers: [AuthInterceptorProviders],
   bootstrap: [AppComponent]

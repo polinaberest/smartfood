@@ -1,11 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Dish } from '../../models/dish.model';
 import { supplierMock } from '../../services/supplier.service';
-import { environment } from 'src/environments/environment';
-import { CreateDishRequest } from '../models/create-dish-request.model';
-import { UpdateDish } from '../../models/update-dish.model';
+import { ODataServiceFactory } from 'angular-odata';
+import { ODataServiceBase } from 'src/app/common/ODataServiceBase';
 
 export const dishesMock: Dish[] = [
   {
@@ -29,36 +27,24 @@ export const dishesMock: Dish[] = [
 @Injectable({
   providedIn: 'root',
 })
-export class DishService {
-  constructor(private http: HttpClient) {}
+export class DishService extends ODataServiceBase<Dish> {
+  protected override oDataEntityName: string = 'Dishes';
 
-  getAllSupplierDishes(supplierId: string): Observable<Dish[]> {
-    return of(dishesMock);
-    // return this.http.get<Dish[]>(
-    //   `${environment.apiBaseUrl}/api/suppliers/${supplierId}/dishes`
-    // );
+  constructor(factory: ODataServiceFactory) {
+    super(factory);
   }
 
-  getDishById(id: string): Observable<Dish> {
-    //return this.http.get<Dish>(`${environment.apiBaseUrl}`);
-    return of(
-      dishesMock.find((dish) => dish.id === id) as Dish
-    );
-    }
-
-    createDish(request: CreateDishRequest): Observable<Dish> {
-        const resultDish: Dish = { id: crypto.randomUUID(), ...request, supplier: supplierMock };
-        dishesMock.push(resultDish);
-        return of(resultDish);
-
-        // return this.http.post(`${environment.apiBaseUrl}/api/dishes`, request);
-    }
-
-  updateDish(id: string, updatedDish: UpdateDish): Observable<Dish> {
-    return this.http.put<Dish>(`${environment.apiBaseUrl}`, updatedDish);
+  getAllSupplierDishes(supplierId: string): Observable<Dish[]> {
+    return this.ODataService.entities()
+      .query((q) =>
+        q.filter(({ e }) => e().eq('supplier/id', supplierId, 'none'))
+      )
+      .fetch()
+      .pipe(this.mapODataEntities);
   }
 
   deleteDish(id: string): Observable<Dish> {
-    return this.http.delete<Dish>(`${environment.apiBaseUrl}`);
+    // TODO: Implement.
+    throw Error('Not implemented');
   }
 }

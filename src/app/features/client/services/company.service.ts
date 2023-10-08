@@ -35,6 +35,7 @@ export class CompanyService {
     // );
   }
 
+  // TODO: move to filial service
   getCompanyFilials(companyId: string): Observable<Filial[]> {
     //return this.http.get<Filial[]>(`/api/companies/${companyId}/filials`);
     return of(filialsMock);
