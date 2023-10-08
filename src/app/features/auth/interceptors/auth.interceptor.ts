@@ -43,7 +43,10 @@ export class AuthInterceptor implements HttpInterceptor {
       catchError((error) => {
         if (
           error instanceof HttpErrorResponse &&
-          !authReq.url.includes('auth/login') &&
+          !(
+            authReq.url.toLowerCase().includes('auth/login') ||
+            authReq.url.toLowerCase().includes('auth/refresh-token')
+          ) &&
           error.status === 401
         ) {
           return this.handle401Error(authReq, next);
@@ -55,7 +58,6 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   private handle401Error(request: HttpRequest<any>, next: HttpHandler) {
-    debugger;
     if (!this.isRefreshing) {
       this.isRefreshing = true;
       this.refreshTokenSubject.next(null);
@@ -77,8 +79,11 @@ export class AuthInterceptor implements HttpInterceptor {
           catchError((err) => {
             this.isRefreshing = false;
 
-            this.authService.logout();
-            this.tokenService.signOut();
+            if (err instanceof HttpErrorResponse && err.status === 401) {
+              this.authService.logout();
+              this.tokenService.signOut();
+            }
+
             return throwError(err);
           })
         );
