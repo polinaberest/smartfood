@@ -5,7 +5,7 @@ import { User } from 'src/app/features/auth/models/user.model';
 import { AuthService, Role } from 'src/app/features/auth/sevices/auth.service';
 import { Organization } from 'src/app/features/client/models/organization.model';
 import { Supplier } from 'src/app/features/client/models/supplier.model';
-import { CompanyService } from 'src/app/features/client/services/organization.service';
+import { OrganizationService } from 'src/app/features/client/services/organization.service';
 import { SupplierService } from 'src/app/features/client/services/supplier.service';
 
 @Component({
@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private readonly supplierService: SupplierService,
-    private readonly companyService: CompanyService
+    private readonly organizationService: OrganizationService
   ) {}
 
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
             .subscribe((s) => (this.supplier = s));
         }
         if (user && user?.roles?.includes(Role.OrganizationManager)) {
-          this.organizationSubscription$ = this.companyService
+          this.organizationSubscription$ = this.organizationService
             .getOrganization(user?.id)
             .subscribe((s) => (this.organization = s));
         }

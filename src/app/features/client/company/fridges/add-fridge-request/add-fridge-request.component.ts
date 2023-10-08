@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FridgeService } from '../services/fridge.service';
 import { MessageService } from 'primeng/api';
 import { Observable, Subscription } from 'rxjs';
-import { CompanyService } from '../../../services/organization.service';
+import { OrganizationService } from '../../../services/organization.service';
 
 @Component({
   selector: 'app-add-fridge-request',
@@ -23,7 +23,7 @@ export class AddFridgeRequestComponent {
     constructor(
       private route: ActivatedRoute,
       private fridgeService: FridgeService,
-      private organizationService: CompanyService,
+      private organizationService: OrganizationService,
       private router: Router,
       public messageService: MessageService
     ) {
@@ -44,7 +44,7 @@ export class AddFridgeRequestComponent {
 
           //get all filials from API
           if (this.organizationId) {
-            this.filials$ = this.organizationService.getCompanyFilials(this.organizationId);
+            this.filials$ = this.organizationService.getOrganizationFilials(this.organizationId);
           }
         },
       });

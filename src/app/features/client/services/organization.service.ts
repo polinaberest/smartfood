@@ -17,7 +17,7 @@ export const organizationMock: Organization = {
 @Injectable({
   providedIn: 'root'
 })
-export class CompanyService {
+export class OrganizationService {
 
   constructor(private http: HttpClient) {}
 
@@ -36,7 +36,7 @@ export class CompanyService {
   }
 
   // TODO: move to filial service
-  getCompanyFilials(companyId: string): Observable<Filial[]> {
+  getOrganizationFilials(companyId: string): Observable<Filial[]> {
     //return this.http.get<Filial[]>(`/api/companies/${companyId}/filials`);
     return of(filialsMock);
   }
