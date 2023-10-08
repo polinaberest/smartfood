@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { organizationMock } from '../../../services/company.service';
+import { organizationMock } from '../../../services/organization.service';
 import { Observable, of } from 'rxjs';
 import { Filial } from '../../../models/filial.model';
 import { UpdateFilial } from '../../../models/update-filial.model';

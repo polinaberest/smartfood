@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Organization } from 'src/app/features/client/models/company.model';
+import { Organization } from 'src/app/features/client/models/organization.model';
 
 @Component({
   selector: 'app-client-list',

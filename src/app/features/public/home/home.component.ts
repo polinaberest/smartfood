@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
-import { Organization } from '../../client/models/company.model';
+import { Organization } from '../../client/models/organization.model';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 

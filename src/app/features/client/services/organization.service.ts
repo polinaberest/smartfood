@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Organization } from '../models/company.model';
+import { Organization } from '../models/organization.model';
 import { companyUser } from '../../auth/sevices/auth.service';
 import { Filial } from '../models/filial.model';
 import { filialsMock } from '../company/filials/services/filial.service';

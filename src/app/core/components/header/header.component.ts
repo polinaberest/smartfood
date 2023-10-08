@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from 'src/app/features/auth/models/user.model';
 import { AuthService, Role } from 'src/app/features/auth/sevices/auth.service';
-import { Organization } from 'src/app/features/client/models/company.model';
+import { Organization } from 'src/app/features/client/models/organization.model';
 import { Supplier } from 'src/app/features/client/models/supplier.model';
-import { CompanyService } from 'src/app/features/client/services/company.service';
+import { CompanyService } from 'src/app/features/client/services/organization.service';
 import { SupplierService } from 'src/app/features/client/services/supplier.service';
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { Observable, Subscription } from 'rxjs';
-import { Organization } from '../../client/models/company.model';
-import { UpdateOrganization } from '../../client/models/update-company.model';
+import { Organization } from '../../client/models/organization.model';
+import { UpdateOrganization } from '../../client/models/update-organization.model';
 import { AdminService } from '../services/admin.service';
 import { Router } from '@angular/router';
 

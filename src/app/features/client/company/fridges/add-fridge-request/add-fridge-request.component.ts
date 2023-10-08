@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FridgeService } from '../services/fridge.service';
 import { MessageService } from 'primeng/api';
 import { Observable, Subscription } from 'rxjs';
-import { CompanyService } from '../../../services/company.service';
+import { CompanyService } from '../../../services/organization.service';
 
 @Component({
   selector: 'app-add-fridge-request',
