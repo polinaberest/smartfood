@@ -48,7 +48,7 @@ export class EditDishComponent implements OnInit, OnDestroy {
                 if (response) {
                   this.model = response;
                 } else {
-                  console.error(`Dish with id: ${this.id} is not fould`);
+                  console.error(`Dish with id: ${this.id} is not found!`);
                 }
               },
             });

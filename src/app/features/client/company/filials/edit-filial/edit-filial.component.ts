@@ -45,10 +45,14 @@ export class EditFilialComponent implements OnInit, OnDestroy{
         //get filial from API
         if (this.id) {
           this.getFilialSubscription = this.filialService
-            .getFilialById(this.id)
+            .getById(this.id)
             .subscribe({
               next: (response) => {
-                this.model = response;
+                if (response) {
+                  this.model = response;
+                } else {
+                  console.error(`Dish with id: ${this.id} is not found!`);
+                }
               },
             });
         }
@@ -60,42 +64,32 @@ export class EditFilialComponent implements OnInit, OnDestroy{
     console.log(this.model);
 
     if (this.model && this.id) {
-      var updateFilial: UpdateFilial = {
-        name: this.model.name,
-        address: this.model.address
-      };
-
       this.updateFilialSubscription = this.filialService
-        .updateFilial(this.id, updateFilial)
-        .subscribe({
-          next: (response) => {
-            this.router.navigateByUrl('/organization/' + this.organizationId + '/filials');
-          },
-        });
-    }
+      .update(this.id, this.model)
+      .subscribe({
+        next: (response) => {
+          this.router.navigateByUrl('/organization/' + this.organizationId + '/filials');
+        },
+      });
+    };
   }
 
   onDelete(): void {
     this.showError();
 
     if (this.model && this.id) {
-      var deleteFilial: UpdateFilial = {
-        name: this.model.name,
-        address: this.model.address,
-        isDeleted: true,
-      };
+        this.model.isDeleted = true;
 
-      this.deleteFilialSubscription = this.filialService
-        .updateFilial(this.id, deleteFilial)
+        this.deleteFilialSubscription = this.filialService
+        .deleteFilialDeinstallFridges(this.id, this.model)
         .subscribe({
           next: (response) => {
-           // this.router.navigateByUrl('/organization/' + this.organizationId + '/smartfridges-list');
            setTimeout(() => {
             this.router.navigateByUrl('/organization/' + this.organizationId + '/filials');
           }, 5000);
           },
         });
-    }
+    };
   }
 
   showError() {
