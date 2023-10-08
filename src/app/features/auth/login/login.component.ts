@@ -22,13 +22,8 @@ export class LoginComponent {
   ) {
     this.model = {
       email: '',
-      password: '',
-      role: '',
+      password: ''
     };
-  }
-
-  setUserRole(role: string) {
-    this.model.role = role;
   }
 
   onFormSubmit(): void {

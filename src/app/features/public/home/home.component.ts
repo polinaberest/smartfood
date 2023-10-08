@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private elementRef: ElementRef, private http: HttpClient) {}
+  constructor(private elementRef: ElementRef) {}
 
   ngOnInit() {
     const fragment = window.location.hash;
@@ -23,12 +23,5 @@ export class HomeComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  }
-
-  getForecast() {
-    this.http.get<any>('https://localhost:7065/WeatherForecast').subscribe({
-      next: (response) => console.log(response),
-      error: (err) => console.error(err),
-    });
   }
 }
