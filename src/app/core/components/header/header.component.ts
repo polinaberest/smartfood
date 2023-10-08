@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
     this.userSubscription$ = this.authService.user().subscribe({
       next: (user) => {
         this.user = user;
+        console.log(user);
         if (user && user?.roles?.includes(Role.Supplier)) {
           this.supplierSubscription$ = this.supplierService
             .getSupplier(user?.id)
@@ -41,7 +42,7 @@ export class HeaderComponent implements OnInit {
         }
         if (user && user?.roles?.includes(Role.OrganizationManager)) {
           this.organizationSubscription$ = this.organizationService
-            .getOrganization(user?.id)
+            .getOrganizationByManagerId(user?.id)
             .subscribe((s) => (this.organization = s));
         }
       },

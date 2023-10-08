@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, first, map } from 'rxjs';
 import { Organization } from '../models/organization.model';
 import { companyUser } from '../../auth/sevices/auth.service';
 import { Filial } from '../models/filial.model';
 import { filialsMock } from '../company/filials/services/filial.service';
+import { ODataServiceFactory } from 'angular-odata';
+import { ODataServiceBase } from 'src/app/common/ODataServiceBase';
 
 export const organizationMock: Organization = {
   id: "c057fbdb-a98d-4132-9df2-7ce7b3589e8c",
@@ -17,9 +19,12 @@ export const organizationMock: Organization = {
 @Injectable({
   providedIn: 'root'
 })
-export class OrganizationService {
+export class OrganizationService extends ODataServiceBase<Organization> {
+  protected override oDataEntityName: string = 'Organizations';
 
-  constructor(private http: HttpClient) {}
+  constructor(factory: ODataServiceFactory) {
+    super(factory);
+  }
 
   // getAllCompanies(): Observable<RequestPost[]> {
   //   return of(this.hardcodedPostsMockData);
@@ -28,11 +33,15 @@ export class OrganizationService {
   //   // );
   // }
 
-  getOrganization(userId: string): Observable<Organization> {
-    return of(organizationMock);
-    // this.http.get<Organization>(
-    //   `${environment.apiBaseUrl}/api/users/{userId}/organizations`
-    // );
+  getOrganizationByManagerId(managerId: string): Observable<Organization> {
+    debugger;
+    return this.ODataService.entities()
+      .query((c) => c.filter(({ e }) => e().eq('managerId', managerId, 'none')))
+      .fetch()
+      .pipe(
+        first(),
+        map((c) => c.entities![0])
+      );
   }
 
   // TODO: move to filial service
