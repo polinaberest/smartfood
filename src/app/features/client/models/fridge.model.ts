@@ -6,5 +6,5 @@ export interface Fridge {
     isOpen: boolean;
     isDeleted?: boolean;
     filial: Filial;
-    //dishesServed: DishStored[];
+    dishesServed: any[];
 }

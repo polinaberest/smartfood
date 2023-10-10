@@ -45,10 +45,14 @@ export class EditFridgeComponent implements OnInit, OnDestroy {
         //get fridge from API
         if (this.id) {
           this.getFridgeSubscription = this.fridgeService
-            .getFridgeById(this.id)
+            .getById(this.id)
             .subscribe({
               next: (response) => {
-                this.model = response;
+                if (response) {
+                  this.model = response;
+                } else {
+                  console.error(`Fridge with id: ${this.id} is not found!`);
+                }
               },
             });
         }
@@ -60,12 +64,8 @@ export class EditFridgeComponent implements OnInit, OnDestroy {
     console.log(this.model);
 
     if (this.model && this.id) {
-      var updateFridge: UpdateFridge = {
-        placementDescription: this.model.placementDescription,
-      };
-
       this.updateFridgeSubscription = this.fridgeService
-        .updateFridge(this.id, updateFridge)
+        .update(this.id, this.model)
         .subscribe({
           next: (response) => {
             this.router.navigateByUrl('/organization/' + this.organizationId + '/smartfridges-list');
@@ -77,21 +77,15 @@ export class EditFridgeComponent implements OnInit, OnDestroy {
   onDelete(): void {
     this.showError();
     if (this.model && this.id) {
-      var updateFridge: UpdateFridge = {
-        placementDescription: this.model.placementDescription,
-        isDeleted: true,
-      };
-
       this.deleteFridgeSubscription = this.fridgeService
-        .updateFridge(this.id, updateFridge)
+        .deinstallFridge(this.id)
         .subscribe({
           next: (response) => {
-           // this.router.navigateByUrl('/organization/' + this.organizationId + '/smartfridges-list');
            setTimeout(() => {
             this.router.navigateByUrl('/organization/' + this.organizationId + '/smartfridges-list');
           }, 3000);
           },
-        });
+        });      
     }
   }
 

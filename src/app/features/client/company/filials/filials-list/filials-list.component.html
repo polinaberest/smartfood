@@ -17,11 +17,13 @@
             </thead>
             <tbody>
                 <tr *ngFor="let filial of filials">
-                    <td>{{filial.name}}</td>
-                    <td>{{filial.address}}</td>
-                    <td class="d-flex justify-content-center">
-                        <a [routerLink]="['/organization', organizationId, 'edit-filial', filial.id]" class="btn btn-outline-warning" i18n>Edit filial address</a>
-                    </td>
+                    <ng-container *ngIf="!filial.isDeleted">
+                        <td>{{filial.name}}</td>
+                        <td>{{filial.address}}</td>
+                        <td class="d-flex justify-content-center">
+                            <a [routerLink]="['/organization', organizationId, 'edit-filial', filial.id]" class="btn btn-outline-warning" i18n>Edit filial address</a>
+                        </td>
+                    </ng-container>
                 </tr>
             </tbody>
         </table>

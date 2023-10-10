@@ -8,43 +8,51 @@ import { environment } from 'src/environments/environment';
 import { FridgeInstallRequest } from '../../../models/fridge-install-request.model';
 import { FridgeRequest } from '../../../models/fridge-request.model';
 import { Status } from '../../../models/request-status';
+import { ODataEntitySetService, ODataServiceFactory } from 'angular-odata';
+import { ODataServiceBase } from 'src/app/common/ODataServiceBase';
 
 export const fridgesMock: Fridge[] = [
     {
       id: '1',
       placementDescription: 'Холодильник 1 - 1 єтаж',
       isOpen: false,
-      filial: filialsMock[0]
+      filial: filialsMock[0],
+      dishesServed: []
     },
     {
       id: '2',
       placementDescription: 'Холодильник 2 - 2 єтаж',
       isOpen: true,
-      filial: filialsMock[0]
+      filial: filialsMock[0],
+      dishesServed: []
     },
     {
       id: '3',
       placementDescription: 'Холодильник 3 - 3 єтаж',
       isOpen: false,
-      filial: filialsMock[0]
+      filial: filialsMock[0],
+      dishesServed: []
     },
     {
       id: '4',
       placementDescription: 'Холодильник 4 - 1 єтаж',
       isOpen: true,
-      filial: filialsMock[1]
+      filial: filialsMock[1],
+      dishesServed: []
     },
     {
       id: '5',
       placementDescription: 'Холодильник 5 - 2 єтаж',
       isOpen: false,
-      filial: filialsMock[1]
+      filial: filialsMock[1],
+      dishesServed: []
     },
     {
       id: '6',
       placementDescription: 'Холодильник 6 - холл при входе',
       isOpen: true,
-      filial: filialsMock[2]
+      filial: filialsMock[2],
+      dishesServed: []
     },
 ];
 
@@ -78,18 +86,28 @@ export const fridgeRequestsMock: FridgeRequest[] = [
 @Injectable({
   providedIn: 'root'
 })
-export class FridgeService {
+export class FridgeService extends ODataServiceBase<Fridge> {
+  protected override oDataEntityName: string = 'Fridges';
 
-  constructor(private http: HttpClient) {}
-
+  constructor(factory: ODataServiceFactory, 
+    private http: HttpClient) {
+    super(factory);
+  }
   getAllFridges(): Observable<Fridge[]> {
     return of(fridgesMock);
     //return this.http.get<Fridge[]>('/api/fridges');
   }
 
-  getAllOrganizationsFridges(companyId: string): Observable<Fridge[]> {
-    return of(fridgesMock);
-    //return this.http.get<Fridge[]>(`/api/companies/${companyId}/fridges`);
+  getAllOrganizationsFridges(organizationId: string): Observable<Fridge[]> {
+    debugger;
+    return this.ODataService.entities()
+    .query((q) => {
+      q.expand('filial');
+      q.filter(({ e }) => e().eq('filial/organizationId', organizationId, 'none'))
+    }
+    )
+    .fetch()
+    .pipe(this.mapODataEntities);
   }
 
   getFilialFridges(filialId: string): Observable<Fridge[]> {
@@ -97,12 +115,6 @@ export class FridgeService {
     //return this.http.get<Fridge[]>('/api/filials/${filialId}/fridges');
   }
 
-  getFridgeById(id: string): Observable<Fridge> {
-    //return this.http.get<Fridge>(`/api/fridges/${id}`);
-    return of(
-      fridgesMock.find((fridge) => fridge.id === id) as Fridge
-    );
-  }
 
   addFridgeInstallRequest(request: FridgeInstallRequest): Observable<FridgeRequest> {
     const result: FridgeRequest = { id: crypto.randomUUID(), ...request, status: 'Unseen', requestTime: new Date(), filialOfInstall: filialsMock[0], organizationId: filialsMock[0].ownerOrganization.id };
@@ -117,10 +129,7 @@ export class FridgeService {
     //return this.http.get<FridgeRequest[]>(`/api/installation-requests/${companyId}`);
   }
 
-  updateFridge(id: string, updatedFridge: UpdateFridge): Observable<Fridge> {
-    //return this.http.put<Fridge>(`/api/fridges/${id}`, updatedFridge);
-    return of(
-      fridgesMock.find((fridge) => fridge.id === id) as Fridge
-    );
+  deinstallFridge(id: string) : Observable<Fridge>{
+    return this.ODataService.destroy(id); // this.http.delete<Filial>(`https://localhost:7065/filials/${id}/delete`);
   }
 }

@@ -18,13 +18,15 @@
             </thead>
             <tbody>
                 <tr *ngFor="let fridge of fridges">
-                    <td>{{fridge.filial.name}}</td>
-                    <td>{{fridge.placementDescription}}</td>
-                    <td class="text-center">
-                        <div class="d-inline-block">
-                          <a [routerLink]="['/organization', organizationId, 'edit-fridge', fridge.id]" class="btn btn-warning mx-2" i18n>Manage fridge</a>
-                        </div>
-                    </td>
+                    <ng-container *ngIf="!fridge.isDeleted">
+                        <td>{{fridge.filial.name}}</td>
+                        <td>{{fridge.placementDescription}}</td>
+                        <td class="text-center">
+                            <div class="d-inline-block">
+                            <a [routerLink]="['/organization', organizationId, 'edit-fridge', fridge.id]" class="btn btn-warning mx-2" i18n>Manage fridge</a>
+                            </div>
+                        </td>
+                    </ng-container>
                 </tr>
             </tbody>
         </table>

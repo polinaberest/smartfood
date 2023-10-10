@@ -81,7 +81,7 @@ export class EditFilialComponent implements OnInit, OnDestroy{
         this.model.isDeleted = true;
 
         this.deleteFilialSubscription = this.filialService
-        .deleteFilialDeinstallFridges(this.id, this.model)
+        .deleteFilialDeinstallFridges(this.id)
         .subscribe({
           next: (response) => {
            setTimeout(() => {

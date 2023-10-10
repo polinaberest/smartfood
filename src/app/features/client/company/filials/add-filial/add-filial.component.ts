@@ -12,7 +12,7 @@ export class AddFilialComponent implements OnInit {
   model: AddFilial = {
     name: '',
     address: '',
-    ownerOrganizationId: '',
+    organizationId: '',
   };
 
   constructor(
@@ -31,18 +31,19 @@ export class AddFilialComponent implements OnInit {
       return;
     }
 
-    this.model.ownerOrganizationId = organizationId;
+    this.model.organizationId = organizationId;
   }
 
   onFormSubmit(): void {
     if (this.model) {
-      this.filialService.addFilial(this.model).subscribe({
+      debugger;
+      this.filialService.create(this.model).subscribe({
         next: (response) => {
           console.log('Successful filial creating!', this.model);
           // redirect to menu
           this.router.navigate([
             '/organization',
-            this.model.ownerOrganizationId,
+            this.model.organizationId,
             'filials',
           ]);
         },

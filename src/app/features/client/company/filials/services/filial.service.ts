@@ -6,6 +6,7 @@ import { UpdateFilial } from '../../../models/update-filial.model';
 import { AddFilial } from '../../../models/add-filial.model';
 import { ODataEntitySetService, ODataServiceFactory } from 'angular-odata';
 import { ODataServiceBase } from 'src/app/common/ODataServiceBase';
+import { HttpClient } from '@angular/common/http';
 
 export const filialsMock = [
   {
@@ -37,7 +38,8 @@ export const filialsMock = [
 export class FilialService extends ODataServiceBase<Filial> {
   protected override oDataEntityName: string = 'Filials';
 
-  constructor(factory: ODataServiceFactory) {
+  constructor(factory: ODataServiceFactory, 
+    private http: HttpClient) {
     super(factory);
   }
 
@@ -54,20 +56,8 @@ export class FilialService extends ODataServiceBase<Filial> {
       .pipe(this.mapODataEntities);
   }
 
-  deleteFilialDeinstallFridges(id: string, filial: Filial) : Observable<Filial>{
+  deleteFilialDeinstallFridges(id: string) : Observable<Filial>{
     // TODO: Implement.
-    const filialToUpdate = filialsMock.find((filial) => filial.id === id);
-    if (filialToUpdate !== undefined) {
-      filialToUpdate.address = filial.address;
-      filialToUpdate.name = filial.name;
-    }
-
-    return of(filialToUpdate as Filial);
-  }
-
-  addFilial(request: AddFilial) : Observable<Filial>{
-    //this.http.post<Filial>(``, request);
-    filialsMock.push({id: crypto.randomUUID(), ...request, ownerOrganization: organizationMock, isDeleted: false});
-    return of(filialsMock[filialsMock.length - 1]);
+    return this.ODataService.destroy(id); // this.http.delete<Filial>(`https://localhost:7065/filials/${id}/delete`);
   }
 }
