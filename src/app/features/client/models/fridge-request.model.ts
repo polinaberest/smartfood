@@ -6,6 +6,5 @@ export interface FridgeRequest {
     requestTime: Date;
     answeredTime?: Date;
     status: string;
-    organizationId: string;
-    filialOfInstall: Filial;
+    filial: Filial;
 }

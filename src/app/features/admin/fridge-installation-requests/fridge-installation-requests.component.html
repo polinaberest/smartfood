@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let request of requests" [ngStyle]="{'background': getRequestStatusColor(request.status)}">
-                        <td>{{request.filialOfInstall.name}}, <br>{{request.filialOfInstall.address}}<br><br>Company: {{request.filialOfInstall.ownerOrganization.name}}</td>
+                        <td>{{request.filial.name}}, <br>{{request.filial.address}}<br><br>Company: {{request.filial.ownerOrganization.name}}</td>
                         <td>{{request.placementDescription}}</td>
                         <td>{{request.requestTime | date: 'dd.MM.yyyy' }}</td>
                         <td>{{request?.answeredTime | date: 'dd.MM.yyyy' }}</td>

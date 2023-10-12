@@ -59,24 +59,21 @@ export const fridgesMock: Fridge[] = [
 export const fridgeRequestsMock: FridgeRequest[] = [
   {
     id: '1',
-    filialOfInstall: filialsMock[1],
-    organizationId: filialsMock[1].ownerOrganization.id,
+    filial: filialsMock[1],
     requestTime: new Date(),
     placementDescription: 'lalalala',
     status: Status.Rejected
   },
   {
     id: '2',
-    filialOfInstall: filialsMock[0],
-    organizationId: filialsMock[0].ownerOrganization.id,
+    filial: filialsMock[0],
     requestTime: new Date(),
     placementDescription: 'la2la2la2la',
     status: Status.Unseen
   },
   {
     id: '3',
-    filialOfInstall: filialsMock[1],
-    organizationId: filialsMock[1].ownerOrganization.id,
+    filial: filialsMock[1],
     requestTime: new Date(),
     placementDescription: 'la333lalala',
     status: Status.Approved
@@ -115,21 +112,7 @@ export class FridgeService extends ODataServiceBase<Fridge> {
     //return this.http.get<Fridge[]>('/api/filials/${filialId}/fridges');
   }
 
-
-  addFridgeInstallRequest(request: FridgeInstallRequest): Observable<FridgeRequest> {
-    const result: FridgeRequest = { id: crypto.randomUUID(), ...request, status: 'Unseen', requestTime: new Date(), filialOfInstall: filialsMock[0], organizationId: filialsMock[0].ownerOrganization.id };
-        fridgeRequestsMock.push(result);
-        return of(result);
-
-    // return this.http.post(``, request);
-  }
-
-  getOrganizationsInstallationRequests(companyId: string): Observable<FridgeRequest[]> {
-    return of(fridgeRequestsMock);
-    //return this.http.get<FridgeRequest[]>(`/api/installation-requests/${companyId}`);
-  }
-
   deinstallFridge(id: string) : Observable<Fridge>{
-    return this.ODataService.destroy(id); // this.http.delete<Filial>(`https://localhost:7065/filials/${id}/delete`);
+    return this.ODataService.destroy(id); 
   }
 }

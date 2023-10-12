@@ -43,6 +43,12 @@ import { OrganizationsManagementComponent } from './features/admin/organizations
 import { authInterceptorProviders as AuthInterceptorProviders } from './features/auth/interceptors/auth.interceptor';
 import { ODataModule } from 'angular-odata';
 import { environment } from 'src/environments/environment';
+import { DateParsePipe } from './pipes/date-parse.pipe';
+
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeUk from '@angular/common/locales/uk';
+registerLocaleData(localeUk);
 
 @NgModule({
   declarations: [
@@ -70,6 +76,7 @@ import { environment } from 'src/environments/environment';
     FridgeInstallationRequestsComponent,
     SuppliersManagementComponent,
     OrganizationsManagementComponent,
+    DateParsePipe,
   ],
   imports: [
     BrowserModule,
@@ -93,7 +100,8 @@ import { environment } from 'src/environments/environment';
       }
     })
   ],
-  providers: [AuthInterceptorProviders],
+  providers: [AuthInterceptorProviders,
+    { provide: LOCALE_ID, useValue: 'uk-UA' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

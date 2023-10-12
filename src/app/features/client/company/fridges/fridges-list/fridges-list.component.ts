@@ -4,11 +4,14 @@ import { Fridge } from '../../../models/fridge.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FridgeService } from '../services/fridge.service';
 import { FridgeRequest } from '../../../models/fridge-request.model';
+import { FridgeInstallService } from '../services/fridge-install.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-fridges-list',
   templateUrl: './fridges-list.component.html',
-  styleUrls: ['./fridges-list.component.css']
+  styleUrls: ['./fridges-list.component.css'],
+  providers: [DatePipe]
 })
 export class FridgesListComponent implements OnInit{
   organizationId?: string;
@@ -17,6 +20,7 @@ export class FridgesListComponent implements OnInit{
 
   constructor(
     private fridgeService: FridgeService,
+    private fridgeInstallService: FridgeInstallService,
     private readonly router: Router,
     private readonly route: ActivatedRoute
   ) {}
@@ -35,7 +39,7 @@ export class FridgesListComponent implements OnInit{
 
     this.fridges$ = this.fridgeService.getAllOrganizationsFridges(organizationId);
 
-    this.requests$ = this.fridgeService.getOrganizationsInstallationRequests(organizationId);
+    this.requests$ = this.fridgeInstallService.getOrganizationsInstallationRequests(organizationId);
   }
 
 }

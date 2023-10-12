@@ -43,10 +43,4 @@ export class OrganizationService extends ODataServiceBase<Organization> {
         map((c) => c.entities![0])
       );
   }
-
-  // TODO: move to filial service
-  getOrganizationFilials(companyId: string): Observable<Filial[]> {
-    //return this.http.get<Filial[]>(`/api/companies/${companyId}/filials`);
-    return of(filialsMock);
-  }
 }

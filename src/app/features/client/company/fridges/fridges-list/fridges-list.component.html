@@ -51,9 +51,9 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let request of requests">
-                        <td>{{request.filialOfInstall.name}}</td>
+                        <td>{{request.filial.name}}</td>
                         <td>{{request.placementDescription}}</td>
-                        <td>{{request.requestTime | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{request.requestTime | date:'MM/dd/yyyy'}}</td>
                         <td>{{request.status}}</td>
                     </tr>
                 </tbody>

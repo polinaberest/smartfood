@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { FridgeInstallRequest } from '../../../models/fridge-install-request.model';
 import { Filial } from '../../../models/filial.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FridgeService } from '../services/fridge.service';
 import { MessageService } from 'primeng/api';
 import { Observable, Subscription } from 'rxjs';
-import { OrganizationService } from '../../../services/organization.service';
+import { FilialService } from '../../filials/services/filial.service';
+import { FridgeInstallService } from '../services/fridge-install.service';
 
 @Component({
   selector: 'app-add-fridge-request',
@@ -22,8 +22,8 @@ export class AddFridgeRequestComponent {
 
     constructor(
       private route: ActivatedRoute,
-      private fridgeService: FridgeService,
-      private organizationService: OrganizationService,
+      private fridgeInstallService: FridgeInstallService,
+      private filialService: FilialService,
       private router: Router,
       public messageService: MessageService
     ) {
@@ -42,9 +42,9 @@ export class AddFridgeRequestComponent {
         next: (params) => {
           this.organizationId = params.get('organizationId');
 
-          //get all filials from API
+          //get all filials of this Organization from API
           if (this.organizationId) {
-            this.filials$ = this.organizationService.getOrganizationFilials(this.organizationId);
+            this.filials$ = this.filialService.getAllOrganizationFilials(this.organizationId);
           }
         },
       });
@@ -56,7 +56,7 @@ export class AddFridgeRequestComponent {
       if (this.organizationId && this.model.filialId) {
         this.showSuccess();
 
-        this.fridgeService.addFridgeInstallRequest(this.model)
+        this.fridgeInstallService.create(this.model)
         .subscribe({
           next: (response) => {
             // this.router.navigateByUrl('/organization/' + this.organizationId + '/smartfridges-list');

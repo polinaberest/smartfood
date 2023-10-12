@@ -57,7 +57,6 @@ export class FilialService extends ODataServiceBase<Filial> {
   }
 
   deleteFilialDeinstallFridges(id: string) : Observable<Filial>{
-    // TODO: Implement.
-    return this.ODataService.destroy(id); // this.http.delete<Filial>(`https://localhost:7065/filials/${id}/delete`);
+    return this.ODataService.destroy(id); 
   }
 }
