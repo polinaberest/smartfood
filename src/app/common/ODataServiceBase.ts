@@ -15,6 +15,10 @@ export abstract class ODataServiceBase<TEntity> {
     return this.factory.entitySet<TEntity>(this.oDataEntityName);
   }
 
+  public getAll(): Observable<TEntity[]> {
+    return this.ODataService.fetchAll().pipe(this.mapODataEntities);
+  }
+
   public getById(id: string): Observable<TEntity | null> {
     return this.ODataService.entity(id).fetchEntity();
   }

@@ -18,9 +18,9 @@
                 <tbody>
                     <tr *ngFor="let request of requests">
                         <td>{{request.supplier.name}}</td>
-                        <td>{{request.dishToDeliver.name}}, {{request.dishToDeliver.price}} UAH<br>{{request.dishToDeliver.description}}</td>
+                        <td>{{request.dish.name}}, {{request.dish.price}} UAH<br>{{request.dish.description}}</td>
                         <td>{{request?.requestMessage}}</td>
-                        <td>{{request.fridgeUseRequested.filial.name}}<br><i>{{request.fridgeUseRequested.placementDescription}}</i></td>
+                        <td>{{request.fridge.filial.name}}<br><i>{{request.fridge.placementDescription}}</i></td>
                         <td>
                             <div class="mt-5 mb-5 d-flex justify-content-end">
                                 <button (click)="onAccept(request.id)" pButton pRipple label="Success" class="btn btn-success" 

@@ -9,6 +9,6 @@ export interface FridgeUseRequest {
     answeredTime?: Date;
     status: string;
     supplier: Supplier;
-    fridgeUseRequested: Fridge;
-    dishToDeliver: Dish;
+    fridge: Fridge;
+    dish: Dish;
 }

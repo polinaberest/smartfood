@@ -51,9 +51,10 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let request of requests">
+                        <script>console.log(request)</script>
                         <td>{{request.filial.name}}</td>
                         <td>{{request.placementDescription}}</td>
-                        <td>{{request.requestTime | date:'MM/dd/yyyy'}}</td>
+                        <td>{{request.requestTime | date}}</td>
                         <td>{{request.status}}</td>
                     </tr>
                 </tbody>

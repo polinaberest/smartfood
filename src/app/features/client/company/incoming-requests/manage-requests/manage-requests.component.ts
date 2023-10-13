@@ -28,9 +28,7 @@ export class ManageRequestsComponent implements OnInit{
   ngOnInit(): void {
     const organizationId = this.route.snapshot.paramMap.get('organizationId');
 
-    // Case when organizationId is missing in query params.
     if (!organizationId) {
-      // TODO: Create not found page and navigate here to it.
       this.router.navigateByUrl('/notFound');
       return;
     }
@@ -59,7 +57,7 @@ export class ManageRequestsComponent implements OnInit{
   }
 
   onReject(requestId: string): void {
-    this.rejectRequestSubscription = this.fridgeUseService.acceptRequest(requestId).subscribe({
+    this.rejectRequestSubscription = this.fridgeUseService.rejectRequest(requestId).subscribe({
       next: (response) => {
           this.router.navigateByUrl('/organization/' + this.organizationId + '/fridge-use-requests');
       },

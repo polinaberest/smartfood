@@ -21,12 +21,12 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let request of requests" [ngStyle]="{'background': getRequestStatusColor(request.status)}">
-                        <td>{{request.fridgeUseRequested.filial.name}}, {{request.fridgeUseRequested.filial.address}}<br>Company: {{request.fridgeUseRequested.filial.ownerOrganization.name}}</td>
+                        <td>{{request.fridge.filial.name}}, {{request.fridge.filial.address}}</td>
                         <td>{{request.status}}</td>
-                        <td>{{request.requestTime | date: 'dd.MM.yyyy' }}</td>
-                        <td>{{request?.answeredTime | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{request.requestTime | date}}</td>
+                        <td>{{request?.answeredTime | date}}</td>
                         <td>{{request?.requestMessage}}</td>
-                        <td>{{request.dishToDeliver.name}}</td>
+                        <td>{{request.dish.name}}</td>
                     </tr>
                 </tbody>
             </table>

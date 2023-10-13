@@ -43,10 +43,6 @@ export class FilialService extends ODataServiceBase<Filial> {
     super(factory);
   }
 
-  getAllFilials() : Observable<Filial[]>{
-    return of(filialsMock.filter(filial => !filial?.isDeleted));
-  }
-
   getAllOrganizationFilials(organizationId: string) : Observable<Filial[]>{
     return this.ODataService.entities()
       .query((q) =>

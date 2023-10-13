@@ -108,8 +108,14 @@ export class FridgeService extends ODataServiceBase<Fridge> {
   }
 
   getFilialFridges(filialId: string): Observable<Fridge[]> {
-    return of(fridgesMock.filter((fridge) => fridge.filial.id === filialId));
-    //return this.http.get<Fridge[]>('/api/filials/${filialId}/fridges');
+    debugger;
+    return this.ODataService.entities()
+    .query((q) => {
+      q.filter(({ e }) => e().eq('filialId', filialId, 'none'))
+    }
+    )
+    .fetch()
+    .pipe(this.mapODataEntities);
   }
 
   deinstallFridge(id: string) : Observable<Fridge>{

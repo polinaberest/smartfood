@@ -30,7 +30,7 @@ export class RequestsListComponent {
 
     this.supplierId = supplierId;
 
-    this.requests$ = this.fridgeUseService.getSuppliersRequests(supplierId);
+    this.requests$ = this.fridgeUseService.getSupplierUsageRequests(supplierId);
   }
 
   getRequestStatusColor(status: string): string {

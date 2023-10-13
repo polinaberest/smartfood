@@ -57,9 +57,9 @@ export class AddUseRequestComponent implements OnInit, OnDestroy{
         //get all filials, dishes, fridges from API
         if (this.supplierId) {
           this.model.supplierId = this.supplierId;
-          this.filials$ = this.filialService.getAllFilials();
+          this.filials$ = this.filialService.getAll();
           this.dishes$ = this.dishService.getAllSupplierDishes(this.supplierId);
-          this.fridges$ = this.fridgeService.getAllFridges();
+          this.fridges$ = this.fridgeService.getAll();
         }
       },
     });
@@ -71,7 +71,7 @@ export class AddUseRequestComponent implements OnInit, OnDestroy{
     if (this.supplierId && this.model.fridgeId && this.model.dishId) {
       this.showSuccess();
 
-      this.fridgeUseService.addFridgeUseRequest(this.model)
+      this.fridgeUseService.create(this.model)
       .subscribe({
         next: (response) => {
           setTimeout(() => {
@@ -94,9 +94,8 @@ export class AddUseRequestComponent implements OnInit, OnDestroy{
   }
 
   onFilialChange() {
-    // Load fridges based on the selected filial.
     if (this.selectedFilialId)
-     this.fridges$ = this.fridgeService.getFilialFridges(this.selectedFilialId);
+      this.fridges$ = this.fridgeService.getFilialFridges(this.selectedFilialId);
   }
 
 }
