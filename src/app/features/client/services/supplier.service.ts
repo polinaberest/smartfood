@@ -37,6 +37,20 @@ export class SupplierService extends ODataServiceBase<Supplier> {
       );
   }
 
+  getAllSuppliers(): Observable<Supplier[]> {
+    return this.ODataService.entities()
+    .query((q) => {
+        q.expand('manager');
+      }
+    )
+    .fetch()
+    .pipe(this.mapODataEntities);
+  }
+
+  updateSuppliersState(id: string) : Observable<Supplier>{
+    return this.ODataService.destroy(id); 
+  }
+
   // getAllCompanies(): Observable<RequestPost[]> {
   //   return of(this.hardcodedPostsMockData);
   //   // this.http.get<RequestPost[]>(

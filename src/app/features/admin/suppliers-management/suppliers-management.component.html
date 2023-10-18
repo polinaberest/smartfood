@@ -19,7 +19,7 @@
                     <tr *ngFor="let supplier of suppliers" [ngStyle]="{'background': getStateColor(supplier?.isBlocked)}">
                         <td>{{supplier.name}}</td>
                         <td>{{supplier.description}}</td>
-                        <td>{{supplier.registerDate | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{supplier.registerDate | date }}</td>
                         <td>{{supplier?.manager?.name}}<br><i>{{supplier?.manager?.email}}</i></td>
                         <td>
                                 <div class="d-flex justify-content-center">

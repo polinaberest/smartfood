@@ -5,6 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { UpdateSupplier } from '../../client/models/update-supplier.model';
 import { AdminService } from '../services/admin.service';
 import { Router } from '@angular/router';
+import { SupplierService } from '../../client/services/supplier.service';
 
 @Component({
   selector: 'app-suppliers-management',
@@ -14,7 +15,6 @@ import { Router } from '@angular/router';
 })
 export class SuppliersManagementComponent {
   suppliers$?: Observable<Supplier[]>;
-  updateSupplier: UpdateSupplier;
 
   changeStateSubscription?: Subscription;
 
@@ -24,15 +24,13 @@ export class SuppliersManagementComponent {
   constructor(
     private adminService: AdminService,
     private readonly router: Router,
+    private readonly supplierService: SupplierService,
     public messageService: MessageService
   ) {
-    this.updateSupplier = {
-      isBlocked: false,
-    };
   }
 
   ngOnInit(): void {
-    this.suppliers$ = this.adminService.getAllSuppliers();
+    this.suppliers$ = this.supplierService.getAllSuppliers();
   }
 
   ngOnDestroy(): void {
@@ -42,29 +40,22 @@ export class SuppliersManagementComponent {
   blockSupplier(supplier: Supplier): void {
     this.showSuccess(this.blockMsg);
 
-    this.updateSupplier = {
-      isBlocked: true,
-    };
-
     this.updateSupplierState(supplier.id);
   }
 
   unblockSupplier(supplier: Supplier): void {
     this.showSuccess(this.unblockMsg);
 
-    this.updateSupplier = {
-      isBlocked: false,
-    };
-
     this.updateSupplierState(supplier.id);
   }
 
   updateSupplierState(supplierId: string): void {
-      this.changeStateSubscription = this.adminService.updateSupplier(supplierId, this.updateSupplier).subscribe({
+      this.changeStateSubscription = this.supplierService.updateSuppliersState(supplierId).subscribe({
         next: (response) => {
           setTimeout(() => {
             this.router.navigateByUrl('/admin/food-suppliers-management');
           }, 3000);
+          this.suppliers$ = this.supplierService.getAllSuppliers();
         },
       });
   }

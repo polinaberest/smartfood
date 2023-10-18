@@ -27,4 +27,18 @@ export class FridgeInstallService extends ODataServiceBase<FridgeRequest> {
     .fetch()
     .pipe(this.mapODataEntities);
   }
+
+  getAllRequests(): Observable<FridgeRequest[]> {
+    return this.ODataService.entities()
+    .query((q) => {
+        q.expand('filial/ownerOrganization');
+      }
+    )
+    .fetch()
+    .pipe(this.mapODataEntities);
+  }
+
+  updateFridgeInstallRequest(id: string, updatedRequest: FridgeRequest): Observable<FridgeRequest> {
+    return this.ODataService.update(id, updatedRequest).pipe(this.mapODataEntity);
+  }
 }

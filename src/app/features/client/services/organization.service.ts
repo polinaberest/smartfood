@@ -43,4 +43,18 @@ export class OrganizationService extends ODataServiceBase<Organization> {
         map((c) => c.entities![0])
       );
   }
+
+  getAllOrganizations(): Observable<Organization[]> {
+    return this.ODataService.entities()
+    .query((q) => {
+        q.expand('manager');
+      }
+    )
+    .fetch()
+    .pipe(this.mapODataEntities);
+  }
+
+  updateOrganizationsState(id: string) : Observable<Organization>{
+    return this.ODataService.destroy(id); 
+  }
 }

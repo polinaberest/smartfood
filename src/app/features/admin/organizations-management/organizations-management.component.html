@@ -19,7 +19,7 @@
                     <tr *ngFor="let organization of organizations" [ngStyle]="{'background': getStateColor(organization?.isBlocked)}">
                         <td>{{organization.name}}</td>
                         <td>{{organization.description}}</td>
-                        <td>{{organization.registerDate | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{organization.registerDate | date }}</td>
                         <td>{{organization?.manager?.name}}<br><i>{{organization?.manager?.email}}</i></td>
                         <td>
                                 <div class="d-flex justify-content-center">

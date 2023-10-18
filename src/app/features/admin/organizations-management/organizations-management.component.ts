@@ -5,6 +5,7 @@ import { Organization } from '../../client/models/organization.model';
 import { UpdateOrganization } from '../../client/models/update-organization.model';
 import { AdminService } from '../services/admin.service';
 import { Router } from '@angular/router';
+import { OrganizationService } from '../../client/services/organization.service';
 
 @Component({
   selector: 'app-organizations-management',
@@ -14,7 +15,6 @@ import { Router } from '@angular/router';
 })
 export class OrganizationsManagementComponent {
   organizations$?: Observable<Organization[]>;
-  updateOrganization: UpdateOrganization;
 
   changeStateSubscription?: Subscription;
 
@@ -22,17 +22,15 @@ export class OrganizationsManagementComponent {
   private readonly unblockMsg = $localize `The organization is unblocked, all the services available!`;
 
   constructor(
-    private adminService: AdminService,
+    private readonly organizationService: OrganizationService,
     private readonly router: Router,
     public messageService: MessageService
   ) {
-    this.updateOrganization = {
-      isBlocked: false,
-    };
+
   }
 
   ngOnInit(): void {
-    this.organizations$ = this.adminService.getAllOrganizations();
+    this.organizations$ = this.organizationService.getAllOrganizations();
   }
 
   ngOnDestroy(): void {
@@ -41,30 +39,22 @@ export class OrganizationsManagementComponent {
 
   blockOrganization(organization: Organization): void {
     this.showSuccess(this.blockMsg);
-
-    this.updateOrganization = {
-      isBlocked: true,
-    };
-
     this.updateOrganizationState(organization.id);
   }
 
   unblockOrganization(organization: Organization): void {
     this.showSuccess(this.unblockMsg);
-
-    this.updateOrganization = {
-      isBlocked: false,
-    };
-
     this.updateOrganizationState(organization.id);
   }
 
   updateOrganizationState(organizationId: string): void {
-      this.changeStateSubscription = this.adminService.updateOrganization(organizationId, this.updateOrganization).subscribe({
+      this.changeStateSubscription = this.organizationService.updateOrganizationsState(organizationId).subscribe({
         next: (response) => {
           setTimeout(() => {
             this.router.navigateByUrl('/admin/organizations-management');
           }, 3000);
+
+          this.organizations$ = this.organizationService.getAllOrganizations();
         },
       });
   }

@@ -23,14 +23,6 @@ export class AdminService {
     return of(fridgeRequestsMock);
   }
 
-  updateFridgeInstallRequest(id: string, updatedRequest: UpdateFridgeInstallRequest): Observable<FridgeRequest> {
-    //return this.http.put<FridgeRequest>(`${environment.apiBaseUrl}`, updatedRequest);
-    const requestToUpdate = fridgeRequestsMock.find((request) => request.id === id);
-    if(requestToUpdate)
-      requestToUpdate.status = updatedRequest.status;
-    return of(requestToUpdate as FridgeRequest);
-  }
-
   getAllOrganizations(): Observable<Organization[]> {
     //return this.http.get<Organization[]>(`${environment.apiBaseUrl}/api/admin/organization`);
     return of([organizationMock, organizationMock] as Organization[]);

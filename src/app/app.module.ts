@@ -48,6 +48,7 @@ import { DateParsePipe } from './pipes/date-parse.pipe';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeUk from '@angular/common/locales/uk';
+import { TechInspectionsManagementComponent } from './features/admin/tech-inspections-management/tech-inspections-management.component';
 registerLocaleData(localeUk);
 
 @NgModule({
@@ -77,6 +78,7 @@ registerLocaleData(localeUk);
     SuppliersManagementComponent,
     OrganizationsManagementComponent,
     DateParsePipe,
+    TechInspectionsManagementComponent,
   ],
   imports: [
     BrowserModule,

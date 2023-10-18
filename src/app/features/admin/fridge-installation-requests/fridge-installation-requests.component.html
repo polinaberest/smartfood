@@ -1,10 +1,10 @@
 <p-toast></p-toast>
 <div class="container">
 
-    <h1 class="mt-3" i18n>Requests about smartfridges installation:</h1>
+    <h1 class="mt-3" i18n>Requests about smartfridges Installation:</h1>
 
-    <ng-container *ngIf="requests$ | async as requests">
-        <ng-container *ngIf="requests.length > 0; else noRequests">
+    <ng-container *ngIf="requestsInstall$ | async as requestsInstall">
+        <ng-container *ngIf="requestsInstall.length > 0; else noRequestsInstall">
             <table class="table mt-3 table-bordered">
                 <thead>
                     <tr>
@@ -17,11 +17,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let request of requests" [ngStyle]="{'background': getRequestStatusColor(request.status)}">
+                    <tr *ngFor="let request of requestsInstall" [ngStyle]="{'background': getRequestStatusColor(request.status)}">
                         <td>{{request.filial.name}}, <br>{{request.filial.address}}<br><br>Company: {{request.filial.ownerOrganization.name}}</td>
                         <td>{{request.placementDescription}}</td>
-                        <td>{{request.requestTime | date: 'dd.MM.yyyy' }}</td>
-                        <td>{{request?.answeredTime | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{request.requestTime | date }}</td>
+                        <td>{{request?.answeredTime | date }}</td>
                         <td>{{request.status}}</td>
                         <td>
                                 <div class="mt-5 mb-5 d-flex justify-content-end">
@@ -44,9 +44,48 @@
         </ng-container>
     </ng-container>
 
-    <ng-template #noRequests>
+    <ng-template #noRequestsInstall>
         <div class="alert alert-info" role="alert" i18n>
             There are no requests about smartfridges installation yet.
+        </div>
+    </ng-template>
+</div>
+
+<div class="container">
+
+    <h1 class="mt-3" i18n>Requests about smartfridges Deinstallation:</h1>
+
+    <ng-container *ngIf="requestsDeinstall$ | async as requestsDeinstall">
+        <ng-container *ngIf="requestsDeinstall.length > 0; else noRequestsDeinstall">
+            <table class="table mt-3 table-bordered">
+                <thead>
+                    <tr>
+                        <th i18n>Address of installation</th>
+                        <th i18n>Placement description</th>
+                        <th i18n>Created on</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let request of requestsDeinstall">
+                        <td>{{request.fridge.filial.name}}, <br>{{request.fridge.filial.address}}</td>
+                        <td>{{request.fridge.placementDescription}}</td>
+                        <td>{{request. requestTime | date: 'dd.MM.yyyy' }}</td>
+                        <td>
+                                <div class="mt-5 mb-5 d-flex justify-content-center">
+                                    <button (click)="onDeinstall(request.id)" pButton pRipple label="Success" class="btn btn-danger" 
+                                    i18n>Mark as fulfilled</button>
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+    </ng-container>
+
+    <ng-template #noRequestsDeinstall>
+        <div class="alert alert-info" role="alert" i18n>
+            There are no requests about smartfridges deinstallation yet.
         </div>
     </ng-template>
 </div>

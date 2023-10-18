@@ -6,6 +6,9 @@ import { Observable, Subscription } from 'rxjs';
 import { AdminService } from '../services/admin.service';
 import { Router } from '@angular/router';
 import { UpdateFridgeInstallRequest } from '../../client/models/update-fridge-install-request.model';
+import { FridgeInstallService } from '../../client/company/fridges/services/fridge-install.service';
+import { FridgeDeinstallService } from '../../client/company/fridges/services/fridge-deinstall.service';
+import { FridgeDeinstallationRequest } from '../../client/models/fridge-deinstall-request.model';
 
 @Component({
   selector: 'app-fridge-installation-requests',
@@ -15,7 +18,8 @@ import { UpdateFridgeInstallRequest } from '../../client/models/update-fridge-in
 })
 export class FridgeInstallationRequestsComponent {
   status = Status;
-  requests$?: Observable<FridgeRequest[]>;
+  requestsInstall$?: Observable<FridgeRequest[]>;
+  requestsDeinstall$?: Observable<FridgeDeinstallationRequest[]>;
   updateRequest?: UpdateFridgeInstallRequest;
 
   approveRequestSubscription?: Subscription;
@@ -27,13 +31,15 @@ export class FridgeInstallationRequestsComponent {
   private readonly fulfiilledMsg = $localize `Request status changed to "fulfilled"!`;
 
   constructor(
-    private adminService: AdminService,
+    private readonly fridgeDeinstallService: FridgeDeinstallService,
+    private readonly fridgeInstallService: FridgeInstallService,
     private readonly router: Router,
     public messageService: MessageService
   ) {}
 
   ngOnInit(): void {
-    this.requests$ = this.adminService.getAllFridgeInstallRequests();
+    this.requestsInstall$ = this.fridgeInstallService.getAllRequests();
+    this.requestsDeinstall$ = this.fridgeDeinstallService.getAllRequests();
   }
 
   ngOnDestroy(): void {
@@ -45,11 +51,9 @@ export class FridgeInstallationRequestsComponent {
   onAccept(request: FridgeRequest): void {
     this.showSuccess(this.approveMsg);
 
-    this.updateRequest = {
-      status: this.status.Approved,
-    };
+    request.status = this.status.Approved;
 
-    this.approveRequestSubscription = this.adminService.updateFridgeInstallRequest(request.id, this.updateRequest).subscribe({
+    this.approveRequestSubscription = this.fridgeInstallService.updateFridgeInstallRequest(request.id, request).subscribe({
       next: (response) => {
         setTimeout(() => {
           this.router.navigateByUrl('/admin/fridge-installation-requests');
@@ -63,11 +67,9 @@ export class FridgeInstallationRequestsComponent {
   onReject(request: FridgeRequest): void {
     this.showSuccess(this.rejectMsg);
 
-    this.updateRequest = {
-      status: this.status.Rejected,
-    };
+    request.status = this.status.Rejected;
 
-    this.approveRequestSubscription = this.adminService.updateFridgeInstallRequest(request.id, this.updateRequest).subscribe({
+    this.approveRequestSubscription = this.fridgeInstallService.updateFridgeInstallRequest(request.id, request).subscribe({
       next: (response) => {
         setTimeout(() => {
           this.router.navigateByUrl('/admin/fridge-installation-requests');
@@ -79,11 +81,21 @@ export class FridgeInstallationRequestsComponent {
   onFulfill(request: FridgeRequest): void {
     this.showSuccess(this.fulfiilledMsg);
 
-    this.updateRequest = {
-      status: this.status.Fulfilled,
-    };
+    request.status = this.status.Fulfilled;
 
-    this.approveRequestSubscription = this.adminService.updateFridgeInstallRequest(request.id, this.updateRequest).subscribe({
+    this.approveRequestSubscription = this.fridgeInstallService.updateFridgeInstallRequest(request.id, request).subscribe({
+      next: (response) => {
+        setTimeout(() => {
+          this.router.navigateByUrl('/admin/fridge-installation-requests');
+        }, 3000);
+      },
+    });
+  }
+
+  onDeinstall(requestId: string): void {
+    this.showSuccess(this.fulfiilledMsg);
+
+    this.approveRequestSubscription = this.fridgeDeinstallService.fulfillFridgeDeinstallRequest(requestId).subscribe({
       next: (response) => {
         setTimeout(() => {
           this.router.navigateByUrl('/admin/fridge-installation-requests');

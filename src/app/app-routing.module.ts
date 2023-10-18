@@ -19,6 +19,7 @@ import { AddFilialComponent } from './features/client/company/filials/add-filial
 import { FridgeInstallationRequestsComponent } from './features/admin/fridge-installation-requests/fridge-installation-requests.component';
 import { SuppliersManagementComponent } from './features/admin/suppliers-management/suppliers-management.component';
 import { OrganizationsManagementComponent } from './features/admin/organizations-management/organizations-management.component';
+import { TechInspectionsManagementComponent } from './features/admin/tech-inspections-management/tech-inspections-management.component';
 
 const routes: Routes = [
   {
@@ -96,6 +97,10 @@ const routes: Routes = [
   {
     path: 'admin/organizations-management',
     component: OrganizationsManagementComponent,
+  },
+  {
+    path: 'admin/tech-inspection-requests-management',
+    component: TechInspectionsManagementComponent,
   },
 ];
 
