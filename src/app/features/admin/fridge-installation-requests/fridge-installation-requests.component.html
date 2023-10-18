@@ -33,8 +33,8 @@
                                         i18n>Reject request</button>
                                     </ng-container>
                                     <ng-container *ngIf="request.status == status.Approved">
-                                        <button (click)="onFulfill(request)" pButton pRipple label="Success" class="btn btn-success" 
-                                        i18n>Mark as fulfilled</button>
+                                        <button [routerLink]="['/admin/fridge-installation-requests/' + request.id + '/add-uri']" pButton pRipple label="Success" class="btn btn-success" 
+                                        i18n>Add fridge to the system</button>
                                     </ng-container> 
                                 </div>
                         </td>

@@ -4,6 +4,7 @@ import { ODataEntitySetService, ODataServiceFactory } from 'angular-odata';
 import { ODataServiceBase } from 'src/app/common/ODataServiceBase';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FridgeInstallRequest } from '../../../models/fridge-install-request.model';
 
 @Injectable({
   providedIn: 'root'
@@ -40,5 +41,14 @@ export class FridgeInstallService extends ODataServiceBase<FridgeRequest> {
 
   updateFridgeInstallRequest(id: string, updatedRequest: FridgeRequest): Observable<FridgeRequest> {
     return this.ODataService.update(id, updatedRequest).pipe(this.mapODataEntity);
+  }
+
+  checkUriExists(uri: string): Observable<boolean> {
+    //return this.http.get<boolean>(`${this.apiUrl}/checkUrl?url=${encodeURIComponent(url)}`);
+    return this.http.get<boolean>(`https://localhost:7065/fridge-install-requests/checkUri?uri=${encodeURIComponent(uri)}`, {});
+  }
+
+  fulfillInstallation(installRequestId: string, uri: string): Observable<FridgeInstallRequest> {
+    return this.http.post<FridgeInstallRequest>(`https://localhost:7065/fridge-install-requests/${installRequestId}/fulfill?uri=${encodeURIComponent(uri)}`, {});
   }
 }

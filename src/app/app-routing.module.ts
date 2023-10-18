@@ -20,6 +20,7 @@ import { FridgeInstallationRequestsComponent } from './features/admin/fridge-ins
 import { SuppliersManagementComponent } from './features/admin/suppliers-management/suppliers-management.component';
 import { OrganizationsManagementComponent } from './features/admin/organizations-management/organizations-management.component';
 import { TechInspectionsManagementComponent } from './features/admin/tech-inspections-management/tech-inspections-management.component';
+import { AddFridgeUriComponent } from './features/admin/add-fridge-uri/add-fridge-uri.component';
 
 const routes: Routes = [
   {
@@ -101,6 +102,10 @@ const routes: Routes = [
   {
     path: 'admin/tech-inspection-requests-management',
     component: TechInspectionsManagementComponent,
+  },
+  {
+    path: 'admin/fridge-installation-requests/:requestId/add-uri',
+    component: AddFridgeUriComponent,
   },
 ];
 
