@@ -22,8 +22,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/user/AppData/Local/Temp/2e147d9a-c199-47fb-84a1-314cde22257a_lab2.zip.57a/lab2/utils/formatters",
-      "program": "c:/Users/user/AppData/Local/Temp/2e147d9a-c199-47fb-84a1-314cde22257a_lab2.zip.57a/lab2/utils/formatters/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

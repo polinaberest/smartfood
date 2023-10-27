@@ -83,7 +83,7 @@ export class AuthService {
 
   register(request: RegisterRequest): Observable<any> {
     const req = this.http.post(
-      `${environment.apiBaseUrl}/api/Auth/register`,
+      `${environment.apiBaseUrl}/api/Auth/registerCompany`,
       request
     );
 

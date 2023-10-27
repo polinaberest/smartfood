@@ -50,6 +50,7 @@ import { registerLocaleData } from '@angular/common';
 import localeUk from '@angular/common/locales/uk';
 import { TechInspectionsManagementComponent } from './features/admin/tech-inspections-management/tech-inspections-management.component';
 import { AddFridgeUriComponent } from './features/admin/add-fridge-uri/add-fridge-uri.component';
+import { BlockedComponent } from './core/components/blocked/blocked.component';
 registerLocaleData(localeUk);
 
 @NgModule({
@@ -81,6 +82,7 @@ registerLocaleData(localeUk);
     DateParsePipe,
     TechInspectionsManagementComponent,
     AddFridgeUriComponent,
+    BlockedComponent,
   ],
   imports: [
     BrowserModule,
