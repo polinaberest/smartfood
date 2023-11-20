@@ -23,6 +23,7 @@ import { TechInspectionsManagementComponent } from './features/admin/tech-inspec
 import { AddFridgeUriComponent } from './features/admin/add-fridge-uri/add-fridge-uri.component';
 import { Block } from '@angular/compiler';
 import { BlockedComponent } from './core/components/blocked/blocked.component';
+import { SystemAdministrationComponent } from './features/admin/system-administration/system-administration.component';
 
 const routes: Routes = [
   {
@@ -108,6 +109,10 @@ const routes: Routes = [
   {
     path: 'admin/fridge-installation-requests/:requestId/add-uri',
     component: AddFridgeUriComponent,
+  },
+  {
+    path: 'admin/system-administration',
+    component: SystemAdministrationComponent,
   },
   {
     path: 'blocked',

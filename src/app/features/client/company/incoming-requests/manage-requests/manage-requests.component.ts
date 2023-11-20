@@ -44,16 +44,17 @@ export class ManageRequestsComponent implements OnInit{
   }
 
   onAccept(requestId: string): void {
-    this.showSuccess();
     this.acceptRequestSubscription = this.fridgeUseService.acceptRequest(requestId).subscribe({
       next: (response) => {
+        this.showSuccess();
         setTimeout(() => {
           this.router.navigateByUrl('/organization/' + this.organizationId + '/fridge-use-requests');
         }, 3000);
+        this.requests$ = this.fridgeUseService.getUnseenRequestsToOrganization(this.organizationId as string);
+
       },
     });
 
-    this.requests$ = this.fridgeUseService.getUnseenRequestsToOrganization(this.organizationId as string);
   }
 
   onReject(requestId: string): void {
@@ -63,7 +64,6 @@ export class ManageRequestsComponent implements OnInit{
       },
     });
 
-    this.requests$ = this.fridgeUseService.getUnseenRequestsToOrganization(this.organizationId as string);
   }
 
   showSuccess() {
