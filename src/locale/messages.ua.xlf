@@ -2,9 +2,37 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="8940590235206725346" datatype="html">
+        <source>You are blocked</source>
+        <target>Вас заблоковано</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/blocked/blocked.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4614486144299495643" datatype="html">
+        <source>Oops! The company you are working for was blocked by the system administrator.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>Contact adminastrators to get more details.</source>
+        <target>Упс! Вашу компанію заблоковано.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>Зверніться до адміністратора за деталями.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/blocked/blocked.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7983239278679610556" datatype="html">
+        <source>Return to the Home page</source>
+        <target>Повернутись на Головну</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/blocked/blocked.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/not-found/not-found.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="5546831001269130590" datatype="html">
         <source> System for ordering and managing smart fridge devices and food suppliers for them. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>Stay smart even having lunch!<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></source>
-        <target> Система замовлення смарт-холодильників, управління пристроями та постачальниками їжі. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>Залишайся Smart навіть жуючи ланч!<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></target>
+        <target> Система для замовлення інсталяції та упраління smart fridge пристроями, підбору постачальників їжі. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>Залишайся smart навіть жуючи ланч!<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">20,23</context>
@@ -12,6 +40,7 @@
       </trans-unit>
       <trans-unit id="6284442506490785579" datatype="html">
         <source>Useful links</source>
+        <target>Корисні посилання</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">31</context>
@@ -19,6 +48,7 @@
       </trans-unit>
       <trans-unit id="1121962291050173912" datatype="html">
         <source>About the project</source>
+        <target>У чому суть</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">34</context>
@@ -26,6 +56,7 @@
       </trans-unit>
       <trans-unit id="3933266700834385010" datatype="html">
         <source>Our partners</source>
+        <target>Наші партнери</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">43</context>
@@ -33,6 +64,7 @@
       </trans-unit>
       <trans-unit id="6126348966441645425" datatype="html">
         <source>Food suppliers</source>
+        <target>Постачальники їжі</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">52</context>
@@ -44,6 +76,7 @@
       </trans-unit>
       <trans-unit id="8188466195784749672" datatype="html">
         <source>Join us</source>
+        <target>Розпочати співпрацю</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">56</context>
@@ -51,6 +84,7 @@
       </trans-unit>
       <trans-unit id="7922989125096435449" datatype="html">
         <source>Contact</source>
+        <target>Контакти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">64</context>
@@ -58,6 +92,7 @@
       </trans-unit>
       <trans-unit id="4813382719470194105" datatype="html">
         <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-geo-alt&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Kharkiv city, UA</source>
+        <target><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-geo-alt&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Харків, Україна</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">65</context>
@@ -65,6 +100,7 @@
       </trans-unit>
       <trans-unit id="3810943859536598066" datatype="html">
         <source> © 2023 SmartFood - Smart fridge food distribution management system </source>
+        <target> © 2023 SmartFood - система управління розумними холодильниками </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
           <context context-type="linenumber">84,86</context>
@@ -72,6 +108,7 @@
       </trans-unit>
       <trans-unit id="2501489806101473286" datatype="html">
         <source>About us</source>
+        <target>Про нас</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">11</context>
@@ -83,6 +120,7 @@
       </trans-unit>
       <trans-unit id="7357840409704846778" datatype="html">
         <source>Client organizations</source>
+        <target>Компанії-клієнти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">17</context>
@@ -90,6 +128,7 @@
       </trans-unit>
       <trans-unit id="8808470903491101391" datatype="html">
         <source> Super admin panel </source>
+        <target> Панель адміністратора </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">22,24</context>
@@ -97,6 +136,7 @@
       </trans-unit>
       <trans-unit id="4039751171626980386" datatype="html">
         <source>Manage fridge installation requests</source>
+        <target>Управління запитами на встановлення смарт-холодильників</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">26</context>
@@ -104,6 +144,7 @@
       </trans-unit>
       <trans-unit id="7003894283160063599" datatype="html">
         <source>Manage food suppliers</source>
+        <target>Управління постачальниками їжі</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">28</context>
@@ -111,23 +152,42 @@
       </trans-unit>
       <trans-unit id="5322874710909959179" datatype="html">
         <source>Manage companies</source>
+        <target>Управління компаніями</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7684605385119986564" datatype="html">
-        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-person-hearts&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Log in to join the program!</source>
+      <trans-unit id="6749861236575588858" datatype="html">
+        <source>Manage tech-inspection requests</source>
+        <target>Управління запитами на тех. огляд</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3798085083594075292" datatype="html">
+        <source>Manage system</source>
+        <target>Управління системою</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2162951217838476199" datatype="html">
-        <source>My menu</source>
+      <trans-unit id="7684605385119986564" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-person-hearts&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Log in to join the program!</source>
+        <target><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-person-hearts&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Увійти в систему!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
           <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2162951217838476199" datatype="html">
+        <source>My menu</source>
+        <target>Моє меню</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">55</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/supplier/menu/menu/menu.component.html</context>
@@ -136,34 +196,39 @@
       </trans-unit>
       <trans-unit id="4203383087993236458" datatype="html">
         <source>My requests</source>
+        <target>Мої заявки</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5344118618061470967" datatype="html">
         <source>My fridges</source>
+        <target>Мої холодильники</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8206229979524257359" datatype="html">
         <source>My filials</source>
+        <target>Офіси моєї компанії</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7484168812820509390" datatype="html">
-        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-person&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Log out</source>
+      <trans-unit id="491718244757075036" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-person&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Log out</source>
+        <target><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-person&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Вийти з системи</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="181464970911903082" datatype="html">
         <source>404 Not Found</source>
+        <target>404 Не Знайдено</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/not-found/not-found.component.html</context>
           <context context-type="linenumber">2</context>
@@ -171,20 +236,71 @@
       </trans-unit>
       <trans-unit id="7640366343049199869" datatype="html">
         <source>Oops! It seems, the page you are looking for does not exist.</source>
+                <target>Трясця! Здається, такої сторінки не існує.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/not-found/not-found.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7983239278679610556" datatype="html">
-        <source>Return to the Home page</source>
+      <trans-unit id="1235594246130602020" datatype="html">
+        <source>Create a unique link for the IoT fridge device</source>
+                <target>Створи унікальне посилання на ІоТ пристрій</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/not-found/not-found.component.html</context>
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4956061161590789916" datatype="html">
-        <source>Requests about smartfridges installation:</source>
+      <trans-unit id="1678679909756061645" datatype="html">
+        <source>URI:</source>
+                <target>URI:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7580682505205760093" datatype="html">
+        <source> URI is required. </source>
+                <target> URI не може бути порожнім. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1102934150908318011" datatype="html">
+        <source> URI should have at least 5 characters. </source>
+                <target> URI має містити принаймні 5 символів. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2639213442160634818" datatype="html">
+        <source> URI maximum size is 300 characters. </source>
+                <target> Максимальна довжина URI - 300 символів. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">23,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4645130994247317298" datatype="html">
+        <source>Mark fridge installation request as fulfilled</source>
+                <target>Позначити заявку на встановлення холодильника як виконану</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7359876279647585654" datatype="html">
+        <source>The link is already taken! Make another one!</source>
+                <target>Цей лінк зайнято! Створи інший!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8261931305116304977" datatype="html">
+        <source>Requests about smartfridges Installation:</source>
+                <target>Заявки на встановлення смарт-холодильників:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">4</context>
@@ -192,23 +308,46 @@
       </trans-unit>
       <trans-unit id="7967184286218358648" datatype="html">
         <source>Address of installation</source>
+                <target>Адреса встановлення</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="9206640718344660224" datatype="html">
         <source>Placement description</source>
+                <target>Опис місця розміщення</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5736998174800408999" datatype="html">
         <source>Created on</source>
+                <target>Створено</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/supplier/fridge-use-requests/requests-list/requests-list.component.html</context>
@@ -217,6 +356,7 @@
       </trans-unit>
       <trans-unit id="2856119920698568280" datatype="html">
         <source>Answered on</source>
+                <target>Відповідь надано</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">14</context>
@@ -228,13 +368,14 @@
       </trans-unit>
       <trans-unit id="8028606890634050029" datatype="html">
         <source>Request status</source>
+                <target>Статус заявки</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/supplier/fridge-use-requests/requests-list/requests-list.component.html</context>
@@ -243,6 +384,7 @@
       </trans-unit>
       <trans-unit id="609836197036822519" datatype="html">
         <source>Approve installation</source>
+                <target>Схвалити встановлення</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">30</context>
@@ -250,6 +392,7 @@
       </trans-unit>
       <trans-unit id="1043889970846094345" datatype="html">
         <source>Reject request</source>
+                <target>Відхилити заявку</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">33</context>
@@ -259,8 +402,9 @@
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2519179246451592808" datatype="html">
-        <source>Mark as fulfilled</source>
+      <trans-unit id="6034938660142990219" datatype="html">
+        <source>Add fridge to the system</source>
+                <target>Додати холодильник до системи</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">37</context>
@@ -268,34 +412,71 @@
       </trans-unit>
       <trans-unit id="1361761979520961848" datatype="html">
         <source> There are no requests about smartfridges installation yet. </source>
+                <target> Поки що немає заявок на встановлення смарт-холодильників. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">48,50</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="2258970682436434920" datatype="html">
+        <source>Requests about smartfridges Deinstallation:</source>
+                <target>Заявки на деінсталяцію смарт-холодильників:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2519179246451592808" datatype="html">
+        <source>Mark as fulfilled</source>
+                <target>Позначити як виконану</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2597318495721841934" datatype="html">
+        <source> There are no requests about smartfridges deinstallation yet. </source>
+                <target> Поки що немає заявок на деінсталяцію смарт-холодильників. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">87,89</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1704707458869497466" datatype="html">
         <source>Request approved!</source>
+                <target>Заявку схвалено!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4698835830427783663" datatype="html">
         <source>Request rejected!</source>
+                <target>Заявку відхилено!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3711731275323837157" datatype="html">
         <source>Request status changed to &quot;fulfilled&quot;!</source>
+                <target>Статус заявки змінено на &quot;Виконана&quot;!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.ts</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4612160161506415263" datatype="html">
         <source>The organizations registered in the SmartFood system:</source>
+                <target>Компанії, зареєстровані в системі SmartFood:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.html</context>
           <context context-type="linenumber">4</context>
@@ -303,6 +484,7 @@
       </trans-unit>
       <trans-unit id="3076687427621376223" datatype="html">
         <source>Organization</source>
+                <target>Компанія</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.html</context>
           <context context-type="linenumber">11</context>
@@ -310,6 +492,7 @@
       </trans-unit>
       <trans-unit id="4902817035128594900" datatype="html">
         <source>Description</source>
+                <target>Опис</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.html</context>
           <context context-type="linenumber">12</context>
@@ -325,6 +508,7 @@
       </trans-unit>
       <trans-unit id="6352396891898821670" datatype="html">
         <source>Registered on</source>
+                <target>Зареєстровано</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.html</context>
           <context context-type="linenumber">13</context>
@@ -336,6 +520,7 @@
       </trans-unit>
       <trans-unit id="1540281436321485610" datatype="html">
         <source>Manager</source>
+                <target>Менеджер</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.html</context>
           <context context-type="linenumber">14</context>
@@ -347,6 +532,7 @@
       </trans-unit>
       <trans-unit id="2460825146042664538" datatype="html">
         <source>Unblock organization</source>
+                <target>Розблокувати компанію</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.html</context>
           <context context-type="linenumber">28</context>
@@ -354,6 +540,7 @@
       </trans-unit>
       <trans-unit id="8561580740566999375" datatype="html">
         <source>Block organization</source>
+                <target>Заблокувати компанію</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.html</context>
           <context context-type="linenumber">32</context>
@@ -361,6 +548,7 @@
       </trans-unit>
       <trans-unit id="7193629844975460328" datatype="html">
         <source> There are no organizations registered yet. </source>
+                <target> Поки що немає зареєстрованих компаній. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.html</context>
           <context context-type="linenumber">43,45</context>
@@ -368,6 +556,7 @@
       </trans-unit>
       <trans-unit id="1508242709864509062" datatype="html">
         <source>The organization is blocked, no service available!</source>
+                <target>Компанію заблоковано, доступ до сервісів відсутній!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.ts</context>
           <context context-type="linenumber">21</context>
@@ -375,6 +564,7 @@
       </trans-unit>
       <trans-unit id="7585149449558668440" datatype="html">
         <source>The organization is unblocked, all the services available!</source>
+                <target>Компанію розблоковано, доступ до сервісів відновлено!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/organizations-management/organizations-management.component.ts</context>
           <context context-type="linenumber">22</context>
@@ -382,6 +572,7 @@
       </trans-unit>
       <trans-unit id="2918948158455919655" datatype="html">
         <source>The food suppliers registered in the SmartFood system:</source>
+                <target>Постачальники їжі, зареєстровані в системі SmartFood:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/suppliers-management/suppliers-management.component.html</context>
           <context context-type="linenumber">4</context>
@@ -389,6 +580,7 @@
       </trans-unit>
       <trans-unit id="1146790895057353608" datatype="html">
         <source>Food supplier</source>
+                <target>Постачальник їжі</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/suppliers-management/suppliers-management.component.html</context>
           <context context-type="linenumber">11</context>
@@ -396,6 +588,7 @@
       </trans-unit>
       <trans-unit id="6490119167567439930" datatype="html">
         <source>Unblock food supplier</source>
+                <target>Розблокувати постачальника їжі</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/suppliers-management/suppliers-management.component.html</context>
           <context context-type="linenumber">28</context>
@@ -403,6 +596,7 @@
       </trans-unit>
       <trans-unit id="8359639652796080279" datatype="html">
         <source>Block food supplier</source>
+                <target>Заблокувати постачальника їжі</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/suppliers-management/suppliers-management.component.html</context>
           <context context-type="linenumber">32</context>
@@ -410,6 +604,7 @@
       </trans-unit>
       <trans-unit id="1591703619489746205" datatype="html">
         <source> There are no food suppliers registered yet. </source>
+                <target> Поки що немає зареєстрованих постачальників їжі. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/suppliers-management/suppliers-management.component.html</context>
           <context context-type="linenumber">43,45</context>
@@ -417,6 +612,7 @@
       </trans-unit>
       <trans-unit id="4464656798703370064" datatype="html">
         <source>The food supplier is blocked, no service available!</source>
+                <target>Постачальника їжі заблоковано, доступ до сервісів відсутній!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/suppliers-management/suppliers-management.component.ts</context>
           <context context-type="linenumber">21</context>
@@ -424,13 +620,103 @@
       </trans-unit>
       <trans-unit id="9160661925594626926" datatype="html">
         <source>The food supplier is unblocked, all the services available!</source>
+                <target>Постачальника їжі розблоковано, доступ до сервісів відновлено!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/suppliers-management/suppliers-management.component.ts</context>
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1833410766516567529" datatype="html">
+        <source>Database backups created:</source>
+                <target>Створені резервні копії бази даних:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="913688863297471035" datatype="html">
+        <source>Create a new DB backup</source>
+                <target>Створити нову резервну копію БД</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2300247576851644080" datatype="html">
+        <source>File name</source>
+                <target>Назва файлу</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1520049505561836231" datatype="html">
+        <source>Created at</source>
+                <target>Створено</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3651449699419607001" datatype="html">
+        <source> There are no DB backups created yet. </source>
+                <target> Поки що немає створених резервних копій бази даних. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">29,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4600840327288394134" datatype="html">
+        <source>Backup created!</source>
+                <target>Резервну копію створено!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6453275970821629592" datatype="html">
+        <source>Requests about Tech-inspection of Smart fridges:</source>
+                <target>Заявки на технічний огляд смарт-холодильників:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2906798338294160168" datatype="html">
+        <source>Address of fridge installation</source>
+                <target>Адреса встановлення холодильника</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="189449919861511045" datatype="html">
+        <source>Temperature inside<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>when request was created</source>
+                <target>Температура всередині<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>на момент створення заявки</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2316689295296665407" datatype="html">
+        <source>Doors opened count<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>when request was created</source>
+                <target>Кількість відкритих дверей<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>на момент створення заявки</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4923913569107486375" datatype="html">
+        <source> There are no requests about tech-inspection of smart fridges yet. </source>
+                <target> Поки що немає заявок на технічний огляд смарт-холодильників. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4688442434844724106" datatype="html">
         <source>Log in to proceed:</source>
+                <target>Авторизуйтеся, щоб продовжити:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login/login.component.html</context>
           <context context-type="linenumber">4</context>
@@ -438,6 +724,7 @@
       </trans-unit>
       <trans-unit id="4768749765465246664" datatype="html">
         <source>Email</source>
+                <target>Email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login/login.component.html</context>
           <context context-type="linenumber">11</context>
@@ -449,6 +736,7 @@
       </trans-unit>
       <trans-unit id="1431416938026210429" datatype="html">
         <source>Password</source>
+                <target>Пароль</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login/login.component.html</context>
           <context context-type="linenumber">20</context>
@@ -458,29 +746,25 @@
           <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1382650234496166948" datatype="html">
-        <source>Log in as a food supplier</source>
+      <trans-unit id="9218603018990838997" datatype="html">
+        <source>Log me in!</source>
+                <target>Увійти в систему!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login/login.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6054970179145723495" datatype="html">
-        <source>Log in as a client organization</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/auth/login/login.component.html</context>
-          <context context-type="linenumber">26</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="5600316534445793381" datatype="html">
         <source>Do not joined us yet? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/register&apos;]&quot; &gt;"/>Click to Register!<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+                <target>Ще не співпрацювали з нами? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/register&apos;]&quot; &gt;"/>Натисніть, щоб зареєструватися!<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login/login.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6458531204133702890" datatype="html">
         <source>Register to <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>take advantage of Smart Food:</source>
+                <target>Зареєструйтеся, щоб <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>скористатися перевагами Smart Food:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">4</context>
@@ -488,6 +772,7 @@
       </trans-unit>
       <trans-unit id="201415202274648723" datatype="html">
         <source> Register me as a <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>food supplier<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> (I want to deliver food to Smart fridges)</source>
+                <target> Зареєструвати мене як <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>постачальника їжі<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> (Я хочу постачати їжу до смарт-холодильників)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">11</context>
@@ -495,6 +780,7 @@
       </trans-unit>
       <trans-unit id="7282106579378073338" datatype="html">
         <source> Register me as a <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>client organization<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> (I want Smart fridges to be installed in my filias)</source>
+                <target> Зареєструвати мене як <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>клієнта<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> (Я хочу встановити смарт-холодильники в своїх офісах)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">16</context>
@@ -502,6 +788,7 @@
       </trans-unit>
       <trans-unit id="2796760620406713589" datatype="html">
         <source> Email is required. </source>
+                <target> Email обов&apos;язковий. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">28,30</context>
@@ -509,6 +796,7 @@
       </trans-unit>
       <trans-unit id="6791478188167943518" datatype="html">
         <source> Invalid email address. </source>
+                <target> Неправильний email. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">31,33</context>
@@ -516,6 +804,7 @@
       </trans-unit>
       <trans-unit id="8203367621031610680" datatype="html">
         <source>Your name</source>
+                <target>Ваше ім&apos;я</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">41</context>
@@ -523,6 +812,7 @@
       </trans-unit>
       <trans-unit id="3323415564519831786" datatype="html">
         <source> Name is required. </source>
+                <target> Ім&apos;я обов&apos;язкове. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">45,47</context>
@@ -542,6 +832,7 @@
       </trans-unit>
       <trans-unit id="7260067147066962510" datatype="html">
         <source> Name must be at least 10 characters long. </source>
+                <target> Ім&apos;я повинно містити принаймні 10 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">48,50</context>
@@ -549,6 +840,7 @@
       </trans-unit>
       <trans-unit id="1385609264552768285" datatype="html">
         <source>Your title company / organization name</source>
+                <target>Назва вашої компанії / організації</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">58</context>
@@ -556,6 +848,7 @@
       </trans-unit>
       <trans-unit id="2277829967304482768" datatype="html">
         <source> Name must be at least 5 characters long. </source>
+                <target> Назва повинна містити принаймні 5 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">65,67</context>
@@ -567,6 +860,7 @@
       </trans-unit>
       <trans-unit id="430670933386343469" datatype="html">
         <source> Password should be of minimum 6 characters. </source>
+                <target> Пароль повинен містити принаймні 6 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">81,83</context>
@@ -574,6 +868,7 @@
       </trans-unit>
       <trans-unit id="5889504808716457150" datatype="html">
         <source>Confirm the password</source>
+                <target>Підтвердіть пароль</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">91</context>
@@ -581,6 +876,7 @@
       </trans-unit>
       <trans-unit id="2319657844488624318" datatype="html">
         <source> Passwords do not match. </source>
+                <target> Паролі не збігаються. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">95,97</context>
@@ -588,6 +884,7 @@
       </trans-unit>
       <trans-unit id="895907587036285932" datatype="html">
         <source>Company / Organization short description</source>
+                <target>Короткий опис компанії / організації</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">105</context>
@@ -595,6 +892,7 @@
       </trans-unit>
       <trans-unit id="6799332168382537042" datatype="html">
         <source> Company short description is required. </source>
+                <target> Короткий опис компанії / організації обов&apos;язковий. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">109,111</context>
@@ -602,6 +900,7 @@
       </trans-unit>
       <trans-unit id="4153564111161925072" datatype="html">
         <source> Company short description should have at least 10 characters. </source>
+                <target> Короткий опис компанії / організації повинен містити принаймні 10 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">112,114</context>
@@ -609,6 +908,7 @@
       </trans-unit>
       <trans-unit id="1100453030290007344" datatype="html">
         <source> Company short description maximum size is 200 characters. </source>
+                <target> Короткий опис компанії / організації має максимальний розмір 200 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">115,117</context>
@@ -616,6 +916,7 @@
       </trans-unit>
       <trans-unit id="3301086086650990787" datatype="html">
         <source>Register</source>
+                <target>Зареєструватися</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">126</context>
@@ -623,6 +924,7 @@
       </trans-unit>
       <trans-unit id="4670673538482518008" datatype="html">
         <source>Log in!</source>
+                <target>Увійти в систему!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/register/register.component.html</context>
           <context context-type="linenumber">130</context>
@@ -630,6 +932,7 @@
       </trans-unit>
       <trans-unit id="6847244411680560096" datatype="html">
         <source>Add a new filial of the organization</source>
+                <target>Додати новий офіс організації</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/add-filial/add-filial.component.html</context>
           <context context-type="linenumber">4</context>
@@ -637,6 +940,7 @@
       </trans-unit>
       <trans-unit id="1951348493868455824" datatype="html">
         <source>Filial name</source>
+                <target>Назва офісу</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/add-filial/add-filial.component.html</context>
           <context context-type="linenumber">19</context>
@@ -644,6 +948,7 @@
       </trans-unit>
       <trans-unit id="2954238452002325308" datatype="html">
         <source> Name must be at least 2 characters long. </source>
+                <target> Назва повинна містити принаймні 2 символи. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/add-filial/add-filial.component.html</context>
           <context context-type="linenumber">34,36</context>
@@ -655,6 +960,7 @@
       </trans-unit>
       <trans-unit id="3708452605203242395" datatype="html">
         <source>Filial address</source>
+                <target>Адреса офісу</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/add-filial/add-filial.component.html</context>
           <context context-type="linenumber">54</context>
@@ -662,6 +968,7 @@
       </trans-unit>
       <trans-unit id="6943065121014407619" datatype="html">
         <source> Dish description maximum size is 300 characters. </source>
+                <target> Максимальний розмір опису страви - 300 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/add-filial/add-filial.component.html</context>
           <context context-type="linenumber">66,68</context>
@@ -669,6 +976,7 @@
       </trans-unit>
       <trans-unit id="934887896882925302" datatype="html">
         <source> Address is required. </source>
+                <target> Адреса обов&apos;язкова. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/add-filial/add-filial.component.html</context>
           <context context-type="linenumber">72,74</context>
@@ -680,6 +988,7 @@
       </trans-unit>
       <trans-unit id="1525562128421901593" datatype="html">
         <source> Address must be at least 5 characters long. </source>
+                <target> Адреса повинна містити принаймні 5 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/add-filial/add-filial.component.html</context>
           <context context-type="linenumber">78,80</context>
@@ -687,6 +996,7 @@
       </trans-unit>
       <trans-unit id="6650021945772321163" datatype="html">
         <source> Add filial </source>
+                <target> Додати офіс </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/add-filial/add-filial.component.html</context>
           <context context-type="linenumber">93,95</context>
@@ -694,6 +1004,7 @@
       </trans-unit>
       <trans-unit id="3862497674553063473" datatype="html">
         <source>Edit <x id="INTERPOLATION" equiv-text="{{model.name}}"/></source>
+                <target>Редагувати <x id="INTERPOLATION" equiv-text="{{model.name}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.html</context>
           <context context-type="linenumber">5</context>
@@ -701,6 +1012,7 @@
       </trans-unit>
       <trans-unit id="1737708525255596240" datatype="html">
         <source>Filial name:</source>
+                <target>Назва офісу:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.html</context>
           <context context-type="linenumber">15</context>
@@ -708,6 +1020,7 @@
       </trans-unit>
       <trans-unit id="7715495669720183754" datatype="html">
         <source> Filial name is required. </source>
+                <target> Назва офісу обов&apos;язкова. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.html</context>
           <context context-type="linenumber">19,21</context>
@@ -715,6 +1028,7 @@
       </trans-unit>
       <trans-unit id="5353408913233161746" datatype="html">
         <source> Filial name should have at least 2 characters. </source>
+                <target> Назва офісу повинна містити принаймні 2 символи. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.html</context>
           <context context-type="linenumber">22,24</context>
@@ -722,6 +1036,7 @@
       </trans-unit>
       <trans-unit id="1940238788747125167" datatype="html">
         <source> Filial name maximum size is 100 characters. </source>
+                <target> Максимальний розмір назви офісу - 100 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.html</context>
           <context context-type="linenumber">25,27</context>
@@ -729,6 +1044,7 @@
       </trans-unit>
       <trans-unit id="989442551142875426" datatype="html">
         <source>Filial address:</source>
+                <target>Адреса офісу:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.html</context>
           <context context-type="linenumber">37</context>
@@ -736,6 +1052,7 @@
       </trans-unit>
       <trans-unit id="8036613687262028823" datatype="html">
         <source> Address should have at least 5 characters. </source>
+                <target> Адреса повинна містити принаймні 5 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.html</context>
           <context context-type="linenumber">44,46</context>
@@ -743,6 +1060,7 @@
       </trans-unit>
       <trans-unit id="9161020552683444798" datatype="html">
         <source> Address maximum size is 300 characters. </source>
+                <target> Максимальний розмір адреси - 300 символів. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.html</context>
           <context context-type="linenumber">47,49</context>
@@ -750,6 +1068,7 @@
       </trans-unit>
       <trans-unit id="2417293597567858577" datatype="html">
         <source>Save filial changes</source>
+                <target>Зберегти зміни щодо офісу</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.html</context>
           <context context-type="linenumber">55</context>
@@ -766,7 +1085,7 @@
         <source>The filial was deleted. The smartfidges will be removed at the earliest convenience. No more food orders available</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.ts</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3881288427233393953" datatype="html">
@@ -805,7 +1124,7 @@
         <source>Edit filial address</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/filials-list/filials-list.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6131556966447794591" datatype="html">
@@ -896,8 +1215,8 @@
           <context context-type="linenumber">93</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5962609138171841209" datatype="html">
-        <source>Edit Smartfridge in <x id="INTERPOLATION" equiv-text="{{model.filial.name}}"/> (#<x id="INTERPOLATION_1" equiv-text="{{model.id}}"/>)</source>
+      <trans-unit id="4673479439068291190" datatype="html">
+        <source>Edit Smartfridge (#<x id="INTERPOLATION" equiv-text="{{model.id}}"/>)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/edit-fridge/edit-fridge.component.html</context>
           <context context-type="linenumber">5</context>
@@ -928,7 +1247,7 @@
         <source>The fridge will be removed at the earliest convenience. No more food orders available</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/edit-fridge/edit-fridge.component.ts</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">93</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9180094821964591237" datatype="html">
@@ -960,7 +1279,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4662774993363931268" datatype="html">
@@ -971,35 +1290,35 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4070225426649339994" datatype="html">
         <source>Manage fridge</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8040279640500933618" datatype="html">
         <source>My requests about fridge installation:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2275532246801944011" datatype="html">
         <source>Creation date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3337357113862183723" datatype="html">
         <source> You have no Smartfridge installation requests yet. Make one! </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">63,65</context>
+          <context context-type="linenumber">66,68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8438592594112987641" datatype="html">
@@ -1055,7 +1374,7 @@
         <source>Request accepted! Wait for the dishes in the fridge!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/incoming-requests/manage-requests/manage-requests.component.ts</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3333784813592174390" datatype="html">

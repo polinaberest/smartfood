@@ -2,6 +2,31 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="8940590235206725346" datatype="html">
+        <source>You are blocked</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/blocked/blocked.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4614486144299495643" datatype="html">
+        <source>Oops! The company you are working for was blocked by the system administrator.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>Contact adminastrators to get more details.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/blocked/blocked.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7983239278679610556" datatype="html">
+        <source>Return to the Home page</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/blocked/blocked.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/not-found/not-found.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="5546831001269130590" datatype="html">
         <source> System for ordering and managing smart fridge devices and food suppliers for them. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/>Stay smart even having lunch!<x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/></source>
         <context-group purpose="location">
@@ -115,18 +140,32 @@
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="6749861236575588858" datatype="html">
+        <source>Manage tech-inspection requests</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3798085083594075292" datatype="html">
+        <source>Manage system</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="7684605385119986564" datatype="html">
         <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-person-hearts&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Log in to join the program!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2162951217838476199" datatype="html">
         <source>My menu</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">55</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/supplier/menu/menu/menu.component.html</context>
@@ -137,28 +176,28 @@
         <source>My requests</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5344118618061470967" datatype="html">
         <source>My fridges</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8206229979524257359" datatype="html">
         <source>My filials</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7484168812820509390" datatype="html">
-        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-person&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/> Log out</source>
+      <trans-unit id="491718244757075036" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i class=&quot;bi bi-person&quot;&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Log out</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/components/header/header.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="181464970911903082" datatype="html">
@@ -175,15 +214,57 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7983239278679610556" datatype="html">
-        <source>Return to the Home page</source>
+      <trans-unit id="1235594246130602020" datatype="html">
+        <source>Create a unique link for the IoT fridge device</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/core/components/not-found/not-found.component.html</context>
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4956061161590789916" datatype="html">
-        <source>Requests about smartfridges installation:</source>
+      <trans-unit id="1678679909756061645" datatype="html">
+        <source>URI:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7580682505205760093" datatype="html">
+        <source> URI is required. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">17,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1102934150908318011" datatype="html">
+        <source> URI should have at least 5 characters. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2639213442160634818" datatype="html">
+        <source> URI maximum size is 300 characters. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">23,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4645130994247317298" datatype="html">
+        <source>Mark fridge installation request as fulfilled</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7359876279647585654" datatype="html">
+        <source>The link is already taken! Make another one!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/add-fridge-uri/add-fridge-uri.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8261931305116304977" datatype="html">
+        <source>Requests about smartfridges Installation:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">4</context>
@@ -195,11 +276,23 @@
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="9206640718344660224" datatype="html">
         <source>Placement description</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
@@ -208,6 +301,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/supplier/fridge-use-requests/requests-list/requests-list.component.html</context>
@@ -233,7 +334,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/supplier/fridge-use-requests/requests-list/requests-list.component.html</context>
@@ -258,8 +359,8 @@
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2519179246451592808" datatype="html">
-        <source>Mark as fulfilled</source>
+      <trans-unit id="6034938660142990219" datatype="html">
+        <source>Add fridge to the system</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
           <context context-type="linenumber">37</context>
@@ -272,25 +373,54 @@
           <context context-type="linenumber">48,50</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="2258970682436434920" datatype="html">
+        <source>Requests about smartfridges Deinstallation:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2519179246451592808" datatype="html">
+        <source>Mark as fulfilled</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2597318495721841934" datatype="html">
+        <source> There are no requests about smartfridges deinstallation yet. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.html</context>
+          <context context-type="linenumber">87,89</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1704707458869497466" datatype="html">
         <source>Request approved!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4698835830427783663" datatype="html">
         <source>Request rejected!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3711731275323837157" datatype="html">
         <source>Request status changed to &quot;fulfilled&quot;!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/admin/fridge-installation-requests/fridge-installation-requests.component.ts</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.ts</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4612160161506415263" datatype="html">
@@ -428,6 +558,83 @@
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1833410766516567529" datatype="html">
+        <source>Database backups created:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="913688863297471035" datatype="html">
+        <source>Create a new DB backup</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2300247576851644080" datatype="html">
+        <source>File name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1520049505561836231" datatype="html">
+        <source>Created at</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3651449699419607001" datatype="html">
+        <source> There are no DB backups created yet. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.html</context>
+          <context context-type="linenumber">29,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4600840327288394134" datatype="html">
+        <source>Backup created!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/system-administration/system-administration.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6453275970821629592" datatype="html">
+        <source>Requests about Tech-inspection of Smart fridges:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2906798338294160168" datatype="html">
+        <source>Address of fridge installation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="189449919861511045" datatype="html">
+        <source>Temperature inside<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>when request was created</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2316689295296665407" datatype="html">
+        <source>Doors opened count<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>when request was created</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4923913569107486375" datatype="html">
+        <source> There are no requests about tech-inspection of smart fridges yet. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/admin/tech-inspections-management/tech-inspections-management.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4688442434844724106" datatype="html">
         <source>Log in to proceed:</source>
         <context-group purpose="location">
@@ -457,25 +664,18 @@
           <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1382650234496166948" datatype="html">
-        <source>Log in as a food supplier</source>
+      <trans-unit id="9218603018990838997" datatype="html">
+        <source>Log me in!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login/login.component.html</context>
           <context context-type="linenumber">25</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="6054970179145723495" datatype="html">
-        <source>Log in as a client organization</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/features/auth/login/login.component.html</context>
-          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5600316534445793381" datatype="html">
         <source>Do not joined us yet? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/register&apos;]&quot; &gt;"/>Click to Register!<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/auth/login/login.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6458531204133702890" datatype="html">
@@ -765,7 +965,7 @@
         <source>The filial was deleted. The smartfidges will be removed at the earliest convenience. No more food orders available</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/edit-filial/edit-filial.component.ts</context>
-          <context context-type="linenumber">102</context>
+          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3881288427233393953" datatype="html">
@@ -804,7 +1004,7 @@
         <source>Edit filial address</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/filials/filials-list/filials-list.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6131556966447794591" datatype="html">
@@ -895,8 +1095,8 @@
           <context context-type="linenumber">93</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5962609138171841209" datatype="html">
-        <source>Edit Smartfridge in <x id="INTERPOLATION" equiv-text="{{model.filial.name}}"/> (#<x id="INTERPOLATION_1" equiv-text="{{model.id}}"/>)</source>
+      <trans-unit id="4673479439068291190" datatype="html">
+        <source>Edit Smartfridge (#<x id="INTERPOLATION" equiv-text="{{model.id}}"/>)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/edit-fridge/edit-fridge.component.html</context>
           <context context-type="linenumber">5</context>
@@ -927,7 +1127,7 @@
         <source>The fridge will be removed at the earliest convenience. No more food orders available</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/edit-fridge/edit-fridge.component.ts</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">93</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9180094821964591237" datatype="html">
@@ -959,7 +1159,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4662774993363931268" datatype="html">
@@ -970,35 +1170,35 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4070225426649339994" datatype="html">
         <source>Manage fridge</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8040279640500933618" datatype="html">
         <source>My requests about fridge installation:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2275532246801944011" datatype="html">
         <source>Creation date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3337357113862183723" datatype="html">
         <source> You have no Smartfridge installation requests yet. Make one! </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/fridges/fridges-list/fridges-list.component.html</context>
-          <context context-type="linenumber">63,65</context>
+          <context context-type="linenumber">66,68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8438592594112987641" datatype="html">
@@ -1054,7 +1254,7 @@
         <source>Request accepted! Wait for the dishes in the fridge!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/client/company/incoming-requests/manage-requests/manage-requests.component.ts</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3333784813592174390" datatype="html">

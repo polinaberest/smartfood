@@ -13,6 +13,7 @@ export enum Role {
   Supplier = 'supplier',
   OrganizationManager = 'organizationmanager',
   Admin = 'admin',
+  Sysadmin = 'sysadmin',
 }
 
 const superAdminResponse: LoginResponse | any = {

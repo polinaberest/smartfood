@@ -109,7 +109,7 @@ registerLocaleData(localeUk);
     })
   ],
   providers: [AuthInterceptorProviders,
-    { provide: LOCALE_ID, useValue: 'uk-UA' }],
+    { provide: LOCALE_ID, useValue: 'en-US' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
